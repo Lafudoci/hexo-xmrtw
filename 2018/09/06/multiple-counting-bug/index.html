@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101869289-1');
+  </script>
+  
+  <title>關於重複計數漏洞的事後檢討 | Monero - 台灣正體中文站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="這篇文章要來談重複計數(multiple counting)的漏洞，其包括了兩個變種。這篇文章的目標是對上述的漏洞提供完整的細節，解釋這是如何被用來攻擊線上服務、商家與交易所，並且 Monero (開發)社群是如何處理這個漏洞。 重複計數漏洞的兩個變種存在於子地址(subaddress)功能中，這功能用了個不同的交易金鑰程式碼架構。第一個漏洞的變種簡單來說就是沒有對重複的公鑰進行檢查，因此攻擊者可">
+<meta name="keywords" content="漏洞,Subaddresses">
+<meta property="og:type" content="article">
+<meta property="og:title" content="關於重複計數漏洞的事後檢討">
+<meta property="og:url" content="https://xmr-tw.org/2018/09/06/multiple-counting-bug/index.html">
+<meta property="og:site_name" content="Monero - 台灣正體中文站">
+<meta property="og:description" content="這篇文章要來談重複計數(multiple counting)的漏洞，其包括了兩個變種。這篇文章的目標是對上述的漏洞提供完整的細節，解釋這是如何被用來攻擊線上服務、商家與交易所，並且 Monero (開發)社群是如何處理這個漏洞。 重複計數漏洞的兩個變種存在於子地址(subaddress)功能中，這功能用了個不同的交易金鑰程式碼架構。第一個漏洞的變種簡單來說就是沒有對重複的公鑰進行檢查，因此攻擊者可">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-04-20T21:24:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="關於重複計數漏洞的事後檢討">
+<meta name="twitter:description" content="這篇文章要來談重複計數(multiple counting)的漏洞，其包括了兩個變種。這篇文章的目標是對上述的漏洞提供完整的細節，解釋這是如何被用來攻擊線上服務、商家與交易所，並且 Monero (開發)社群是如何處理這個漏洞。 重複計數漏洞的兩個變種存在於子地址(subaddress)功能中，這功能用了個不同的交易金鑰程式碼架構。第一個漏洞的變種簡單來說就是沒有對重複的公鑰進行檢查，因此攻擊者可">
+  <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-square310x310logo" src="/images/site/favicons/favicon-310.png">
+  <link rel="apple-touch-icon" href="/images/site/favicons/favicon-180.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/advantage">Monero是什麼？</a>
+        
+          <a class="main-nav-link" href="/nodes">公共節點(Node)</a>
+        
+          <a class="main-nav-link" href="/xmr-eta">區塊鏈動態(XMR-ETA)</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xmr-tw.org"></form>
+      </div>
+    </div>
+    <div id="logo-wrap" class="outer">
+        <a href="/">
+          <img id="logo" src="/images/site/logowspace.png" alt="Monero Taiwan logo">
+        </a>
+      </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="y2018-multiple-counting-bug" class="article article-type-y2018" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/06/multiple-counting-bug/" class="article-date">
+  <time datetime="2018-09-06T09:49:51.000Z" itemprop="datePublished">2018-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/官方消息宣布/">官方消息宣布</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      關於重複計數漏洞的事後檢討
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>這篇文章要來談重複計數(multiple counting)的漏洞，其包括了兩個變種。這篇文章的目標是對上述的漏洞提供完整的細節，解釋這是如何被用來攻擊線上服務、商家與交易所，並且 Monero (開發)社群是如何處理這個漏洞。</p>
+<p>重複計數漏洞的兩個變種存在於子地址(subaddress)功能中，這功能用了個不同的交易金鑰程式碼架構。第一個漏洞的變種簡單來說就是沒有對重複的公鑰進行檢查，因此攻擊者可以重複將同份交易公鑰包含在交易中，這結果導致了接收者的錢包會回報收到了x倍於其真正收到的的交易數量(x是代表收到幾次交易金鑰的一個整數)，所有用來回報收到交易的指令(如show_transfers (CLI), get_transfers (RPC))都被此漏洞影響。但是餘額並沒有受到影響，錢包依舊會回報正常的資金餘額。可惜的是，大多數的交易所都是利用 get_transfers 或 get_payments RPC指令在運作，因此重複的交易公鑰將會導致計算出錯誤的金額。 </p>
+<p>不幸的是，這個漏洞的變種非常容易被使用，攻擊者可以輕易的利用在 src/cryptonote_core/cryptonote_tx_utils.cpp 中的 add_tx_pub_key_to_extra(tx, txkey_pub) 來附加重複的交易公鑰。實際上的運作如下: 攻擊者在 src/cryptonote_core/cryptonote_tx_utils.cpp 中附加了譬如三次的金鑰，因此在他的交易中就會出現四筆相同的交易公鑰。這導致了當攻擊者將一筆 1 XMR 的交易發送至目標交易所的時候，交易所很有可能就會計帳給攻擊者 4 XMR 的餘額，於是攻擊者就可以領出4 XMR的資金而惡意盜取了交易所 3 XMR 的資金。若交易所沒有進行對餘額與進出交易金額的核對或檢查熱錢包的異常狀況，那麼攻擊者基本上可以重複上述攻擊直到交易所的熱錢包被領空或更慘的是到整個交易所的資金耗盡為止。 </p>
+<p>本漏洞的第二個變種，<a href="https://hackerone.com/reports/379049" target="_blank" rel="noopener">在 HackerOne 上有完整的報告</a>，原理是程式碼沒有對假冒的交易公鑰進行檢查。因此攻擊者可以利用變造後的交易公鑰欺騙錢包使其將交易輸出計算為實際收到的兩倍，而與第一個變種類似，錢包餘額並不會受到此漏洞影響。 本漏洞的第一個變種<a href="https://github.com/monero-project/monero/issues/3983" target="_blank" rel="noopener">最早是在 GitHub 上被提出</a>並迅速地在<a href="https://github.com/monero-project/monero/pull/3985" target="_blank" rel="noopener">這份 PR 中被 moneromooo 修正</a>。 不幸的是，這個漏洞的嚴重性被低估，直到 (i) 一個交易所的 Monero 分叉幣被利用此手法攻擊 (ii) 在 HackerOne 上的一位資安研究員(jagerman)提供了<a href="https://hackerone.com/reports/377592" target="_blank" rel="noopener">完整報告關於如何利用此漏洞</a>竊取交易所資金。而漏洞的第二變種是由 <a href="https://hackerone.com/reports/379049" target="_blank" rel="noopener">HackerOne 上的 phiren 所提出</a>，並也被快速的<a href="https://github.com/monero-project/monero/pull/4118" target="_blank" rel="noopener">在此份PR中修正</a>。兩份修正都已由 fluffypony 合併在 v0.12.3.0 的發布版本中。 </p>
+<p>在 v0.12.3.0 定版之後，筆者(dEBRUYNE)與其他開發者們私下地盡可能通知了所有的交易所、線上服務、與商家。但顯然這不是個最好的方法: (i)這不可避免地排除了與我們沒有聯絡管道但又是 Monero 生態中重要的對象。(ii) 這可能導致差別待遇的觀感。此外，這個漏洞消息應該要於公開地郵件列表中發布，但可惜的是並沒有，我們應要能從這樣的疏忽中記取教訓。我們是一個 Monero 的社群，應該要找出一個更順暢的資安弱點處理流程(譬如回報重要漏洞給交易所、線上服務與商家的的流程)，一個只提供給交易所、線上服務與商家的”祕密”郵件列表或許符合這個概念。加上需要一些繁瑣的認證程序或許會比公開的郵件列表安全，因為聰明的攻擊者會毫不猶豫地訂閱這份郵件列表。 </p>
+<p>總而言之，在錢包中的一個重要漏洞，在初期被低估其嚴重性，導致在攻擊者得以在 Monero 生態中的竊取交易所的資金。幸好，這個漏洞僅限於影響錢包軟體中的計帳功能，而在交易協定和貨幣發行量上沒有受到影響。我們必須在此次事件中記取教訓去改進使我們在未來遇到類似漏洞時能夠阻緩其帶來的影響。此外，這個事件也是一個重要的提醒，加密貨幣與其軟體都還是在發展中階段，容易出現(重大)漏洞。因此對於提供服務的單位，盡可能納入完整性檢查是比較好的(替如檢查交易總和是否吻合真實帳戶餘額)，此外，Monero 開發社群也正在研究加入這類核對功能至 RPC 錢包中的可行性。 </p>
+<p>註記: 1. 一份包含著50份相同交易公鑰的交易範例: (01ede13f013833f8aef14a9397b83fd5171833ab55bc480104dd6ba86ca8f13558) 可以<a href="https://xmrchain.net/tx/705501446556cb9dfed7997c6f3e31e76c43bdf459ae8c5485b8d1600bb7e142" target="_blank" rel="noopener">在此查看</a>這份交易內容。 </p>
+<p>本篇消息譯自核心開發團隊網站: <a href="https://getmonero.org/2018/09/05/a-post-mortum-of-the-multiple-counting-bug-2018-09-05.html" target="_blank" rel="noopener">https://getmonero.org/2018/09/05/a-post-mortum-of-the-multiple-counting-bug-2018-09-05.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2018/09/06/multiple-counting-bug/" data-id="cjuun08ex002b6ckgbcxjtykc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Subaddresses/">Subaddresses</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/漏洞/">漏洞</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/15/devmeeting-20180909/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          開發者會議記錄 DevMeeting 20180909
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/29/devmeeting-20180826/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">開發者會議記錄 DevMeeting 20180826</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+<h3 class="widget-title">Monero Taiwan 正體中文站</h3>
+<div class="widget">
+  <p>本站是由非官方的 Monero (XMR, 門羅幣)愛好者自發性熱血建置，旨在轉貼翻譯專案開發訊息與便利服務以推廣 Monero 在台灣/中文世界的應用普及。</p>
+</div>
+</div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">桌面版錢包/節點下載</h3>
+    <div class="widget">
+        <a href="https://getmonero.org/downloads" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"></a>
+            <p>目前節點軟體最新版本: v0.14.0.2</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">行動版錢包</h3>
+    <div class="widget">
+        <div><p>Android 版： Monero: Monerujo Wallet</p>
+        <a href="https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img style="width:80%;max-width:400px;" alt="Google Play 立即下載" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg"></a></div>
+        <div><p>Apple iOS 版： Cake Wallet</p>
+        <a href="https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8"><img style="width:80%;max-width:400px;" alt="App Store 下載" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"></a></div>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">試用好專案支持本站</h3>
+    <div class="widget">
+        <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"></a>
+            <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
+    <div class="widget">
+    	<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">即時價格</h3>
+    <div class="widget">
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowtransparency="true" border="0" hidefocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="no"></iframe>
+</div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">XMR常用連結</h3>
+    <div class="widget">
+        <ul>
+        	<dt>區塊瀏覽器</dt>
+            <dd><a href="https://community.xmr.to/explorer/mainnet/" target="_blank" rel="noopener">XMR.to 區塊瀏覽器</a></dd>
+            <dd><a href="https://xmrchain.net/" target="_blank" rel="noopener">XMRchain 區塊瀏覽器</a></dd>
+            <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
+            <dt>兌換服務</dt>
+            <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
+            <dd><a href="https://xmr.to/" target="_blank" rel="noopener">XMR.TO</a> - 將XMR快速兌換至BTC</dd>
+            <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
+            <dt>視覺化資料</dt>
+            <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
+            <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
+        </ul>
+    </div></div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-小秘訣/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-新聞/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/區塊鏈分叉消息/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方新版本釋出/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方消息宣布/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/站務消息/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 10px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/23/2018-Monero-review/">Monero 2018 年發展回顧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/monero-0-14-0-release/">Monero發布新版本v0.14.0更新</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181216/">開發者會議記錄 DevMeeting 20181216</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議記錄 DevMeeting 20181014</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/10/devmeeting-20181007/">開發者會議記錄 DevMeeting 20181007</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <div>
+                <p>如果你覺得這個網站有幫助到你，請考慮贊助我們一點XMR以補貼網站運作的支出<br></p>
+                <p style="color:#FFFFFF"><strong>45XMRtw5de1EYjtsZPuLgmG3vo2n5vW8iLPM9NmT2MSG65vZSCf1cXBgaNQJtxLx45aaFYZJQawERJJV9yuHiLYsCk82j8Z</strong></p>
+                <p>亦可發送至OpenAlias地址: donate.xmr-tw.org</p>
+            </div>
+            <div>
+                <p>&copy;
+                    2019 Monero - Taiwan 正體中文站<br>
+                    本網站內容採用<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+            </div>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/advantage" class="mobile-nav-link">Monero是什麼？</a>
+  
+    <a href="/nodes" class="mobile-nav-link">公共節點(Node)</a>
+  
+    <a href="/xmr-eta" class="mobile-nav-link">區塊鏈動態(XMR-ETA)</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

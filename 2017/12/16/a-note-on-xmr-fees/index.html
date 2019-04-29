@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101869289-1');
+  </script>
+  
+  <title>關於Monero手續費的一份筆記 | Monero - 台灣正體中文站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="近期社群中不斷有抱怨認為Monero交易的手續費過於昂貴。雖然我們並不同意其中的一些意見，但我們還是必須先徹底地分析一下這個情況。在那之前我們必須回應一點，有些抱怨認為開發者理當要將手續費直接修改降低後釋出新版本，但這樣的作法是因小失大的，因為 1. 這個方法只是把問題向後拖延；2. 改變參數與公式需要進行硬分叉，而這需要全面的共識；3. 每當價格變化後就得介入調整手續費的作法與去中心化的生態是矛">
+<meta name="keywords" content="Monero Research Lab,密碼學,手續費">
+<meta property="og:type" content="article">
+<meta property="og:title" content="關於Monero手續費的一份筆記">
+<meta property="og:url" content="https://xmr-tw.org/2017/12/16/a-note-on-xmr-fees/index.html">
+<meta property="og:site_name" content="Monero - 台灣正體中文站">
+<meta property="og:description" content="近期社群中不斷有抱怨認為Monero交易的手續費過於昂貴。雖然我們並不同意其中的一些意見，但我們還是必須先徹底地分析一下這個情況。在那之前我們必須回應一點，有些抱怨認為開發者理當要將手續費直接修改降低後釋出新版本，但這樣的作法是因小失大的，因為 1. 這個方法只是把問題向後拖延；2. 改變參數與公式需要進行硬分叉，而這需要全面的共識；3. 每當價格變化後就得介入調整手續費的作法與去中心化的生態是矛">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-04-22T03:24:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="關於Monero手續費的一份筆記">
+<meta name="twitter:description" content="近期社群中不斷有抱怨認為Monero交易的手續費過於昂貴。雖然我們並不同意其中的一些意見，但我們還是必須先徹底地分析一下這個情況。在那之前我們必須回應一點，有些抱怨認為開發者理當要將手續費直接修改降低後釋出新版本，但這樣的作法是因小失大的，因為 1. 這個方法只是把問題向後拖延；2. 改變參數與公式需要進行硬分叉，而這需要全面的共識；3. 每當價格變化後就得介入調整手續費的作法與去中心化的生態是矛">
+  <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-square310x310logo" src="/images/site/favicons/favicon-310.png">
+  <link rel="apple-touch-icon" href="/images/site/favicons/favicon-180.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/advantage">Monero是什麼？</a>
+        
+          <a class="main-nav-link" href="/nodes">公共節點(Node)</a>
+        
+          <a class="main-nav-link" href="/xmr-eta">區塊鏈動態(XMR-ETA)</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xmr-tw.org"></form>
+      </div>
+    </div>
+    <div id="logo-wrap" class="outer">
+        <a href="/">
+          <img id="logo" src="/images/site/logowspace.png" alt="Monero Taiwan logo">
+        </a>
+      </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="y2017-a-note-on-xmr-fees" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/16/a-note-on-xmr-fees/" class="article-date">
+  <time datetime="2017-12-15T17:23:27.000Z" itemprop="datePublished">2017-12-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/官方消息宣布/">官方消息宣布</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      關於Monero手續費的一份筆記
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>近期社群中不斷有抱怨認為Monero交易的手續費過於昂貴。雖然我們並不同意其中的一些意見，但我們還是必須先徹底地分析一下這個情況。在那之前我們必須回應一點，有些抱怨認為開發者理當要將手續費直接修改降低後釋出新版本，但這樣的作法是因小失大的，因為 1. 這個方法只是把問題向後拖延；2. 改變參數與公式需要進行硬分叉，而這需要全面的共識；3. 每當價格變化後就得介入調整手續費的作法與去中心化的生態是矛盾的。 <a id="more"></a>這就讓我們拿幾個同是使用工作證明(POW)的區塊鏈貨幣來做個每單位容量(kB)手續費比較:</p>
+<ul>
+<li><strong>比特幣 Bitcoin:</strong> ~$26.90</li>
+<li><strong>乙太幣 Ethereum:</strong> ~$2.91</li>
+<li><strong>萊特幣 Litecoin:</strong> ~$0.10</li>
+<li><strong>達世幣 Dash:</strong> ~$0.07</li>
+<li><strong>門羅幣 Monero:</strong> ~$0.24</li>
+</ul>
+<p>比較起來，Monero的每單位容量手續費其實並不算高。但是由於每筆交易所需的容量較大，實質的費用就因此變得相當高。但必須注意的是，Monero較大的交易容量是來自於預設的隱私保護功能。例如隱藏交易金額功能RingCT中的Range proofs可以佔到12kB的容量；但RingCT在強化交易隱私上是絕對必要的，當這功能還沒有啟用時，讓許多交易洩漏了隱私。 不過有個好消息是，未來<a href="https://xmr-tw.org/2017/12/09/bulletproofs-news-update/">Bulletproofs協定</a>的啟用將會降低Monero至少80％的交易容量。 為了完整分析整個問題，讓我們來看看程式碼裡的參數，就從打包區塊(挖礦)的動態區塊演算法與獎勵懲罰公式開始吧，這部分的公式如下: <strong>懲罰 = 基礎獎勵 * ((區塊容量 /  M*N) - 1)²</strong> 所以實際的獎勵為: <strong>新獎勵 = 基礎獎勵 - 懲罰</strong><br>其中:</p>
+<ul>
+<li>MN是過去最新的N個區塊的容量中位數，N在Monero中<a href="https://github.com/monero-project/monero/blob/master/src/cryptonote_config.h#L57" target="_blank" rel="noopener">被設定為100</a></li>
+<li>區塊容量是指目前正在打包的區塊容量</li>
+<li>基礎獎勵是根據當下的發行曲線的位置或是尾段發行量(tail emission)而決定</li>
+<li>新獎勵是礦工實際獲得的獎勵</li>
+<li>區塊容量的上限為2MN</li>
+</ul>
+<p>而在公式中基礎獎勵<a href="https://bitcointalk.org/index.php?topic=583449.0" target="_blank" rel="noopener">被定義如下</a>: <strong>基礎獎勵 = 2 * ((S - A) * 2<sup>-20</sup> * 10<sup>-12</sup>)</strong><br>其中:</p>
+<ul>
+<li>2是調整區塊間隔時間為兩分鐘的因子</li>
+<li>S是原子單位(atomic units)的初始值 = 264 - 1</li>
+</ul>
+<p>A是目前的貨幣發行總量，可以<a href="https://moneroblocks.info/" target="_blank" rel="noopener">在這裡查到</a>，此外，目前顯示在區塊鏈瀏覽器上的發行總量數字必須乘上1012 (Monero有小數後12位)以轉換為原子單位。 最小的區塊容量限制為300kB，因此礦工得以最多將區塊使用至300kB而不會受到獎勵懲罰，也就是說，上述提到的懲罰公式僅在區塊容量超過300kB之後才會開始發揮作用。 舉個例子，現在有一個標準的Monero交易(兩個輸入兩個輸出約需13.2kB的容量)來了，讓我們來放入公式看看: 假設目前的區塊基礎獎勵是5.7 XMR: 懲罰 = (5.7 * ((313.2/300)-1)² ，約為0.011 XMR。另外可以注意的是與半年多前相比，目前基礎獎勵明顯低很多，也因此目前懲罰隨之降低。 而礦工不會無故擴張區塊容量。因此在容量超過300 kB之後，每多添加一筆交易時的手續費必須比這些懲罰來得多，否則礦工將會只在打包至300 kB的容量後就不願意處理其他的交易，這樣會導致交易網路的堵塞。以結論來說，目前的預設手續費(約0.013)就是為了讓礦工在多處理額外的交易而不會損失挖礦獎勵的收益。 從上述的懲罰公式可以發現，懲罰會隨著基礎獎勵的下降而減少，另外，將公式製圖後可以發現懲罰在一開始是比較緩和的，這代表著減少些許交易容量就可以降低相對更多的手續費，譬如，80%的交易容量降低可以減少90%的手續費。讓我們來用公式算個更精確的例子，假設使用單輸出的防彈協定(bulletproofs)，交易的容量將會降至2.5 kB左右；另也假設我們希望礦工會願意擴張區塊容量來處理額外的兩筆交易而不會損失收益，也就是說在超過最小區塊限制後，礦工可以多處理兩筆交易而不會讓懲罰超過獎勵。將數字帶入後我們就得到: 懲罰 =  (5.7 * ((305/300)-1)²，約等於0.0016XMR，或0.0008XMR的單筆懲罰 當降低80%交易容量時卻保持著最小區塊容量限制似乎不太對，因此最小區塊容量限制可以被降低至100、150、200或250 kB，<br>讓我們再次把數字套入看看: </p>
+<p>懲罰 = (5.7 * ((255/250)-1)²，約等於0.0023 XMR，或0.00115 XMR的單筆懲罰<br>懲罰 = (5.7 * ((205/200)-1)²，約等於0.0036 XMR，或0.0018 XMR的單筆懲罰<br>懲罰 = (5.7 * ((155/150)-1)²，約等於0.0063 XMR，或0.00315 XMR的單筆懲罰<br>懲罰 = (5.7 * ((105/100)-1)²，約等於0.014 XMR，或0.007 XMR的單筆懲罰 </p>
+<p>你可以依此公式(MN 對 x 與 區塊容量對 x+5)畫出一張圖觀察變化的結果。<br>大家也許會很好奇，那動態手續費演算法在這其中到底是扮演著什麼角色？首先必須澄清一下，預設的手續費僅僅只能應付最低限度的懲罰，也就是說，礦工只會在最小區塊容量之外多處理一筆交易。更精確的說，以目前的狀況就是製造出一個313kB的區塊(提醒一下，最小區塊容量限制是300kB)。當(最後一百個區塊的)中位數區塊容量開始成長時，動態手續費演算法才會開始發揮作用。 來看看動態手續費演算法的運作： <strong>手續費 = (R/R<sub>0</sub>) * (M<sub>0</sub>/M) * F<sub>0</sub> * (60/300) * 4</strong> 其中:</p>
+<ul>
+<li>R 是基礎獎勵</li>
+<li>R<sub>0</sub> 是基礎獎勵的初始參照值(10 XMR)</li>
+<li>M 是區塊容量上限</li>
+<li>M<sub>0</sub> 是最小區塊容量上限 (300 kB)</li>
+<li>F<sub>0</sub> 是 0.002 XMR</li>
+</ul>
+<p>舉個實際的例子，數月前區塊容量的中位數一度增加到了400 kB左右，當時標準手續費降低到了約0.0095xmr。我們可以在公式中看到，這是概略與理論值符合的。也就是: 手續費 = (6.5/10) * (300/400) * 0.002 = 0.00975 基本上中位區塊容量(其在公式中扮演的角色與最小區塊大小的基數相反)百分比倒數的增加即可視為手續費減少的百分比。舉個實際例子來說，若區塊容量的中位數增長到了600kB，就等於是擴容為兩倍(200%)的區塊，此時將可減免一半(1/200%)的單筆手續費。這個設計使得交易手續費會因交易的數量增加而下降。用意在於當Monero日益熱門時，增加的交易量將會降低每單位容量手續費。 那麼，為什麼近期價格的飆升並未造成每單位容量手續費的驟降呢?  這是因為近期價格上漲的效應比交易使用量這個影響因子大多了。而且區塊容量的中位數需要維持在比300kB大才能夠讓動態手續費演算法順利的運作，但目前Monero交易使用量並未維持在其之上。手續費演算法當初是被設計成要與價格連動的，但是我們可以發現Monero價格並未完美的與Monero的交易使用量連動。綜合以上，雖然Monero使用量成長了非常多，但還尚未超過300kB的動態門檻，且與價格的成長相比卻是小巫見大巫，因此最後造成每單位容量手續費尚未開始如預期的下降。 另從結合懲罰公式以及動態區塊大小公式與動態手續費公式看來，我們可以得知較高的最小區塊容量限制(比如300kB)會有著較低的起始手續費，但手續費的下降效應(因動態手續費演算法)也會較不明顯。反過來說，較低的最小區塊容量限制(比如150kB)會有較高的起始手續費，但手續費的減少就會較為明顯。 </p>
+<p><strong>結論是，雖然目前手續費太高，但過一陣子之後很可能就不會再有這狀況，因為當使用量增加到一定程度後，動態公式就會開始發揮作用來減免手續費。此外，我們真正需要的是仔細研究最適當的最小區塊容量限制數值(如上段所述)，因為我們比較希望能夠找到一個以後都不會再需要人工介入修改的參數。</strong>   最後一些尚需補充的要點:</p>
+<ol>
+<li>手續費的<em>中位數</em>是從 <a href="https://bitinfocharts.com/" target="_blank" rel="noopener">Bitinfocharts</a>取得的。</li>
+<li>對於手續費懲罰的功能有更深入的探討(ArticMine著)的可以到<a href="https://bitcointalk.org/index.php?topic=753252.msg13591241#msg13591241" target="_blank" rel="noopener">這裡</a>閱讀。</li>
+<li>手續費懲罰的功能跟原先在 <a href="https://getmonero.org/2017/12/11/cryptonote.org/whitepaper.pdf" target="_blank" rel="noopener">CryptoNote 白皮書</a>上所寫的有某種程度上的差異了, <a href="https://monero.stackexchange.com/questions/1067/block-reward-penalties-and-dynamic-block-size" target="_blank" rel="noopener">這裡</a>有更多資訊。</li>
+<li>程式碼的細節和確切植入的動態區塊大小演算法在<a href="https://github.com/monero-project/monero/blob/master/src/cryptonote_basic/cryptonote_basic_impl.cpp" target="_blank" rel="noopener">這裡</a>。</li>
+<li><p>程式碼的細節和確切植入的動態手續費演算法在<a href="https://github.com/monero-project/monero/commit/82dbba10d467e28e56929e2e7f3b1f04d4635da4" target="_blank" rel="noopener">這裡</a>。</p>
+<p>本文翻譯文章來源: <a href="https://getmonero.org/2017/12/11/A-note-on-fees.html" target="_blank" rel="noopener">https://getmonero.org/2017/12/11/A-note-on-fees.html</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/12/16/a-note-on-xmr-fees/" data-id="cjuun08gp00526ckgvehoy8m9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Monero-Research-Lab/">Monero Research Lab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/密碼學/">密碼學</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手續費/">手續費</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/20/devmeeting-20171217/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          開發者會議紀錄 DevMeeting 20171217
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/09/bulletproofs-news-update/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">防彈協定(Bulletproofs)將為Monero帶來更低的手續費</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+<h3 class="widget-title">Monero Taiwan 正體中文站</h3>
+<div class="widget">
+  <p>本站是由非官方的 Monero (XMR, 門羅幣)愛好者自發性熱血建置，旨在轉貼翻譯專案開發訊息與便利服務以推廣 Monero 在台灣/中文世界的應用普及。</p>
+</div>
+</div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">桌面版錢包/節點下載</h3>
+    <div class="widget">
+        <a href="https://getmonero.org/downloads" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"></a>
+            <p>目前節點軟體最新版本: v0.14.0.2</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">行動版錢包</h3>
+    <div class="widget">
+        <div><p>Android 版： Monero: Monerujo Wallet</p>
+        <a href="https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img style="width:80%;max-width:400px;" alt="Google Play 立即下載" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg"></a></div>
+        <div><p>Apple iOS 版： Cake Wallet</p>
+        <a href="https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8"><img style="width:80%;max-width:400px;" alt="App Store 下載" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"></a></div>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">試用好專案支持本站</h3>
+    <div class="widget">
+        <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"></a>
+            <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
+    <div class="widget">
+    	<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">即時價格</h3>
+    <div class="widget">
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowtransparency="true" border="0" hidefocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="no"></iframe>
+</div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">XMR常用連結</h3>
+    <div class="widget">
+        <ul>
+        	<dt>區塊瀏覽器</dt>
+            <dd><a href="https://community.xmr.to/explorer/mainnet/" target="_blank" rel="noopener">XMR.to 區塊瀏覽器</a></dd>
+            <dd><a href="https://xmrchain.net/" target="_blank" rel="noopener">XMRchain 區塊瀏覽器</a></dd>
+            <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
+            <dt>兌換服務</dt>
+            <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
+            <dd><a href="https://xmr.to/" target="_blank" rel="noopener">XMR.TO</a> - 將XMR快速兌換至BTC</dd>
+            <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
+            <dt>視覺化資料</dt>
+            <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
+            <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
+        </ul>
+    </div></div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-小秘訣/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-新聞/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/區塊鏈分叉消息/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方新版本釋出/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方消息宣布/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/站務消息/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 10px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/23/2018-Monero-review/">Monero 2018 年發展回顧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/monero-0-14-0-release/">Monero發布新版本v0.14.0更新</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181216/">開發者會議記錄 DevMeeting 20181216</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議記錄 DevMeeting 20181014</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/10/devmeeting-20181007/">開發者會議記錄 DevMeeting 20181007</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <div>
+                <p>如果你覺得這個網站有幫助到你，請考慮贊助我們一點XMR以補貼網站運作的支出<br></p>
+                <p style="color:#FFFFFF"><strong>45XMRtw5de1EYjtsZPuLgmG3vo2n5vW8iLPM9NmT2MSG65vZSCf1cXBgaNQJtxLx45aaFYZJQawERJJV9yuHiLYsCk82j8Z</strong></p>
+                <p>亦可發送至OpenAlias地址: donate.xmr-tw.org</p>
+            </div>
+            <div>
+                <p>&copy;
+                    2019 Monero - Taiwan 正體中文站<br>
+                    本網站內容採用<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+            </div>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/advantage" class="mobile-nav-link">Monero是什麼？</a>
+  
+    <a href="/nodes" class="mobile-nav-link">公共節點(Node)</a>
+  
+    <a href="/xmr-eta" class="mobile-nav-link">區塊鏈動態(XMR-ETA)</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

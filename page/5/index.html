@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101869289-1');
+  </script>
+  
+  <title>Monero - 台灣正體中文站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安全、保護隱私且完全匿蹤的加密貨幣。">
+<meta name="keywords" content="門羅幣, Monero, 區塊鏈, 隱匿幣">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Monero - 台灣正體中文站">
+<meta property="og:url" content="https://xmr-tw.org/page/5/index.html">
+<meta property="og:site_name" content="Monero - 台灣正體中文站">
+<meta property="og:description" content="安全、保護隱私且完全匿蹤的加密貨幣。">
+<meta property="og:locale" content="zh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Monero - 台灣正體中文站">
+<meta name="twitter:description" content="安全、保護隱私且完全匿蹤的加密貨幣。">
+  <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-square310x310logo" src="/images/site/favicons/favicon-310.png">
+  <link rel="apple-touch-icon" href="/images/site/favicons/favicon-180.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/advantage">Monero是什麼？</a>
+        
+          <a class="main-nav-link" href="/nodes">公共節點(Node)</a>
+        
+          <a class="main-nav-link" href="/xmr-eta">區塊鏈動態(XMR-ETA)</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xmr-tw.org"></form>
+      </div>
+    </div>
+    <div id="logo-wrap" class="outer">
+        <a href="/">
+          <img id="logo" src="/images/site/logowspace.png" alt="Monero Taiwan logo">
+        </a>
+      </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="y2017-paymentid" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/31/paymentid/" class="article-date">
+  <time datetime="2017-08-31T14:57:57.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/31/paymentid/">Monero的付款ID與整合性地址介紹</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>你在使用Monero付款時是否會感到困惑有時要附payment id有時卻不用呢？ 那就快來好好看看這篇文章嘍！<br>首先介紹一下Monero的<strong>地址(address)</strong> 它會是一組格式以4為首的95字元字串，像這樣落落長：</p>
+<p> <code>45vzSchYNDcMtFngCX8KAjPUKHDtkqa2yJiHgnAAQMisV3YVs9MPFgxhuBUw4wmFM1Q7Jd36Gcvu91mkNo7L5kkbJmxm5f5</code> </p>
+<p> 一個錢包只對應到一個地址，是在創建錢包時由種子碼(seed)產生而來，由於Monero的地址不會直接記錄在區塊鏈上，所以同一組地址是可以放心公開並重複使用的，就像是若公開你的銀行帳號也不需擔心會被他人窺視餘額。 </p>
+<p> 接著是<strong>付款ID(payment id)</strong>，譬如像這樣短短一條： </p>
+<p> <code>bfa232d70e4579ba</code> </p>
+<p> 這是一個使用者可選擇性使用的交易附帶資訊，但各位若在交易所應該都遇過強制要求附上付款id吧？這原因就來自於Monero的匿名性，假設今天有人直接轉了10XMR進交易所的錢包地址，交易所根本無從分辨是哪一個客戶轉的，總不能每次都要求客戶提供tx key證明吧？所以付款ID就像是在寄包裹到某地址時的署名，收款方才得以知道這筆費用是做什麼用的，譬如商家分辨這是來自哪一筆訂單的付款，或是多個好友同時要還你同金額的錢的時候，提供付款ID就可以讓你快速辨別交易，所以有個結論很重要：</p>
+<blockquote>
+<p>沒有附payment id並不會讓錢轉到不見，但是可能會讓交易所無法辨認這筆錢是誰的</p>
+</blockquote>
+<p>只要地址正確，錢就會進到該對應的錢包，但因為不知道是誰的，交易所就沒有辦法把這筆資金正確入帳到對應客戶的名下，若不幸發生了，此時付款者可能就必須提供交易私鑰(tx key)、金額和交易時間，向交易所客服證明這筆tx id真的是屬於他的付款，GUI錢包中的進階功能/檢查交易功能就可以驗證其是否為真。 </p>
+<p>最後就是<strong>整合型地址(integrated address)</strong>，這很簡單地就是上述的地址與付款ID的合成版地址，譬如以上介紹的地址與付款id合成的整合型地址就會是長得像這樣: </p>
+<p><code>4FdfTRX2yV8MtFngCX8KAjPUKHDtkqa2yJiHgnAAQMisV3YVs9MPFgxhuBUw4wmFM1Q7Jd36Gcvu91mkNo7L5kkbTPMoje2BpacN4swpLH</code> </p>
+<p>目前poloniex已改用這種整合型地址接受入金，所以使用者就不需額外輸入付款id，交易後該筆交易就會自動帶出付款id。 經過以上介紹，希望大家以後在付款時看到這些名詞不會再緊張嘍！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/08/31/paymentid/" data-id="cjuun08dr00116ckghnbjsql6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/payment-id/">payment id</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/付款ID/">付款ID</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/整合型地址/">整合型地址</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="y2017-devmeeting-20170820" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/21/devmeeting-20170820/" class="article-date">
+  <time datetime="2017-08-21T05:57:53.000Z" itemprop="datePublished">2017-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/21/devmeeting-20170820/">開發者會議紀錄 DevMeeting 20170820</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>RingCT 2.0團隊已與我們聯絡<ul>
+<li>但目前這方案似乎不太可行，因RingCT2.0需要一個信任設置(trusted setup)的過程。</li>
+</ul>
+</li>
+<li>在RingCT 2.0中，Tim Ruffing 提出了透過次級線性環狀簽名+CT的方案來改進 Monero<ul>
+<li>這篇論文的作者為Time Ruffing、Sri Aravinda Krishnan Thyagarajan、Viktoria Ronge 跟 Dominique Schröder。</li>
+<li>Knacc 將會把資訊統整後透過java來試著植入。</li>
+<li>surae表示 RuffCT 極為有效的讓環狀簽名的容量大幅上升(100k以上)。 “有這個之後，幾乎每筆交易都可以輕鬆地直接跟半個區塊鍊的交易資訊環簽在一起”。</li>
+<li>surae表示 “這感覺像是外星人突然降臨然後給我們比光速還快的移動能力”。</li>
+<li>後續在<a href="https://www.reddit.com/r/Monero/comments/6uxx90/20170820_monero_dev_meeting_summary_and_logs/dlwbky9/" target="_blank" rel="noopener">Reddit</a>上Tim 解釋了100k以上的附註可能無法實行，但至少比現有的環簽容量提升許多。</li>
+<li>這方案有可能影響到MultiSig，因為現有的MultiSig程式碼都需要重寫，所以 MultiSig 應該會先用原樣發布，等到RuffCT上線後再重新植入。</li>
+</ul>
+</li>
+<li>手機錢包的部分<ul>
+<li>“app store的帳號正在等待Apple要求的鄧白氏環球編碼(D-U-N-S)程序，已將文件掃描後寄到Google跟M$了”</li>
+</ul>
+</li>
+<li>為了準備Monero即將到來的版本釋出跟分叉(還有其他東西)，已在Github上開了新的分支。</li>
+<li>針對”專案要更頻繁釋出版本”的討論，這問題是會大幅增加開發者們的負擔，而且我們其實一年也已有數個版本在釋出了。<ul>
+<li>上述提到的專案分支也許可以解決這個問題。</li>
+</ul>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2017/08/21/devmeeting-20170820/#more">繼續閱讀...</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/08/21/devmeeting-20170820/" data-id="cjuun08mg00ah6ckgt2kd6rnb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Monero-Research-Lab/">Monero Research Lab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MultiSig/">MultiSig</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT2-0/">RingCT2.0</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RuffCT/">RuffCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手機錢包/">手機錢包</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="y2017-helium-hydra-testnetob" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/18/helium-hydra-testnetob/" class="article-date">
+  <time datetime="2017-08-18T03:11:40.000Z" itemprop="datePublished">2017-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/官方消息宣布/">官方消息宣布</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/18/helium-hydra-testnetob/">Monero新版本代號Helium Hydra已開始在testnet公開測試</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>例行每半年一次的Monero硬分叉更新即將於九月登場 這次的分叉版本名為Helium Hydra 分叉區塊高度預定為1400000 為了要讓礦工與節點有足夠的時間升級到新版本，將在近期內釋出正式執行檔 但為了讓此次更新盡可能避免出現預期外的問題，我們鼓勵社群成員一起加入測試 若您有興趣參加測試請至消息來源Reddit原文依作業系統下載 <a href="https://www.reddit.com/r/Monero/comments/6uae51/help_out_with_testing_the_upcoming_helium_hydra/" target="_blank" rel="noopener">點我看Reddit原文</a><br>
+        
+          </p><p class="article-more-link">
+            <a href="/2017/08/18/helium-hydra-testnetob/#more">繼續閱讀...</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/08/18/helium-hydra-testnetob/" data-id="cjuun08do000x6ckg7dw86qyf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Helium-Hydra/">Helium Hydra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/testnet/">testnet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/環狀簽名/">環狀簽名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬分叉/">硬分叉</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="y2017-devmeeting-20170806" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/10/devmeeting-20170806/" class="article-date">
+  <time datetime="2017-08-10T05:25:03.000Z" itemprop="datePublished">2017-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/10/devmeeting-20170806/">開發者會議紀錄 DevMeeting 20170806</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>關於環簽交易使用的交易輸入預設值將有更動<ul>
+<li>已經有普遍的共識將由規劃中的3改為5，不過改用8或10的方案也同時在討論中</li>
+<li>也許要找社群裡的數學家Surae跟(或)Sarang來提供點意見比較好</li>
+</ul>
+</li>
+<li><em>測試網路(Testnet)</em>的硬分叉將在2017的八月七號禮拜一進行</li>
+<li>GUI最新資訊<ul>
+<li>Android和iOS系統的官方GUI已經在封閉/公開測試</li>
+<li>而iOS的部分則因為app store帳號問題而延宕了</li>
+<li>Android的版本則因linux box空間不足而耽擱了。1.5個月前的版本在此: <a href="https://github.com/monero-project/monero-core/pull/780" target="_blank" rel="noopener">https://github.com/monero-project/monero-core/pull/780</a></li>
+<li>正在分析iOS的測試狀況，至於MyMonero，基本上是個”超想趕快把這玩意上架”的狀況。</li>
+</ul>
+</li>
+<li>monerod的記憶體流失(memory leak)的問題已經在著手處理</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2017/08/10/devmeeting-20170806/#more">繼續閱讀...</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/08/10/devmeeting-20170806/" data-id="cjuun08iu006u6ckgs5hdm8gl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT/">RingCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mymonero/">mymonero</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手機錢包/">手機錢包</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/環狀簽名/">環狀簽名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬分叉/">硬分叉</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/輕錢包/">輕錢包</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="y2017-ringct" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/25/ringct/" class="article-date">
+  <time datetime="2017-07-25T04:09:12.000Z" itemprop="datePublished">2017-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/25/ringct/">Monero 技術介紹 (三) – 環簽交易(RingCT)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Monero 是一種安全且無法追蹤的電子加密貨幣。它來自一個開放原始碼、去中心化且任何人皆可自由參閱的開發專案。 在這篇文章中，我們要來談談環狀簽名保密交易，通常簡稱為環簽交易(RingCT)。 在<a href="https://xmr-tw.org/2017/07/20/monero-ring-signatures/">上一篇文章</a>中，我們呈現了 Monero 是如何藉由創造無法區分的交易輸入以保護付款者的隱私。 過程中使用了數位簽名的技術，將真正的交易簽署者隱藏在數個環狀簽名輸入中完成一筆交易。 </p>
+<p>另外，我們也闡述了金鑰映像(key image)是如何用來防止交易輸入被重複花費。 然而為了更徹底的增加交易雙方的隱私，一個稱為環簽保密交易(RingCT)的協定被用來隱藏交易的金額。 </p>
+<p>在 Monero 發展早期開始啟用 RingCT 之前， Monero 的交易金額需要先分割成特別的單位數量。 譬如，一筆金額為 12.5 的交易輸出會被分割成三筆分別為10、2、0.5的金額。 這樣的方式可以讓環狀簽名在建構時可以有足夠等同的輸入來源，因為環狀簽名的輸入金額必須是一致的。 但在這個交易步驟中，每一筆交易金額都是可見的。 為了改善這個缺點， Monero 在 2017 年的一月啟用了 RingCT 協定。 在啟用 RingCT 的一個月後，大約有 98% 的交易都是使用 RingCT 協定。 而在 2017 年的九月之後，所有的 Monero 交易都會是強制使用 RingCT 協定。 </p>
+<p>如今在使用 RingCT 的協定下，每個在挖礦中新產生的 Monero 會先以可見金額的形式存在於交易輸出中。 而當這些新產生的 Monero 在第一次被轉移時，將會產生帶有金額遮罩的 RingCT 交易輸出。 如此一來， Monero 的交易將不再需要被分割為特定的單位數量。 這代表著錢包在交易時可以任意挑選一個 RingCT 的交易輸出，這大幅提高了匿蹤性。 值得注意的是，一個環狀簽名裡無法同時包含在 RingCT 啟用前的舊交易輸出與帶有金額遮罩的新交易輸出。 所以就如同新產生的 Monero 的處理方式，在 RingCT 啟用前的舊時期交易輸出必須要先轉換成 RingCT 的交易輸出，接著才能與 RingCT 的輸出形成環狀簽名。 讓我們來舉個例子來解釋 RingCT 是如何運作的。 </p>
+<p>舉例來說，若 Alice 擁有一個金額為 12.56 的交易輸出並想付款 2.5 個 Monero 給 Bob。 由於輸出是無法被花費兩次的，所以這個輸出將會被整筆花費出去，之後才會將找零返回給 Alice 。 以這個例子為例， Alice 的這筆交易將會有一筆 12.56 Monero 的輸入和兩筆輸出，第一個輸出會是要付款給 Bob 的 2.5 Monero ，而另一筆將會是 10.06 Monero 的找零將會傳送回她原本自己的錢包。 為了防止 Monero 在交易的過程中被偽造而無中生有，每一筆 Monero 的交易輸入與交易輸出各自的金額總和必須相同。 而在 RingCT 的交易中， Alice 會被要求提供一個此筆交易輸出的資訊，此資訊僅包含了讓交易網路可以驗證此筆交易的資訊，而不會公開實際上到底花費了多少金額。 儘管提供的這些資訊看起來像是隨機的數字，礦工們仍然可以從這其中驗證轉帳給 Bob 的金額與可用的餘額相同(詳見註1)。 在 RingCT 交易中，</p>
+<p>另一個重要的機制是”範圍保護”，這個可以防止有人提交了負值的交易金額， 範圍保護在加密學上保證了交易中的金額是大於零並小於特定的數字，以保護 Monero 的發行量。 基於以上的各種機制設計，使得即使外部觀察者的角度無法從交易輸出中得知真正的交易金額，但依舊是可以驗證此筆交易為有效的。 </p>
+<p>拜 Monero 擁有的隱私設計所賜，使用者可以隨意地發送給任何對象，而不用擔心有人會得知交易的金額或是交易雙方的身分。 這些特性使得 Monero 成為在保護隱私需求中最先進的數位貨幣，但這些創新的腳步不會停歇於此。 在下一部影片中，我們將討論 Kovri ，一個用 C++ 打造的 I2P 路由技術，將使得 Monero 的交易更加安全。 </p>
+<p>如果你有興趣了解是什麼讓 Monero 成為最重視隱私的加密貨幣，請參閱我們其他的文章或參閱 getmonero.org。 </p>
+<hr>
+<p>註1: 交易中須公開的資訊由這個公式而來:rct = x_G + a_H(G) 。 </p>
+<p>在這邊最重要的變數為a與x。<br>H(G)和G是關係到許多在這篇文章所述之外的因素故在此不做解釋。<br> a是在交易中的真正金額，在文章中的例子也就是2.5。<br> x是用來作為金額遮罩的隨機數字，由錢包所自動產生。<br> 簡單來說，這個公式可以被簡單敘述為 rct = 隨機數字 + 真正的交易金額。 </p>
+<p>在RingCT的交易中，rct的值將會被發佈到交易網路中作為一個交易輸出，而交易網路或礦工將可使用這個rct值去驗證交易輸入是否等於交易輸出的金額，以確認沒有額外的 Monero 被偽造產生。 然而，對於一個外部的觀察者來說，並無從得知變數x的實際金額，所以無法得知有多少金額在交易中被實際的花費掉。 </p>
+<p>本篇翻譯來源 <a href="https://github.com/alvinjoelsantos/promo-video/blob/master/ringct.md" target="_blank" rel="noopener">https://github.com/alvinjoelsantos/promo-video/blob/master/ringct.md</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/07/25/ringct/" data-id="cjuun08dj000r6ckg0acwhyew" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT/">RingCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/環簽交易/">環簽交易</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="y2017-monero-ring-signatures" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/20/monero-ring-signatures/" class="article-date">
+  <time datetime="2017-07-20T13:34:34.000Z" itemprop="datePublished">2017-07-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/20/monero-ring-signatures/">Monero 技術介紹 (二) – 環狀簽名</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Monero 是一種安全且無法追蹤的電子加密貨幣。它來自一個開放原始碼、去中心化且任何人皆可自由參閱的開發專案。在這篇文章中，我們要來談談環狀簽名。 </p>
+<p>在<a href="https://xmr-tw.org/2017/06/30/monero-stealth_addresses/">上一篇文章</a>中，我們討論了 Monero 是如何藉由隱匿性地址來避免交易輸出被連結到收款者的公開地址。這是使用了一次性公鑰所達成的效果。一次性公鑰僅能被收款者所再花費，且僅有收款者得以查看其在區塊鏈上所擁有的交易輸出。因此所有的交易輸出都是無法被追蹤的，可以確保收款者的隱私無虞。 </p>
+<p>而在交易輸入的這端，也就是付款者的隱私，則是藉由環狀簽名(ring signatures)來保護。 </p>
+<p>環狀簽名是一種數位形式的簽署方式，藉由混合一群簽署者的簽名來製造一份無法分辨來源的簽名，而得以授權一份交易。這可以類比是從一個共同銀行帳戶發出的支票，但無法得知真正的簽署者是誰。這份數位簽名是由一位簽署者與多位非簽署者組成的”環”所簽署，每一位參與者都是同等的。其中真正用來簽署的一次性花費金鑰，是來自於該付款者的前一筆收款交易輸出。其餘非簽署用的數個來源是來自區塊鏈上舊有的交易輸出，作為誘餌。這些輸出將被合成一個新的交易輸入。從第三方的角度來看，每一個交易輸入都是相同而無法區分彼此的。這個過程可以幫助付款者隱藏其先前的交易來源。 </p>
+<p>此時您可能會產生疑問，如果第三方無法驗證哪一個交易輸出尚未被花費，那要如何防止有人重複的花費同一筆交易輸出呢? 這種狀況可以用金鑰映像(key image)來解決。 金鑰映像是來自於交易輸出被花費時產生的一組加密金鑰，會被包含在每一筆環狀簽名的交易中。基於加密學的原理，每一個交易輸出只會對應一個金鑰映像存在於區塊鏈上，但無法回推是哪一組金鑰映像是由哪一筆交易輸出產生。所有的金鑰映像清單會被記錄於區塊鏈中，使礦工得以驗證交易輸出沒有被重複花費。 </p>
+<p>讓我們用一個例子來看看這是怎麼運作的。 </p>
+<p>Alice 想要用環簽大小(ringsize)為5的方式付 Monero 給 Bob。此時5個交易輸入的其中1個輸入即會是來自於 Alice 的錢包，將會在交易中被消耗。其餘4個交易輸入則是隨意的在區塊鏈中挑選而來，作為誘餌。這就會形成一個5個輸入的環狀簽名，每一個輸入皆有可能為真的簽名。 對一個外部的觀察者，包括 Bob 本人，都無法得知哪一個輸入才是真正來自 Alice 的一次性花費金鑰。如此一來，藉由使用環狀簽名的技術來混淆交易輸入的來源， Monero 可以保護付款者的隱私安全，確保每一個 Monero 的來源都是無法追蹤的。 </p>
+<p>為了要提高交易雙方的隱私保護，環狀簽名保密交易，通常簡稱為 RingCT，被用來隱藏 Monero 的交易金額。</p>
+<p>RingCT 為環狀簽名協定帶來了許多好處。我們將會在下一篇討論。 </p>
+<p>如果你有興趣了解是什麼讓 Monero 成為最重視隱私的加密貨幣，請參閱我們其他的文章或參閱 getmonero.org。 </p>
+<p>本篇翻譯來源 <a href="https://github.com/alvinjoelsantos/promo-video/blob/master/ring_signatures.md" target="_blank" rel="noopener">https://github.com/alvinjoelsantos/promo-video/blob/master/ring_signatures.md</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/07/20/monero-ring-signatures/" data-id="cjuun08dh000p6ckgam68go88" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT/">RingCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/環狀簽名/">環狀簽名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/金鑰映像/">金鑰映像</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="y2017-devmeeting-20170709" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/16/devmeeting-20170709/" class="article-date">
+  <time datetime="2017-07-16T14:30:42.000Z" itemprop="datePublished">2017-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/16/devmeeting-20170709/">開發者會議紀錄 DevMeeting 20170709</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><a href="https://github.com/monero-project/monero/pull/1936" target="_blank" rel="noopener">Mac智慧挖礦(Mac Smart Mining) PR#1936</a> 在<a href="https://github.com/monero-project/monero/pull/2055" target="_blank" rel="noopener">OSX Background Mining</a>的幫忙下完成了</li>
+<li><a href="https://github.com/monero-project/monero/pull/2044" target="_blank" rel="noopener">ZeroMQ 距離提交到github上不遠了</a>。 JSON PRC跟ZeroMQ的指令可能在初期還會更動。</li>
+<li>MRL 開始著手寫打算跟<a href="https://github.com/monero-project/monero/pull/2056" target="_blank" rel="noopener">SubAddresses</a> 一起發布的文案</li>
+<li>hyc 想要聽聽看各方對於<a href="https://github.com/monero-project/meta/issues/85" target="_blank" rel="noopener">LMDB使用條款改變</a>的想法</li>
+<li>Pigeons 開始彙整在Android NDK上加入Docker file的事宜</li>
+<li>FFS(論壇資助系統)的重新規劃<ul>
+<li>讓整個流程更明確一點<ul>
+<li>拿超額募款來說好了, 現在超額的部分就流入一般公積金, 準備給以後的FFS計畫使用</li>
+</ul>
+</li>
+<li>對某些計畫來說需要有里程碑不是甚麼好事</li>
+<li>FFS的處理狀況容得下沒資助的人置喙的空間嗎?<ul>
+<li>Mooo 建議說他應該可以寫一個投票平台來確認那些人是有資助的</li>
+</ul>
+</li>
+<li>如果有人有資助, 可是不真的”夠格”討論技術問題呢?</li>
+</ul>
+</li>
+<li>gkruja 提供了一些新開發的Android 錢包的螢幕截圖: <a href="http://imgur.com/a/mluUb" target="_blank" rel="noopener">http://imgur.com/a/mluUb</a></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/16/devmeeting-20170709/#more">繼續閱讀...</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/07/16/devmeeting-20170709/" data-id="cjuun08gl00516ckgaj4alpvb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FFS/">FFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LMDB/">LMDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mining/">Mining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Subaddresses/">Subaddresses</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ZeroMQ/">ZeroMQ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手機錢包/">手機錢包</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="y2017-monero-ringct-will-rise" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/12/monero-ringct-will-rise/" class="article-date">
+  <time datetime="2017-07-12T14:36:16.000Z" itemprop="datePublished">2017-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Monero-新聞/">Monero 新聞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/12/monero-ringct-will-rise/">Monero的預設環簽交易(RingCT)大小將調升</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>根據reddit社群上SamsungGalaxyPlayer的<a href="https://www.reddit.com/r/Monero/comments/6moxgy/update_regarding_minimum_ringsizes/" target="_blank" rel="noopener">消息整理</a>指出 依照2015年時 Monero 研究室的<a href="https://lab.getmonero.org/pubs/MRL-0004.pdf" target="_blank" rel="noopener">研究報告</a>中規劃，在今年2017年時的9月例行分叉後，環簽交易的預設大小下限應訂為5。 但目前技術的進步是在當時沒有預料到的，包括現在新增一個輸入到環簽所增加的成本降低了，環簽輸入5與輸入10所占用的區塊容量差異也已大幅降低，這使得社群正重新考慮要提升這個下限值。 這項提議從今年二月就開始持續在<a href="https://github.com/monero-project/monero/issues/1673" target="_blank" rel="noopener">GitHub</a>上被討論，由各個開發者提出他們的分析結果來找出最佳的環簽大小下限值。其中一些重點如下:</p>
+<ul>
+<li>需要更好的交易輸入選擇演算法。這會讓創造環簽時所挑選的交易輸入更加地有效率，這將使得提升環簽大小的同時可以不會增加太多的交易容量。</li>
+<li>交易容量主要取決於交易輸出的數量，這代表大幅提升環簽大小對於區塊容量的增加是有限度的。</li>
+<li>其中亦討論到了EAB與EABE的攻擊，這指得是當某人持續在某些情況下重複地與特定對象交易時，有可能造成資訊被追蹤的風險，這個狀況將無法直接由提高環簽大小來迴避。此時將會需要一個稱為攪動(churning)的動作來迴避，就是使用者將資金直接從自己的錢包重複傳送到自己的錢包內數次。但提高環簽大小可以減少需要這個動作的機會，這個部分還在持續被討論中，而 surae 正在著手研究這樣的攻擊模式帶來的威脅，另一個成員亦提出了一個<a href="http://i.imgur.com/n41lhXf.png" target="_blank" rel="noopener">新的迴避的技術</a>(環簽下限亦設定為10)，尚待社群的同儕審查。</li>
+<li>需要是固定的環簽大小選項，而非使用者自行選擇的任意數字。因為大部分的交易都會使用預設最小的環簽大小，若有少數使用者使用特別大的環簽設定將使得匿蹤效果提升有限。</li>
+</ul>
+<p>截至目前為止，環簽大小下限值將從原先規劃的5提升到10是一個普遍被接受的共識。此外許多人同意交易網路應該要<strong>只接受</strong>環簽大小為10，譬如環簽大小設定為19的交易應該要被拒絕。</p>
+<p> 此外，比10更大的環簽大小亦有被考慮到，但目前以環簽10的安全性來看，使用者尚未有明顯的威脅，所以提升到10會比提升到20來得合理。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/07/12/monero-ringct-will-rise/" data-id="cjuun08dn000w6ckg1plri7l4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Monero-Research-Lab/">Monero Research Lab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT/">RingCT</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="y2017-monero-stealth-addresses" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/30/monero-stealth-addresses/" class="article-date">
+  <time datetime="2017-06-30T15:32:57.000Z" itemprop="datePublished">2017-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/30/monero-stealth-addresses/">Monero 技術介紹 (一) - 隱匿性地址</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Monero 是一種安全且無法追蹤的電子加密貨幣。 它來自一個開放原始碼、去中心化且任何人皆可自由參閱的開發專案。</p>
+<p>在這篇文章中我們要來談談隱匿性地址。但讓我們先來回顧一下 Monero 的重點概念。 </p>
+<p>我們知道 Monero 使用了去分散式的點對點共識網路去紀錄區塊鏈中的交易輸出。 如果 Alice 擁有 Monero，這代表著她擁有著某些交易輸出的控制權。 當 Alice 轉帳一些 Monero 給 Bob 時，Alice 其實是在對交易網路宣布她想要把某些她可以控制的交易輸出重新打包成一個新的交易輸出並把控制權完全轉移到 Bob的手上。</p>
+<p>換句話說，一個交易即是指，屬於某個錢包的舊交易經過轉形之後，轉移到屬於另一個錢包的新交易輸出的過程。 </p>
+<p>接著讓我們再更進一步，了解隱匿性地址是如何增加使用者的隱私權。 </p>
+<p>在每一個交易中，隱匿性的地址，也就是一次性的公鑰，將會被自動產生並記錄在交易之中來表明是誰在之後的交易中可以使用這些交易輸出。 以旁觀者的角度來看，並無法從區塊鏈上得知資金是否從 Alice 移動到 Bob 或是任何錢包的地址與這此筆交易相關。 因此，當Alice 轉帳 Monero 給 Bob 時，Bob 所收到的交易輸出並不會與 Bob 的錢包地址出現關聯。 </p>
+<p>但是，如果 Alice 需要證明她真的有轉帳 Monero 給 Bob，她的錢包亦可做出交易有確實傳送的的驗證。 所以 Bob 可以確信沒有其他人能夠得知這筆 Monero 的交易發生在何時或甚至是否存在。 如果 Bob 是一個商人，那這個功能就非常有好處，因為沒有其他人可以從區塊鏈上得知他的客戶組成和數量。</p>
+<p>好了，接下來要注意了，因為我們將要深入到技術層面的解釋。 </p>
+<p>每一個 Monero 地址是95字元的字串，是由 public view key 與 public spend key 組成。 當Alice 轉帳 Monero 給 Bob 時， Alice 的錢包會使用 Bob 的 public view key 與 public spend key 再加上一些隨機資料來產生獨特的一次性公鑰供 Bob 的後續交易使用。 所有人都能夠在區塊鏈上看見一次性公鑰，但只有 Alice 和 Bob 自己知道他們的錢包之間有交易的發生。 </p>
+<p>當 Bob 的錢包在區塊鏈上獲取到該次的交易輸出後，錢包就能透過其一次性公鑰推算出一次性私鑰，最後就可以用 private spend key 去花費掉這些交易輸出。 這整個交易的過程完全不需要讓 Bob 的錢包地址在區塊鏈上與任何交易顯示出關聯。 </p>
+<p>由此你可以發現，隱匿性地址可以防止交易輸出被連結至錢包地址。 而發送者的隱私將被環狀簽名(ring signatures)所保護。 環狀簽名可以幫助混淆這些交易輸出的來源。 在下一篇文章，我們將會進一步詳細討論環狀簽名的概念，並了解這個功能是如何讓 Monero 成為無法追蹤的匿蹤特性。 </p>
+<p>如果你有興趣了解是什麼讓 Monero 成為最重視隱私的加密貨幣 請參閱我們其他的文章或參閱 getmonero.org。   </p>
+<p>本篇翻譯來源 <a href="https://github.com/alvinjoelsantos/promo-video/blob/master/stealth_addresses.md" target="_blank" rel="noopener">https://github.com/alvinjoelsantos/promo-video/blob/master/stealth_addresses.md</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/06/30/monero-stealth-addresses/" data-id="cjuun08d5000j6ckgdipfowme" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT/">RingCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/隱匿性地址/">隱匿性地址</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="y2017-devmeeting-20170625" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/30/devmeeting-20170625/" class="article-date">
+  <time datetime="2017-06-30T14:28:30.000Z" itemprop="datePublished">2017-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/30/devmeeting-20170625/">開發者會議紀錄 DevMeeting 20170625</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>內容概要</p>
+<ul>
+<li>twinget在ZeroMQ RPC Daemon/Server上的植入工作的快要完成，接著將會植入錢包。</li>
+<li>vtnerd已開始著手處理:<ul>
+<li>更快速的Mymonero後台importing</li>
+<li>x86 ASM的錢包匯入功能已上線約莫一個月了</li>
+<li>更快、更強、更好的mempool後台處理程序</li>
+</ul>
+</li>
+<li>Jaquee正在為官方的GUI錢包上加上能夠使用 MyMonero/OpenMonero 的輕錢包功能<ul>
+<li>這將同時支援Android跟iOS的客戶端</li>
+</ul>
+</li>
+<li>kenshi84正在處理錢包的subaddress，<a href="https://github.com/monero-project/monero/pull/2056" target="_blank" rel="noopener">已幾乎準備好、僅剩些許的檢查和測試了</a><ul>
+<li>僅是個錢包的更動，不需要硬分岔</li>
+</ul>
+</li>
+<li>對於預設Ring的大小的討論依然在進行中</li>
+<li>從Kovri會議中得知，rehrar已將Monero網站重新設計完成，正等待上線中
+        
+          <p class="article-more-link">
+            <a href="/2017/06/30/devmeeting-20170625/#more">繼續閱讀...</a>
+          </p>
+        
+      
+    </li></ul></div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/06/30/devmeeting-20170625/" data-id="cjuun08iw006v6ckg230fjbpx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/輕錢包/">輕錢包</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+<h3 class="widget-title">Monero Taiwan 正體中文站</h3>
+<div class="widget">
+  <p>本站是由非官方的 Monero (XMR, 門羅幣)愛好者自發性熱血建置，旨在轉貼翻譯專案開發訊息與便利服務以推廣 Monero 在台灣/中文世界的應用普及。</p>
+</div>
+</div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">桌面版錢包/節點下載</h3>
+    <div class="widget">
+        <a href="https://getmonero.org/downloads" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"></a>
+            <p>目前節點軟體最新版本: v0.14.0.2</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">行動版錢包</h3>
+    <div class="widget">
+        <div><p>Android 版： Monero: Monerujo Wallet</p>
+        <a href="https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img style="width:80%;max-width:400px;" alt="Google Play 立即下載" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg"></a></div>
+        <div><p>Apple iOS 版： Cake Wallet</p>
+        <a href="https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8"><img style="width:80%;max-width:400px;" alt="App Store 下載" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"></a></div>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">試用好專案支持本站</h3>
+    <div class="widget">
+        <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"></a>
+            <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
+    <div class="widget">
+    	<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">即時價格</h3>
+    <div class="widget">
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowtransparency="true" border="0" hidefocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="no"></iframe>
+</div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">XMR常用連結</h3>
+    <div class="widget">
+        <ul>
+        	<dt>區塊瀏覽器</dt>
+            <dd><a href="https://community.xmr.to/explorer/mainnet/" target="_blank" rel="noopener">XMR.to 區塊瀏覽器</a></dd>
+            <dd><a href="https://xmrchain.net/" target="_blank" rel="noopener">XMRchain 區塊瀏覽器</a></dd>
+            <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
+            <dt>兌換服務</dt>
+            <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
+            <dd><a href="https://xmr.to/" target="_blank" rel="noopener">XMR.TO</a> - 將XMR快速兌換至BTC</dd>
+            <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
+            <dt>視覺化資料</dt>
+            <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
+            <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
+        </ul>
+    </div></div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-小秘訣/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-新聞/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/區塊鏈分叉消息/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方新版本釋出/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方消息宣布/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/站務消息/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 10px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/23/2018-Monero-review/">Monero 2018 年發展回顧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/monero-0-14-0-release/">Monero發布新版本v0.14.0更新</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181216/">開發者會議記錄 DevMeeting 20181216</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議記錄 DevMeeting 20181014</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/10/devmeeting-20181007/">開發者會議記錄 DevMeeting 20181007</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <div>
+                <p>如果你覺得這個網站有幫助到你，請考慮贊助我們一點XMR以補貼網站運作的支出<br></p>
+                <p style="color:#FFFFFF"><strong>45XMRtw5de1EYjtsZPuLgmG3vo2n5vW8iLPM9NmT2MSG65vZSCf1cXBgaNQJtxLx45aaFYZJQawERJJV9yuHiLYsCk82j8Z</strong></p>
+                <p>亦可發送至OpenAlias地址: donate.xmr-tw.org</p>
+            </div>
+            <div>
+                <p>&copy;
+                    2019 Monero - Taiwan 正體中文站<br>
+                    本網站內容採用<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+            </div>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/advantage" class="mobile-nav-link">Monero是什麼？</a>
+  
+    <a href="/nodes" class="mobile-nav-link">公共節點(Node)</a>
+  
+    <a href="/xmr-eta" class="mobile-nav-link">區塊鏈動態(XMR-ETA)</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

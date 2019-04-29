@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101869289-1');
+  </script>
+  
+  <title>開發者會議紀錄 DevMeeting 20180520 | Monero - 台灣正體中文站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Monero 整合小組已發布OpenCart版本的Monero支付閘道 https://github.com/monero-integrations/monerocart   Stoffu 已將自動剔除不良版本區塊的功能加入Monero rbrunner 正在試著實作一個簡單版的MultiSig sarang 正在分析一個非互動性的退款方式 https://www.sharelatex.com/">
+<meta name="keywords" content="mymonero,MultiSig,OpenCart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="開發者會議紀錄 DevMeeting 20180520">
+<meta property="og:url" content="https://xmr-tw.org/2018/05/24/devmeeting-20180520/index.html">
+<meta property="og:site_name" content="Monero - 台灣正體中文站">
+<meta property="og:description" content="Monero 整合小組已發布OpenCart版本的Monero支付閘道 https://github.com/monero-integrations/monerocart   Stoffu 已將自動剔除不良版本區塊的功能加入Monero rbrunner 正在試著實作一個簡單版的MultiSig sarang 正在分析一個非互動性的退款方式 https://www.sharelatex.com/">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-04-21T13:23:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="開發者會議紀錄 DevMeeting 20180520">
+<meta name="twitter:description" content="Monero 整合小組已發布OpenCart版本的Monero支付閘道 https://github.com/monero-integrations/monerocart   Stoffu 已將自動剔除不良版本區塊的功能加入Monero rbrunner 正在試著實作一個簡單版的MultiSig sarang 正在分析一個非互動性的退款方式 https://www.sharelatex.com/">
+  <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-square310x310logo" src="/images/site/favicons/favicon-310.png">
+  <link rel="apple-touch-icon" href="/images/site/favicons/favicon-180.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/advantage">Monero是什麼？</a>
+        
+          <a class="main-nav-link" href="/nodes">公共節點(Node)</a>
+        
+          <a class="main-nav-link" href="/xmr-eta">區塊鏈動態(XMR-ETA)</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xmr-tw.org"></form>
+      </div>
+    </div>
+    <div id="logo-wrap" class="outer">
+        <a href="/">
+          <img id="logo" src="/images/site/logowspace.png" alt="Monero Taiwan logo">
+        </a>
+      </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="y2018-devmeeting-20180520" class="article article-type-y2018" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/24/devmeeting-20180520/" class="article-date">
+  <time datetime="2018-05-24T05:10:54.000Z" itemprop="datePublished">2018-05-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      開發者會議紀錄 DevMeeting 20180520
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Monero 整合小組已發布OpenCart版本的Monero支付閘道<ul>
+<li><a href="https://github.com/monero-integrations/monerocart" target="_blank" rel="noopener">https://github.com/monero-integrations/monerocart</a></li>
+</ul>
+</li>
+<li>Stoffu 已將自動剔除不良版本區塊的功能加入Monero</li>
+<li>rbrunner 正在試著實作一個簡單版的MultiSig</li>
+<li>sarang 正在分析一個非互動性的退款方式<ul>
+<li><a href="https://www.sharelatex.com/read/vcyxgpntfsgz" target="_blank" rel="noopener">https://www.sharelatex.com/read/vcyxgpntfsgz</a></li>
+</ul>
+</li>
+<li>防彈協定的審查還在進行中</li>
+<li>Serhack正在撰寫一本《Mastering Monero》<ul>
+<li>搶先看: <a href="https://masteringmonero.com/book/preview.pdf" target="_blank" rel="noopener">https://masteringmonero.com/book/preview.pdf</a></li>
+</ul>
+</li>
+<li>MyMonero的桌面版應用程式已進行到測試階段<ul>
+<li><a href="https://github.com/mymonero/mymonero-app-js/releases/tag/v1.0.0-rc3" target="_blank" rel="noopener">https://github.com/mymonero/mymonero-app-js/releases/tag/v1.0.0-rc3</a></li>
+<li><a href="https://www.reddit.com/r/Monero/comments/8kumc0/mymonero_desktop_app_release_candidate_available/" target="_blank" rel="noopener">https://www.reddit.com/r/Monero/comments/8kumc0/mymonero_desktop_app_release_candidate_available/</a></li>
+</ul>
+</li>
+<li>下次開會時間為2018年六月三日</li>
+</ul>
+<a id="more"></a>
+<p>以上翻譯來自於紀錄原文: <a href="https://monerobase.com/index.php/article/devmeeting_2018-05-20" target="_blank" rel="noopener">https://monerobase.com/index.php/article/devmeeting_2018-05-20</a> </p>
+<p>完整會議記錄： </p>
+<p>1:00 PM rehrar&gt; alright, meeting time!<br>1:01 PM rehrar&gt; <a href="https://github.com/monero-project/meta/issues/222" target="_blank" rel="noopener">https://github.com/monero-project/meta/issues/222</a><br>1:01 PM rehrar&gt; 1. Greetings<br>1:01 PM rehrar&gt; Who’s ready to Monerooooo? Let me see you raise those hands and raise those voices!!!<br>1:02 PM rbrunner&gt; I don’t know how to mooo<br>1:02 PM → serhack joined (1f9d7c0b@gateway/web/cgi-irc/kiwiirc.com/ip.31.157.124.11)<br>1:02 PM erciccione_[m]&gt; whoop whoop<br>1:02 PM serhack&gt; Hi!<br>1:02 PM serhack&gt; Hi<br>1:02 PM cryptochangement&gt; rbrunner: only mooo can moo of course<br>1:02 PM rbrunner&gt; :)<br>1:02 PM rehrar&gt; Weak response. I said who’s readaaaaay?<br>1:02 PM — +moneromooo looks on suspiciously<br>1:02 PM @ArticMine&gt; hi<br>1:02 PM rehrar&gt; <em>sigh</em> Monero isn’t a rock concert, I guess.<br>1:02 PM shortfinal&gt; x<br>1:03 PM endogenic&gt; sort of here<br>1:03 PM rehrar&gt; moneromooo is a confusing name. It implies cow, but he’s obviously the GOAT ;)<br>1:03 PM vp11&gt; lol<br>1:03 PM rehrar&gt; (just learned what that meant recently)<br>1:04 PM rehrar&gt; 2. Brief review of what’s been completed since the previous meeting<br>1:04 PM rehrar&gt; Tell me, people. Watcha been up to? Increase our morale in the market of blood.<br>1:05 PM serhack&gt; Monero Integrations Team released the Monero Payment Gateway for Opencart, a popular e-shop platform. <a href="https://github.com/monero-integrations/monerocart" target="_blank" rel="noopener">https://github.com/monero-integrations/monerocart</a><br>1:05 PM +moneromooo&gt; More sync bug fixing.<br>1:05 PM → glv joined (~glv@2a01:e34:ed03:c7d0:b8d2:10a6:1568:afb8)<br>1:05 PM rehrar&gt; woohoo!<br>1:06 PM +moneromooo&gt; automatic popping of bad version blocks by stoffu (when the user doesn’t update in time despite monerod moaning about it)<br>1:06 PM rehrar&gt; where are we at with 0.12.1? Mr. Potatohead said he’d be working on that this weekend, right?<br>1:07 PM ⇐ sneurlax quit (<a href="mailto:~r@173.254.233.2" target="_blank" rel="noopener">~r@173.254.233.2</a>) Ping timeout: 260 seconds<br>1:07 PM ⇐ lithiumpt quit (<a href="mailto:~lithiumpt@185.156.175.108" target="_blank" rel="noopener">~lithiumpt@185.156.175.108</a>) Ping timeout: 248 seconds<br>1:07 PM +moneromooo&gt; fluffypony said monday last time. Whether this is the last delay or not, who knows.<br>1:07 PM rehrar&gt; 0.12.1 will eventually just become 0.13<br>1:07 PM cryptochangement&gt; iirc he said there’s some git stuff to be done with reverting something and such<br>1:08 PM iDunk&gt; Hmm, he made an Asylum4You type thing for one of the PRs.<br>1:09 PM ⇐ NonaSuomy quit (~NonaSuomy@kodi/staff/TeknoJuce) Ping timeout: 250 seconds<br>1:10 PM rehrar&gt; anyone do anything recently? We been a bit slow?<br>1:10 PM rbrunner&gt; I started to program my MMS design for easy multisig. Progress is good so far, and I already know that the raw number of lines of code will be quite reasonable<br>1:10 PM ⇐ amiuhle quit (<a href="mailto:~amiuhle@S010664777da98893.cg.shawcable.net" target="_blank" rel="noopener">~amiuhle@S010664777da98893.cg.shawcable.net</a>) Ping timeout: 276 seconds<br>1:10 PM rbrunner&gt; I even found a partner, or better said they found me: asymptotically (u/asymptotically508 on reddit) started to implement a first messaging daemon based on Bitmessage<br>1:11 PM sarang&gt; I finished up an analysis of noninteractive refunds and am finalizing coursework for my upcoming crypto outreach class<br>1:11 PM rehrar&gt; you guys are doing something really awesome!<br>1:12 PM rbrunner&gt; Is there an ELI5 for those refunds somewhere?<br>1:13 PM sarang&gt; Yes, let me pull up the link rbrunner<br>1:13 PM sarang&gt; Here’s the link to the tech note: <a href="https://www.sharelatex.com/read/vcyxgpntfsgz" target="_blank" rel="noopener">https://www.sharelatex.com/read/vcyxgpntfsgz</a><br>1:14 PM serhack&gt; The Mastering Monero Resource needs some feedbacks on the content. If you want to help, please check out on <a href="https://github.com/monerobook/monerobook/pulls" target="_blank" rel="noopener">https://github.com/monerobook/monerobook/pulls</a><br>1:14 PM rbrunner&gt; Thanks, sarang, will check that!<br>1:14 PM sarang&gt; I’ll put it in the MRL repo soon for further review<br>1:14 PM sarang&gt; I’ll be working with some Purdue researchers on a more formal version for journal submission at some point<br>1:14 PM sarang&gt; it’s a good collaboration<br>1:15 PM sarang&gt; Also, BP audits are underway still, nothing new to report<br>1:15 PM sarang&gt; funding is fully complete thanks to rehrar and the many generous contributors<br>1:15 PM rehrar&gt; still looking like completing on time?<br>1:16 PM sarang&gt; I don’t foresee any delays<br>1:16 PM rehrar&gt; yay<br>1:17 PM rehrar&gt; also, thanks serhack for the Mastering Monero update<br>1:17 PM rehrar&gt; anything else fun to report?<br>1:18 PM erciccione_[m]&gt; the guide for the GUI is erady, we only need to implement it<br>1:18 PM erciccione_[m]&gt; rehrar: could you add a link for downloading the guide on the website as soon as 0.12.1 is out?<br>1:19 PM rehrar&gt; sure<br>1:19 PM ⇐ iDunk quit (~iDunk@unaffiliated/idunk) Ping timeout: 260 seconds<br>1:19 PM erciccione_[m]&gt; great, thanks.<br>1:19 PM rehrar&gt; alrighty<br>1:19 PM rehrar&gt; I think serhack has one more thing, and then we’ll move on<br>1:20 PM serhack&gt; <a href="https://masteringmonero.com/book/preview.pdf" target="_blank" rel="noopener">https://masteringmonero.com/book/preview.pdf</a> - Mastering Monero Preview with some illustrations<br>1:20 PM rehrar&gt; thanks serhack<br>1:20 PM rehrar&gt; 3. Code + ticket discussion / Q &amp; A<br>1:21 PM rehrar&gt; moneromooo, you wanna take over here? It’d be best if fluffypony was here to help out with 0.12.1 release stuff<br>1:21 PM → iDunk joined (~iDunk@unaffiliated/idunk)<br>1:21 PM +moneromooo&gt; I just wait for pony to have some time to merge, really.<br>1:21 PM → NonaSuomy joined (~NonaSuomy@kodi/staff/TeknoJuce)<br>1:21 PM +moneromooo&gt; I can answer if there are quetions about code.<br>1:22 PM rehrar&gt; Hopefully he can have the time. He does have a watch after all (as we were all reminded this week)<br>1:22 PM rbrunner&gt; lol<br>1:22 PM vp11&gt; ba-dum-tss<br>1:22 PM gingeropolous&gt; aw jeesh<br>1:23 PM +moneromooo&gt; No code question ?<br>1:23 PM rehrar&gt; Any questions for our emperor moneromooo?<br>1:23 PM gingeropolous&gt; uhhmmm… what needs the most testing?<br>1:23 PM +moneromooo&gt; atm, some private code. I might contact you later if you want to test stuff ^<em>^<br>1:23 PM gingeropolous&gt; ok<br>1:24 PM gingeropolous&gt; and, when are we gonna torture ourselves with another database reformat?<br>1:24 PM +moneromooo&gt; Also last two meetings, I said I had a wallet refresh speedup patchset, and asked if people could time the difference. AFAICT nobody did, so I guess performance is a non issue for people in general.<br>1:24 PM gingeropolous&gt; i timed the diff!<br>1:24 PM → ifntifb93 joined (c4342706@gateway/web/cgi-irc/kiwiirc.com/ip.196.52.39.6)<br>1:24 PM +moneromooo&gt; The v2 db stuff is just waiting for pony to release so we can merge to master.<br>1:24 PM endogenic&gt; moneromooo: private code? monero is so centralized<br>1:24 PM +moneromooo&gt; You did, but then I asked you specifically :)<br>1:24 PM shortfinal&gt; do we have a rough idea as to the next fork? month wise? I know that’s sort of a joke considering we’re still waiting on a point release. but this past fork I remember some discussion about moving the next fork further out, towards october<br>1:24 PM rehrar&gt; no no endogenic. We’re supposed to be the most private cryptocurrency<br>1:25 PM gingeropolous&gt; no no rehrar , we’re the most fungible<br>1:25 PM endogenic&gt; hey we should make the pow algo private too, that way no asics<br>1:25 PM rehrar&gt; oh I hope note shortfinal. Bulletproofs are coming in next fork.<br>1:25 PM gingeropolous&gt; hrm, so database reformat and bulletproofs for 0.13?<br>1:25 PM endogenic&gt; i heard a rumor bulletproofs impl has to be redone<br>1:25 PM gingeropolous&gt; lucky 13.<br>1:25 PM endogenic&gt; any truth?<br>1:25 PM +moneromooo&gt; Yay, I’m totally coding in a pub, with my laptop screen plugged into the sports screen. No privacy.<br>1:25 PM sarang&gt; endogenic: ?<br>1:25 PM rehrar&gt; can’t we just have a ‘NO ASICS ALLOWED’ clause in the code of the PoW algo?<br>1:26 PM endogenic&gt; wow mooo that really narrows it down for us<br>1:26 PM — +moneromooo thinks again and does not feed<br>1:26 PM endogenic&gt; sarang: someone told me they heard that was a result of an audit<br>1:26 PM sarang&gt; oh lol<br>1:26 PM sarang&gt; that<br>1:27 PM → Lloydimiller4</em> joined (~Lloydimil@unaffiliated/lloydimiller4)<br>1:27 PM dEBRUYNE&gt; I think sarang joked about that in the MRL channel<br>1:27 PM dEBRUYNE&gt; I can see someone taking it seriously though lol<br>1:27 PM gingeropolous&gt; re: timing, moneromooo - i’ll make a post on reddit to try and get some more testers. its on your fork called some branch something something<br>1:27 PM sarang&gt; BREAKING: no BPs<br>1:27 PM dEBRUYNE&gt; mswip gingeropolous<br>1:27 PM dEBRUYNE&gt; Also PRed I think (not sure if merged)<br>1:27 PM rehrar&gt; bullet proofs aren’t bullet proof<br>1:28 PM +moneromooo&gt; Yes, that one, thanks. It does switch the db to v2 btw.<br>1:28 PM @ArticMine&gt; Someone fell for the joke<br>1:28 PM gingeropolous&gt; or is it mswipe2 dEBRUYNE moneromooo ?<br>1:28 PM shortfinal&gt; I’m falling for it right now, help. can’t get up.<br>1:28 PM shortfinal&gt; lifealert<br>1:28 PM +moneromooo&gt; That one doesn’t exist AFAIK. Joke again ?<br>1:28 PM endogenic&gt; dEBRUYNE: oh ok they were busy at the time so that could have been the case<br>1:29 PM → lithiumpt joined (<a href="mailto:~lithiumpt@185.156.175.108" target="_blank" rel="noopener">~lithiumpt@185.156.175.108</a>)<br>1:29 PM cryptochangement&gt; I opened up #3839 earlier for mining to subaddresses but stoffu said there isn’t any demand for it so we shouldn’t do it. do you have an opinion on that or should I just close it?<br>1:29 PM dEBRUYNE&gt; mswip2 gingeropolous<br>1:29 PM gingeropolous&gt; <a href="https://github.com/moneromooo-monero/bitmonero/tree/mswip2" target="_blank" rel="noopener">https://github.com/moneromooo-monero/bitmonero/tree/mswip2</a><br>1:29 PM +moneromooo&gt; It’s whatever is in PR #3716<br>1:30 PM rehrar&gt; mining to subaddress is kind of cool, honestly<br>1:30 PM rehrar&gt; if I post my XMR address on the internet (for donations or whatever)<br>1:30 PM +moneromooo&gt; OMG, 19 files changed to allow mining to a subaddress :S<br>1:31 PM rehrar&gt; and then somebody goes to a pool and puts that XMR address in the pool software, if I mined on that site, then they see how much Monero I mined.<br>1:31 PM cryptochangement&gt; yea… that was also his problem<br>1:31 PM endogenic&gt; moneromooo that’s just it<br>1:31 PM vp11&gt; rehrar, to be honest most people are mining in pools, and pool support to subaddresses is trivial (I think at least a few pools are already doing it)<br>1:31 PM endogenic&gt; multiply that by rebase work<br>1:31 PM endogenic&gt; afk<br>1:32 PM rehrar&gt; bai<br>1:32 PM cryptochangement&gt; it is basically that we shouldn’t parse the mining address until we get to actually constructing the transaction so it slightly touches a bunch of files<br>1:32 PM endogenic&gt; see you<br>1:32 PM +moneromooo&gt; I’ll read it later.<br>1:32 PM rehrar&gt; alright, move in?<br>1:32 PM cryptochangement&gt; ok thnx<br>1:33 PM rehrar&gt; <em>on<br>1:33 PM rehrar&gt; 4. Any additional meeting items<br>1:33 PM rehrar&gt; msvb-lab: wanted to ask something if I remember<br>1:34 PM sarang&gt; Oh, there was a recent proposal for time-limited outputs<br>1:35 PM rbrunner&gt; Saw it on reddit. Is that new, or has any other coin already tried something like that?<br>1:36 PM rehrar&gt; he doesn’t seem to be around so I’ll just paste what he said for people’s information<br>1:36 PM msvb-lab&gt; Ups.<br>1:36 PM rehrar&gt; oh yay!<br>1:36 PM gingeropolous&gt; i doubt any coin has tried it. most coins can just prune spent outs.<br>1:36 PM msvb-lab&gt; Indeed, firmware development for the hardware badges has begun.<br>1:36 PM msvb-lab&gt; And so if any software developers here would like to learn to program embedded systems, they can make our badges light up.<br>1:37 PM msvb-lab&gt; So my question/request is for those who are interested in charlieplexed LED badge circuits to contact me if they want to create firmware.<br>1:37 PM +moneromooo&gt; Relatedly, back when there was talk about daughter chains, I was toying with the idea of having temporary daughter chains, which would live for, N months, a new one starting every N months, offset slightly. Move monero to it for daily use, then anything left moves back before it dies (possibly to the new temp chain, since offset).<br>1:37 PM msvb-lab&gt; I’ll have a set of sneak preview badges in about a month to send out.<br>1:37 PM msvb-lab&gt; That’s all, thanks rehrar.<br>1:37 PM +moneromooo&gt; and then nobody talked about daughter chains ever again for a long time :D<br>1:38 PM sarang&gt; lol<br>1:38 PM sarang&gt; I hadn’t heard that idea<br>1:39 PM rbrunner&gt; As if syncing </em>one<em> chain wasn’t hard enough already :)<br>1:39 PM @ArticMine&gt; Daughter chains that also use demurrage and are merged mined are something that is worth looking at<br>1:39 PM rehrar&gt; is dandelion tx stuff something that can be useful for Moruno?<br>1:39 PM @ArticMine&gt; For pr unable / expiring tx for example<br>1:40 PM +moneromooo&gt; harhar: you mean for monero ?<br>1:40 PM rehrar&gt; mrunooomo: ye<br>1:41 PM rehrar&gt; do people know what I mean when I say dandelion thingies?<br>1:41 PM _Slack&gt; nanoakron&gt; mooo - which PR is the wallet refresh timing one? I’m happy to test<br>1:41 PM vp11&gt; John Alan recently published in r/Monero about the core team GPG keys, mentioning that Riccardo’s key (<a href="https://github.com/monero-project/monero/tree/master/utils/gpg_keys" target="_blank" rel="noopener">https://github.com/monero-project/monero/tree/master/utils/gpg_keys</a>) isn’t signed by anyone.<br>1:41 PM vp11&gt; As far as I’m concerned it’s not a big deal, but since a lot of people this week are finding multiple reasons to defecate over our CEO (/s), I thought at least an explanation of why it’s not a big deal could be provided by you, important people :D<br>1:41 PM rehrar&gt; sign via signal is the way to be<br>1:41 PM gingeropolous&gt; nanoakron: moneromooo&gt; It’s whatever is in PR #3716<br>1:42 PM _Slack&gt; nanoakron&gt; Thanks<br>1:42 PM +moneromooo&gt; 3716, and it does upgrade your db to v2, which means you always have to use the v2 patch with that db till it’s merged.<br>1:43 PM rehrar&gt; just google Dandelion Protocol<br>1:43 PM _Slack&gt; nanoakron&gt; Hrm…<br>1:43 PM rehrar&gt; maybe for MRL to look at<br>1:43 PM rehrar&gt; but I think good amount of overlap with kovri<br>1:43 PM rehrar&gt; in terms of what trying to accomplish<br>1:43 PM sarang&gt; The Dandelion Protocol sounds like the title of a PG-rated crime novel<br>1:44 PM rehrar&gt; Baby’s first crime thriller<br>1:44 PM rbrunner&gt; Hm, the links that come up on Google are a year old?<br>1:44 PM rehrar&gt; PIVX implemented it for a reason or other<br>1:44 PM rehrar&gt; basically to make it harder for malicious nodes to tell where tx are coming from<br>1:45 PM sarang&gt; Link to original paper: <a href="https://arxiv.org/pdf/1701.04439.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1701.04439.pdf</a><br>1:46 PM sarang&gt; Looks like a fun exercise in sparse graph theory<br>1:46 PM rehrar&gt; just a thought<br>1:47 PM rehrar&gt; alright, nothing else?<br>1:47 PM rehrar&gt; confirm next meeting time?<br>1:47 PM rehrar&gt; #twoweeks<br>1:48 PM rehrar&gt; March 3rd. Any objections?<br>1:48 PM dEBRUYNE&gt; Perhaps endogenic could give us an update on MyMonero<br>1:48 PM rehrar&gt; he left<br>1:48 PM dEBRUYNE&gt; If he’s not afk :P<br>1:48 PM endogenic&gt; back now<br>1:48 PM iDunk&gt; Why not January 3rd ?<br>1:48 PM rehrar&gt; hai<br>1:48 PM endogenic&gt; so the desktop apps are out<br>1:48 PM endogenic&gt; go download them on github?<br>1:48 PM endogenic&gt; !</em><br>1:49 PM ifntifb93&gt; will mymonero be in fdroid?<br>1:49 PM endogenic&gt; the ios app is being reviewed by apple. they need extra time<br>1:49 PM endogenic&gt; ifntifb93: yes<br>1:49 PM endogenic&gt; definitely<br>1:49 PM dEBRUYNE&gt; Where’s the announcement haha<br>1:49 PM rehrar&gt; they don’t give you a timeline for that eh endogenic?<br>1:49 PM endogenic&gt; dEBRUYNE: we not launched yet :)<br>1:49 PM dEBRUYNE&gt; Also, I am saddened by the absence of a pre-announcement<br>1:49 PM endogenic&gt; well<br>1:49 PM endogenic&gt; this is it<br>1:50 PM ifntifb93&gt; great! is android apk available already too?<br>1:50 PM dEBRUYNE&gt; Oh perhaps you got me confused<br>1:50 PM endogenic&gt; the mymonero initial release offering<br>1:50 PM dEBRUYNE&gt; I thought the desktop apps were live already :p<br>1:50 PM unknownids&gt; woooo<br>1:50 PM endogenic&gt; ifntifb93: no i’m building the native app<br>1:50 PM unknownids&gt; mymonero ico buy buy buy<br>1:50 PM endogenic&gt; i’ll make the android source repo public so someone can help<br>1:50 PM cryptochangement&gt; is it backed by the MEA tho?<br>1:50 PM endogenic&gt; yes<br>1:50 PM endogenic&gt; naturally<br>1:50 PM cryptochangement&gt; alright I’ll go all in then<br>1:50 PM endogenic&gt; good<br>1:51 PM endogenic&gt; we’ll do a secondary and tertiary offering<br>1:51 PM ifntifb93&gt; mea is great<br>1:51 PM +moneromooo&gt; The amount of bullshit <em>in a dev meeting</em> is wasting everyone’s time.<br>1:51 PM endogenic&gt; said mooo<br>1:51 PM iDunk&gt; That’s why I basically stopped reading them.<br>1:51 PM rehrar&gt; link to Github desktop apps?<br>1:51 PM ⇐ PuebloZag quit (506d1957@gateway/web/freenode/ip.80.109.25.87) Quit: Page closed<br>1:51 PM dEBRUYNE&gt; This I guess -&gt; <a href="https://github.com/mymonero/mymonero-app-js/releases/tag/v1.0.0-rc3" target="_blank" rel="noopener">https://github.com/mymonero/mymonero-app-js/releases/tag/v1.0.0-rc3</a><br>1:52 PM rehrar&gt; great, thanks<br>1:52 PM endogenic&gt; well it seems this isnt the venue<br>1:52 PM cryptochangement&gt; looks like there are binaries and everything so it’s official!<br>1:52 PM endogenic&gt; we may be spamming<br>1:52 PM rehrar&gt; and thanks endogenic :)<br>1:52 PM rehrar&gt; next meeting on the third<br>1:52 PM rehrar&gt; thanks for coming. Meeting over.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2018/05/24/devmeeting-20180520/" data-id="cjuun08jx007x6ckg7u9aptg6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MultiSig/">MultiSig</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenCart/">OpenCart</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mymonero/">mymonero</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/26/devmeeting-20180617/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          開發者會議紀錄 DevMeeting 20180617
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/11/devmeeting-20180506/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">開發者會議紀錄 DevMeeting 20180506</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+<h3 class="widget-title">Monero Taiwan 正體中文站</h3>
+<div class="widget">
+  <p>本站是由非官方的 Monero (XMR, 門羅幣)愛好者自發性熱血建置，旨在轉貼翻譯專案開發訊息與便利服務以推廣 Monero 在台灣/中文世界的應用普及。</p>
+</div>
+</div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">桌面版錢包/節點下載</h3>
+    <div class="widget">
+        <a href="https://getmonero.org/downloads" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"></a>
+            <p>目前節點軟體最新版本: v0.14.0.2</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">行動版錢包</h3>
+    <div class="widget">
+        <div><p>Android 版： Monero: Monerujo Wallet</p>
+        <a href="https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img style="width:80%;max-width:400px;" alt="Google Play 立即下載" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg"></a></div>
+        <div><p>Apple iOS 版： Cake Wallet</p>
+        <a href="https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8"><img style="width:80%;max-width:400px;" alt="App Store 下載" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"></a></div>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">試用好專案支持本站</h3>
+    <div class="widget">
+        <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"></a>
+            <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
+    <div class="widget">
+    	<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">即時價格</h3>
+    <div class="widget">
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowtransparency="true" border="0" hidefocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="no"></iframe>
+</div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">XMR常用連結</h3>
+    <div class="widget">
+        <ul>
+        	<dt>區塊瀏覽器</dt>
+            <dd><a href="https://community.xmr.to/explorer/mainnet/" target="_blank" rel="noopener">XMR.to 區塊瀏覽器</a></dd>
+            <dd><a href="https://xmrchain.net/" target="_blank" rel="noopener">XMRchain 區塊瀏覽器</a></dd>
+            <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
+            <dt>兌換服務</dt>
+            <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
+            <dd><a href="https://xmr.to/" target="_blank" rel="noopener">XMR.TO</a> - 將XMR快速兌換至BTC</dd>
+            <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
+            <dt>視覺化資料</dt>
+            <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
+            <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
+        </ul>
+    </div></div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-小秘訣/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-新聞/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/區塊鏈分叉消息/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方新版本釋出/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方消息宣布/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/站務消息/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 10px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/23/2018-Monero-review/">Monero 2018 年發展回顧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/monero-0-14-0-release/">Monero發布新版本v0.14.0更新</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181216/">開發者會議記錄 DevMeeting 20181216</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議記錄 DevMeeting 20181014</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/10/devmeeting-20181007/">開發者會議記錄 DevMeeting 20181007</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <div>
+                <p>如果你覺得這個網站有幫助到你，請考慮贊助我們一點XMR以補貼網站運作的支出<br></p>
+                <p style="color:#FFFFFF"><strong>45XMRtw5de1EYjtsZPuLgmG3vo2n5vW8iLPM9NmT2MSG65vZSCf1cXBgaNQJtxLx45aaFYZJQawERJJV9yuHiLYsCk82j8Z</strong></p>
+                <p>亦可發送至OpenAlias地址: donate.xmr-tw.org</p>
+            </div>
+            <div>
+                <p>&copy;
+                    2019 Monero - Taiwan 正體中文站<br>
+                    本網站內容採用<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+            </div>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/advantage" class="mobile-nav-link">Monero是什麼？</a>
+  
+    <a href="/nodes" class="mobile-nav-link">公共節點(Node)</a>
+  
+    <a href="/xmr-eta" class="mobile-nav-link">區塊鏈動態(XMR-ETA)</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

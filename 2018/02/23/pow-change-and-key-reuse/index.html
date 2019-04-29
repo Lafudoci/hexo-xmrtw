@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101869289-1');
+  </script>
+  
+  <title>關於PoW共識機制更動與重複使用金鑰 | Monero - 台灣正體中文站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PoW共識機制的更動最近常常可以看到關於抵抗ASIC礦機和如何面對潛在的ASIC礦機威脅等話題，這篇文將會(稍微)認真地指出: 我們對於如何藉由在硬分叉時調整PoW共識機制以維持抗ASIC礦機特性的立場。  特殊應用積體電路(Application Specific Integrated Circuit)簡稱ASIC在這邊指得是被特殊設計出來的挖礦硬體，舉例來說，BTC的ASIC礦機被設計用來挖S">
+<meta name="keywords" content="硬分叉,CryptoNote,環狀簽名,金鑰映像,Mining,ASIC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="關於PoW共識機制更動與重複使用金鑰">
+<meta property="og:url" content="https://xmr-tw.org/2018/02/23/pow-change-and-key-reuse/index.html">
+<meta property="og:site_name" content="Monero - 台灣正體中文站">
+<meta property="og:description" content="PoW共識機制的更動最近常常可以看到關於抵抗ASIC礦機和如何面對潛在的ASIC礦機威脅等話題，這篇文將會(稍微)認真地指出: 我們對於如何藉由在硬分叉時調整PoW共識機制以維持抗ASIC礦機特性的立場。  特殊應用積體電路(Application Specific Integrated Circuit)簡稱ASIC在這邊指得是被特殊設計出來的挖礦硬體，舉例來說，BTC的ASIC礦機被設計用來挖S">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-04-21T09:19:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="關於PoW共識機制更動與重複使用金鑰">
+<meta name="twitter:description" content="PoW共識機制的更動最近常常可以看到關於抵抗ASIC礦機和如何面對潛在的ASIC礦機威脅等話題，這篇文將會(稍微)認真地指出: 我們對於如何藉由在硬分叉時調整PoW共識機制以維持抗ASIC礦機特性的立場。  特殊應用積體電路(Application Specific Integrated Circuit)簡稱ASIC在這邊指得是被特殊設計出來的挖礦硬體，舉例來說，BTC的ASIC礦機被設計用來挖S">
+  <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-square310x310logo" src="/images/site/favicons/favicon-310.png">
+  <link rel="apple-touch-icon" href="/images/site/favicons/favicon-180.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/advantage">Monero是什麼？</a>
+        
+          <a class="main-nav-link" href="/nodes">公共節點(Node)</a>
+        
+          <a class="main-nav-link" href="/xmr-eta">區塊鏈動態(XMR-ETA)</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xmr-tw.org"></form>
+      </div>
+    </div>
+    <div id="logo-wrap" class="outer">
+        <a href="/">
+          <img id="logo" src="/images/site/logowspace.png" alt="Monero Taiwan logo">
+        </a>
+      </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="y2018-pow-change-and-key-reuse" class="article article-type-y2018" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/23/pow-change-and-key-reuse/" class="article-date">
+  <time datetime="2018-02-23T13:02:55.000Z" itemprop="datePublished">2018-02-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/官方消息宣布/">官方消息宣布</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      關於PoW共識機制更動與重複使用金鑰
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="PoW共識機制的更動"><a href="#PoW共識機制的更動" class="headerlink" title="PoW共識機制的更動"></a>PoW共識機制的更動</h2><p>最近常常可以看到關於抵抗ASIC礦機和如何面對潛在的ASIC礦機威脅等話題，這篇文將會(稍微)認真地指出: 我們對於如何藉由在硬分叉時調整PoW共識機制以維持抗ASIC礦機特性的立場。 </p>
+<p>特殊應用積體電路(Application Specific Integrated Circuit)簡稱ASIC在這邊指得是被特殊設計出來的挖礦硬體，舉例來說，BTC的ASIC礦機被設計用來挖SHA256演算法的加密貨幣。由於這種硬體是被特別設計用來挖礦的，也因此會比CPU、GPU、甚至是FPGA等日常使用的硬體來得有大量的效能優勢。因此，任何被設計出來的ASIC將會顯著地主宰全網算力並導致中心化的問題。 </p>
+<p>Monero的程式碼是從CryptoNote參考實作分出(fork)，在CryptoNote的白皮書(<a href="https://cryptonote.org/whitepaper.pdf" target="_blank" rel="noopener">https://cryptonote.org/whitepaper.pdf</a>)中提到，比特幣的一個最大的缺點即是其PoW共識機制導致了中心化的問題。為了打造更平等的挖礦網路和更去中心化的特性，原先的CryptoNote開發者創造了Cryptonight PoW共識機制，以此拉近CPU(大眾)與GPU/FPGA/ASIC(少數人)的挖礦能力差距。CryptoNote的作者亦提到了”有些礦工比其他礦工更有優勢是合理的”，因為”他們的投資應能線性的提升其算力優勢”，這代表ASIC礦機的出現或許是必然的。我們雖然也認同這樣的可能性，但為了去中心化的原則下，我們認為任何ASIC礦機算力優勢的出現必須要越平等越好。在發文此刻，我們認為任何新發展的ASIC礦機都不會是平等的算力，更不會使Monero網路趨向去中心化。 </p>
+<p>比特幣使用的PoW共識機制(SHA256)具有一個重大的缺點，就是太容易就能從CPU轉移至GPU、接著至FPGA、最後就發展到了ASIC，這其中每一個轉移都帶來了巨大的效率提升。因此CPU挖礦與ASIC挖礦之間就存在著巨大的效益差距，導致最後ASIC成為了唯一挖礦的可行方案，這在本質上造成了中心化，因為只有少數的製造商才有辦法生產ASIC礦機。Cryptonight (Monero的PoW機制)為了拉近CPU、GPU、FPGA、ASIC的差距，在PoW共識機制中綁定了一定數量的記憶體需求，這樣的方式造成了ASIC的製造成本顯著提升。這個PoW機制帶來了更平等的挖礦，這樣的好處有: 第一，如果挖礦算力是去中心化的，這將會防止礦工刻意去挑選或忽略特定交易的確認，避免Monero的區塊鏈審查行為。第二，這將會降低挖礦趨於中心化至大型挖礦廠房。第三，這將會讓政府難以管制可以用來挖礦的硬體。 </p>
+<p>進一步地說，特製的硬體幾乎只能由少數的公司設計，如同比特幣目前的情況，最大宗的ASIC礦機都是由Bitmain設計與生產。如Peter Todd所說: “世界上僅有非常少數的公司有能力創造出有競爭力的ASIC礦機，基本上就是Intel、ASMC、GlobalFoundries等等”。 </p>
+<p>這造成了一個單點失效(single point of failure)的弱點，例如，政府可能向ASIC製造商要求增加一個”自殺開關”，這樣使得其能從遠端關閉或是控制礦機，而這將是有潛力破壞整個交易網路的威脅。或是政府也可以要求礦工必須擁有執照才能使用ASIC挖礦，如此就限制了ASIC礦機只能被特定的團體所持有。這樣的證照系統最終可能導致某些交易的黑名單行為，譬如，政府可以要求礦工不得打包特定的交易否則就撤銷證照。相反的，用日常用途的硬體挖礦就可以讓這些手段無法被實際執行。 </p>
+<p>挖礦這件事，通常來說也具有著讓富者恆富的效應，最終導致中心化的問題。譬如具有經濟規模的礦工可能會更有足夠資本來提升其在全網算力裡的占比。而Cryptonight演算法，拜其平等的特性所賜，或多或少迴避了這個問題，因為礦工必須面對數種來源的競爭: (i) 幾乎沒有成本的殭屍網路(botnet)、(ii) 愛好者礦工，並非由利益驅動的使用他們的CPU與GPU支持網路、(iii)網頁礦工，這種有可能是非法(未經同意透過廣告挖礦)也有可能是合法(用來代替CAPTCHAs或減少/替代廣告)的方式。相對之下，ASIC礦機加速了富者恆富，因為他們沒有上述提及的競爭對手。 </p>
+<p>總結來說，我們強烈的相信保持抵抗ASIC的特性將會帶來好處，因此若有需要時，我們可能會發起臨時性的硬分叉以約束任何潛在的ASIC礦機威脅。此外，為了維持去中心化的目標並抑制檯面下的ASIC開發，Monero核心開發團隊將會在每次的例行分叉更新時微調PoW共識機制，也就是一年兩次的周期，這些更動將會是細微的調整，且不會影響效能太多，第一次微調已在測試中，將在本次三月的硬分叉中實施。我們的最終目標則是研發出新的一套PoW共識機制演算法以取代Cryptonight來確保更好的ASIC抵抗能力。 </p>
+<p>微調將會相容於下列軟體: zone117x’s pool, Snipa’s pool, Lucas Jones’ CPU miner, wolf0’s CPU miner, ccminer-cryptonight, sgminer-gm, xmr-stak, xmrig-nvidia, wolf-xmr-miner。</p>
+<h2 id="金鑰的重複使用"><a href="#金鑰的重複使用" class="headerlink" title="金鑰的重複使用"></a>金鑰的重複使用</h2><p>身為使用者的你必須意識到Monero網路與你所擁有的Monero安全性是取決於你握有的Monero私鑰，你的Monero金鑰就是Monero金鑰。請不要把他們拿來使用在其他用途，包括在Monero的其他分叉幣上取得錢幣。若你使用同一份金鑰(key)在不同鏈上重複花費同一筆交易輸出(output)，這將會傷害你的隱私，同時也對其他人的隱私造成傷害，因為這會產生相同的金鑰映像(key image)在不同的環簽名(ring)之中(這不影響隱匿性地址或保密交易協定，僅影響環狀簽名)。此外，當你在其他鏈上使用相同的金鑰之後，你的私鑰安全性將依賴那些第三方的信用。</p>
+<ul>
+<li>分叉者們: 如果你們要分叉Monero區塊鏈，請不要要求使用者重複使用他們的私鑰，而是讓使用者在你們的新鏈上產生新的私鑰。</li>
+<li>使用者們: 如果分叉者要求你在他們的新鏈上輸入你的Monero金鑰(在這篇文章發表之後)，他們很有可能正在試著操縱你參與大規模的Monero攻擊事件。</li>
+</ul>
+<p>請注意安全，並不要在Monero以外的用途重複使用你的Monero金鑰。   </p>
+<p>本文譯自getmonero.org <a href="https://getmonero.org/2018/02/11/PoW-change-and-key-reuse.html" target="_blank" rel="noopener">https://getmonero.org/2018/02/11/PoW-change-and-key-reuse.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2018/02/23/pow-change-and-key-reuse/" data-id="cjuun08ev00286ckgle630vhe" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASIC/">ASIC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CryptoNote/">CryptoNote</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mining/">Mining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/環狀簽名/">環狀簽名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬分叉/">硬分叉</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/金鑰映像/">金鑰映像</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/05/devmeeting-20180225/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          開發者會議紀錄 DevMeeting 20180225
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/30/devmeeting-20180128/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">開發者會議紀錄 DevMeeting 20180128</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+<h3 class="widget-title">Monero Taiwan 正體中文站</h3>
+<div class="widget">
+  <p>本站是由非官方的 Monero (XMR, 門羅幣)愛好者自發性熱血建置，旨在轉貼翻譯專案開發訊息與便利服務以推廣 Monero 在台灣/中文世界的應用普及。</p>
+</div>
+</div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">桌面版錢包/節點下載</h3>
+    <div class="widget">
+        <a href="https://getmonero.org/downloads" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"></a>
+            <p>目前節點軟體最新版本: v0.14.0.2</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">行動版錢包</h3>
+    <div class="widget">
+        <div><p>Android 版： Monero: Monerujo Wallet</p>
+        <a href="https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img style="width:80%;max-width:400px;" alt="Google Play 立即下載" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg"></a></div>
+        <div><p>Apple iOS 版： Cake Wallet</p>
+        <a href="https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8"><img style="width:80%;max-width:400px;" alt="App Store 下載" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"></a></div>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">試用好專案支持本站</h3>
+    <div class="widget">
+        <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"></a>
+            <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
+    <div class="widget">
+    	<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">即時價格</h3>
+    <div class="widget">
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowtransparency="true" border="0" hidefocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="no"></iframe>
+</div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">XMR常用連結</h3>
+    <div class="widget">
+        <ul>
+        	<dt>區塊瀏覽器</dt>
+            <dd><a href="https://community.xmr.to/explorer/mainnet/" target="_blank" rel="noopener">XMR.to 區塊瀏覽器</a></dd>
+            <dd><a href="https://xmrchain.net/" target="_blank" rel="noopener">XMRchain 區塊瀏覽器</a></dd>
+            <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
+            <dt>兌換服務</dt>
+            <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
+            <dd><a href="https://xmr.to/" target="_blank" rel="noopener">XMR.TO</a> - 將XMR快速兌換至BTC</dd>
+            <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
+            <dt>視覺化資料</dt>
+            <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
+            <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
+        </ul>
+    </div></div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-小秘訣/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-新聞/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/區塊鏈分叉消息/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方新版本釋出/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方消息宣布/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/站務消息/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 10px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/23/2018-Monero-review/">Monero 2018 年發展回顧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/monero-0-14-0-release/">Monero發布新版本v0.14.0更新</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181216/">開發者會議記錄 DevMeeting 20181216</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議記錄 DevMeeting 20181014</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/10/devmeeting-20181007/">開發者會議記錄 DevMeeting 20181007</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <div>
+                <p>如果你覺得這個網站有幫助到你，請考慮贊助我們一點XMR以補貼網站運作的支出<br></p>
+                <p style="color:#FFFFFF"><strong>45XMRtw5de1EYjtsZPuLgmG3vo2n5vW8iLPM9NmT2MSG65vZSCf1cXBgaNQJtxLx45aaFYZJQawERJJV9yuHiLYsCk82j8Z</strong></p>
+                <p>亦可發送至OpenAlias地址: donate.xmr-tw.org</p>
+            </div>
+            <div>
+                <p>&copy;
+                    2019 Monero - Taiwan 正體中文站<br>
+                    本網站內容採用<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+            </div>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/advantage" class="mobile-nav-link">Monero是什麼？</a>
+  
+    <a href="/nodes" class="mobile-nav-link">公共節點(Node)</a>
+  
+    <a href="/xmr-eta" class="mobile-nav-link">區塊鏈動態(XMR-ETA)</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

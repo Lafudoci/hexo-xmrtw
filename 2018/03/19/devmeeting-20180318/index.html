@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101869289-1');
+  </script>
+  
+  <title>開發者會議紀錄 DevMeeting 20180318 | Monero - 台灣正體中文站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="為了讓測試所有新功能的時間更充裕，Monero的發布時間推遲到4月6日附近: https://github.com/monero-project/monero/pull/3424 0.12版版名為”Lithium Luna” 預計會在本周被tag上正式版本號並準備好提供測試   0.12版的重要功能 多重簽名(Multisig) 子地址(SubAddresses) 將預設環簽(Ring)數量從五">
+<meta name="keywords" content="環狀簽名,金鑰映像,Subaddresses,MultiSig,Lithium Luna">
+<meta property="og:type" content="article">
+<meta property="og:title" content="開發者會議紀錄 DevMeeting 20180318">
+<meta property="og:url" content="https://xmr-tw.org/2018/03/19/devmeeting-20180318/index.html">
+<meta property="og:site_name" content="Monero - 台灣正體中文站">
+<meta property="og:description" content="為了讓測試所有新功能的時間更充裕，Monero的發布時間推遲到4月6日附近: https://github.com/monero-project/monero/pull/3424 0.12版版名為”Lithium Luna” 預計會在本周被tag上正式版本號並準備好提供測試   0.12版的重要功能 多重簽名(Multisig) 子地址(SubAddresses) 將預設環簽(Ring)數量從五">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-04-21T13:23:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="開發者會議紀錄 DevMeeting 20180318">
+<meta name="twitter:description" content="為了讓測試所有新功能的時間更充裕，Monero的發布時間推遲到4月6日附近: https://github.com/monero-project/monero/pull/3424 0.12版版名為”Lithium Luna” 預計會在本周被tag上正式版本號並準備好提供測試   0.12版的重要功能 多重簽名(Multisig) 子地址(SubAddresses) 將預設環簽(Ring)數量從五">
+  <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-square310x310logo" src="/images/site/favicons/favicon-310.png">
+  <link rel="apple-touch-icon" href="/images/site/favicons/favicon-180.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/advantage">Monero是什麼？</a>
+        
+          <a class="main-nav-link" href="/nodes">公共節點(Node)</a>
+        
+          <a class="main-nav-link" href="/xmr-eta">區塊鏈動態(XMR-ETA)</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xmr-tw.org"></form>
+      </div>
+    </div>
+    <div id="logo-wrap" class="outer">
+        <a href="/">
+          <img id="logo" src="/images/site/logowspace.png" alt="Monero Taiwan logo">
+        </a>
+      </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="y2018-devmeeting-20180318" class="article article-type-y2018" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/19/devmeeting-20180318/" class="article-date">
+  <time datetime="2018-03-19T13:58:45.000Z" itemprop="datePublished">2018-03-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      開發者會議紀錄 DevMeeting 20180318
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>為了讓測試所有新功能的時間更充裕，Monero的發布時間推遲到4月6日附近: <a href="https://github.com/monero-project/monero/pull/3424" target="_blank" rel="noopener">https://github.com/monero-project/monero/pull/3424</a><ul>
+<li>0.12版版名為”Lithium Luna”</li>
+<li>預計會在本周被tag上正式版本號並準備好提供測試</li>
+</ul>
+</li>
+<li>0.12版的重要功能<ul>
+<li>多重簽名(Multisig)</li>
+<li>子地址(SubAddresses)</li>
+<li>將預設環簽(Ring)數量從五提升到七</li>
+<li>為了對抗ASIC而微調了Proof of Work演算法</li>
+<li>Ledger硬體錢包的初步功能支援</li>
+<li>金鑰映像攻擊緩解措施</li>
+</ul>
+</li>
+<li>官方GUI錢包的暗色系佈景主題應當在本周會完成</li>
+</ul>
+<a id="more"></a>
+<p>以上翻譯來自於紀錄原文: <a href="https://monerobase.com/wiki/DevMeeting_2018-03-18" target="_blank" rel="noopener">https://monerobase.com/wiki/DevMeeting_2018-03-18</a> </p>
+<p>完整會議記錄：<br>1:02 PM @fluffypony&gt; meeting time<br>1:03 PM @fluffypony&gt; 1. Greetings<br>1:03 PM KnifeOfPi&gt; hello!<br>1:03 PM @ArticMine&gt; hi<br>1:03 PM rbrunner&gt; Hoi zäme<br>1:03 PM xmrscott[m]&gt; Salutations<br>1:04 PM @fluffypony&gt; binaryFate luigi1111 luigi1111w smooth hyc moneromooo cryptochangement cslashm dEBRUYNE ErCiccione gingeropolous<br>1:04 PM KnifeOfPi&gt; suraeNoether sarang<br>1:04 PM suraeNoether&gt; howdy~<br>1:04 PM ErCiccione&gt; Hi!<br>1:04 PM cryptochangement&gt; hello<br>1:04 PM medusa_&gt; hi<br>1:05 PM @fluffypony&gt; iDunk: IPGlider JollyMort[m] stoffu NoodleDoodle pigeons redfish whoever else<br>1:05 PM KnifeOfPi&gt; rehrar<br>1:05 PM anonimal&gt; Hi<br>1:05 PM iDunk&gt; Hi<br>1:05 PM dEBRUYNE&gt; hi<br>1:05 PM → +monero (voiced) joined<br>1:05 PM +monero&gt; [monero] anonimal opened pull request #3431: README: add instructions for cloning / submodules (master…README) <a href="https://git.io/vx3cU" target="_blank" rel="noopener">https://git.io/vx3cU</a><br>1:05 PM → ComatoseCarrot joined ← +monero left<br>1:06 PM ComatoseCarrot&gt; Howdy<br>1:07 PM @fluffypony&gt; 2. Brief review of what’s been completed since the previous meeting<br>1:08 PM gingeropolous&gt; hi<br>1:08 PM suraeNoether&gt; I wrote a thing: <a href="https://github.com/b-g-goodell/research-lab/blob/in-prep/publications/bulletins/MRL-0007-multisig/draft/MRL-0007-multisig.pdf" target="_blank" rel="noopener">https://github.com/b-g-goodell/research-lab/blob/in-prep/publications/bulletins/MRL-0007-multisig/draft/MRL-0007-multisig.pdf</a><br>1:08 PM suraeNoether&gt; seekin feedback, especially on proofs<br>1:08 PM KnifeOfPi&gt; a wonderful thing it seems<br>1:08 PM @fluffypony&gt; awesome<br>1:08 PM @fluffypony&gt; also we merged pretty much everything we need for v0.12<br>1:09 PM @fluffypony&gt; so final checks before we tag<br>1:09 PM @fluffypony&gt; I’d imagine we tag tomorrow if all goes well<br>1:09 PM anonimal&gt; #3431?<br>1:09 PM medusa_&gt; so the height got moved by..2 weeks ?<br>1:09 PM anonimal&gt; Not urgent, and anyone cloning the repo will probably be on master anyway.<br>1:09 PM @fluffypony&gt; anonimal: we already branched so you’d have to PR to the branch<br>1:09 PM @fluffypony&gt; medusa_: yes - everyone wanted to push it<br>1:10 PM @fluffypony&gt; I wanted to push it to the anniversary date<br>1:10 PM @fluffypony&gt; but alas<br>1:10 PM @luigi1111&gt; Hey it was my suggestion<br>1:10 PM @fluffypony&gt; it seems luigi1111 and I are the only ones who are serendipitous :-P<br>1:10 PM → +monero (voiced) joined<br>1:10 PM +monero&gt; [monero] anonimal closed pull request #3431: README: add instructions for cloning / submodules (master…README) <a href="https://git.io/vx3cU" target="_blank" rel="noopener">https://git.io/vx3cU</a><br>1:10 PM ← +monero left (<a href="mailto:~monero@coreteam.getmonero.org" target="_blank" rel="noopener">~monero@coreteam.getmonero.org</a>)<br>1:11 PM KnifeOfPi&gt; what happens when people accuse us of procrastination? “march hard fork isn’t in march anymore”<br>1:11 PM @fluffypony&gt; anonimal: lol no leave the master one open too :)<br>1:11 PM @luigi1111&gt; We move fork to anniversary in future<br>1:11 PM @fluffypony&gt; KnifeOfPi: I think this is going to be a permanent change to April / October<br>1:11 PM — anonimal facepalms<br>1:11 PM anonimal&gt; Sorry<br>1:11 PM @fluffypony&gt; yes what luigi1111 said<br>1:11 PM cryptochangement&gt; I see #3424 was merged, so I guess we are pushed back a week now?<br>1:11 PM @fluffypony&gt; cryptochangement: yes<br>1:11 PM @luigi1111&gt; This is a sorta asap fork for pow<br>1:11 PM @luigi1111&gt; Not asap<br>1:11 PM @luigi1111&gt; But soon<br>1:11 PM @ArticMine&gt; Do we have a block number / date?<br>1:11 PM cryptochangement&gt; an extra week isnt going to hurt anybody lol<br>1:12 PM cryptochangement&gt; april 5<br>1:12 PM dEBRUYNE&gt; It’s 9 days actually<br>1:12 PM @luigi1111&gt; Or 11<br>1:12 PM cryptochangement&gt; 1546500 ArticMine<br>1:12 PM gingeropolous&gt; well good thing we can do math<br>1:12 PM +moneromooo&gt; 1546000<br>1:12 PM @luigi1111&gt; Some of us can some of the time<br>1:12 PM → +monero (voiced) joined<br>1:12 PM +monero&gt; [monero] anonimal reopened pull request #3431: README: add instructions for cloning / submodules (master…README) <a href="https://git.io/vx3cU" target="_blank" rel="noopener">https://git.io/vx3cU</a><br>1:12 PM ← +monero left (<a href="mailto:~monero@coreteam.getmonero.org" target="_blank" rel="noopener">~monero@coreteam.getmonero.org</a>)<br>1:12 PM iDunk&gt; 1546000<br>1:12 PM cryptochangement&gt; oops I just noticed that haha<br>1:12 PM @fluffypony&gt; lol<br>1:12 PM @fluffypony&gt; well I guess we really are amateurs after all :-P<br>1:12 PM @fluffypony&gt; so that pretty much covers 3. March hardfork items + code freeze<br>1:13 PM @fluffypony&gt; so I guess 4. Code + ticket discussion / Q &amp; A<br>1:13 PM dEBRUYNE&gt; <a href="https://github.com/monero-project/monero/pull/3424" target="_blank" rel="noopener">https://github.com/monero-project/monero/pull/3424</a> = Title is wrong there fwiw. Code says 1546000<br>1:13 PM rbrunner&gt; Yes, that happens with 24 hour programming shifts<br>1:13 PM rbrunner&gt; just before HF’s<br>1:13 PM rbrunner&gt; .)<br>1:13 PM @fluffypony&gt; dEBRUYNE: “the truth is in the code”<br>1:14 PM +hyc&gt; sourcecode never lies<br>1:14 PM medusa_&gt; so when do we plan to build monerod more or less ?<br>1:14 PM @fluffypony&gt; so I think the next week or two is full on last-minute-brokenness-checks for this extremely-last-minute-fork<br>1:14 PM KnifeOfPi&gt; just to confirm for pinkphloid: to comply with the HF, wallets just need to set min ring size to 7 and sort inputs, right?<br>1:15 PM @fluffypony&gt; medusa_: tag and release in the next day or so<br>1:16 PM → +monero (voiced) joined<br>1:16 PM +monero&gt; [monero] anonimal opened pull request #3432: README: add instructions for cloning / submodules (release-v0.12…README) <a href="https://git.io/vx3cp" target="_blank" rel="noopener">https://git.io/vx3cp</a><br>1:16 PM ← +monero left (<a href="mailto:~monero@coreteam.getmonero.org" target="_blank" rel="noopener">~monero@coreteam.getmonero.org</a>)<br>1:16 PM @luigi1111&gt; KnifeOfPi: yes<br>1:16 PM KnifeOfPi&gt; and for clarity, how is this input-sorting to be done? i’m not familiar<br>1:17 PM @luigi1111&gt; Interpret key image as integer<br>1:17 PM @luigi1111&gt; I think<br>1:17 PM KnifeOfPi&gt; ah, i see<br>1:17 PM +moneromooo&gt; big endian<br>1:17 PM KnifeOfPi&gt; so it’s similar to BIP69?<br>1:17 PM @fluffypony&gt; sort by the recipient’s name<br>1:17 PM @fluffypony&gt; :-P<br>1:17 PM KnifeOfPi&gt; LOL<br>1:17 PM dsc_&gt; I’d like to talk about the GUI black theme redesign<br>1:18 PM @fluffypony&gt; dsc_: please do<br>1:18 PM dsc_&gt; Planning to merge it into master this week - possibly tomorow.<br>1:18 PM dsc_&gt; Since it’s almost finished :P<br>1:19 PM KnifeOfPi&gt; good work !<br>1:19 PM dsc_&gt; I still have a week left of vacation too, so any bugs testers come up with, I could look at.<br>1:19 PM Slack_1&gt; <em>needkovri90 lurks<br>1:19 PM dsc_&gt; ~end update~<br>1:19 PM @fluffypony&gt; we can push the GUI out a little later in the week<br>1:19 PM @fluffypony&gt; to give time for that<br>1:19 PM dsc_&gt; fluffypony: sure<br>1:19 PM cryptochangement&gt; dope<br>1:19 PM cryptochangement&gt; would that then complete you FFS?<br>1:19 PM @fluffypony&gt; rbrunner: what needs to be done on the installer side?<br>1:19 PM dsc_&gt; cryptochangement: Ill complete the FFS when it makes it into the bins<br>1:20 PM medusa_&gt; we have 1 new dll rbrunner, not sure why but it is how it is<br>1:20 PM rbrunner&gt; A few little things. I am working on it.<br>1:20 PM medusa_&gt; its not part of win_deploy helper script yet unfortunately<br>1:20 PM rbrunner&gt; Still have to sort out some DLL hell with my installation<br>1:20 PM rbrunner&gt; to really check<br>1:21 PM rbrunner&gt; libssp-0.dll, I think<br>1:21 PM medusa_&gt; yes!<br>1:21 PM rbrunner&gt; stack protectino related<br>1:21 PM rbrunner&gt; and there are now 5 ICU DLLs, but that’s about it<br>1:22 PM rbrunner&gt; I hope I can finish and push tomorrow<br>1:24 PM ErCiccione&gt; so when code freeze for the GUI? end of next week?<br>1:24 PM @fluffypony&gt; ErCiccione: whenever the GUI workgroup say they’re ready<br>1:25 PM @binaryFate&gt; poor ErCiccione never getting a code freeze date :P<br>1:25 PM KnifeOfPi&gt; lol<br>1:25 PM ErCiccione&gt; ok, i only need few days for 1184<br>1:25 PM medusa_&gt; we got a few more days, depends how the cli release goes too, its dynamic<br>1:26 PM KnifeOfPi&gt; when moon? when lambo? when codefreeze?<br>1:26 PM ErCiccione&gt; yes binaryfate, that was my weekly try :P<br>1:26 PM rbrunner&gt; We are certainly all very “agile” here<br>1:27 PM @fluffypony&gt; moneromooo is our scrum master<br>1:27 PM medusa_&gt; ^^<br>1:28 PM @fluffypony&gt; ok so<br>1:28 PM @fluffypony&gt; 5. Any additional meeting items<br>1:28 PM TheCharlatan&gt; Is there are a reason for keeping the cli dynamic?<br>1:28 PM gingeropolous&gt; i was wondering if we could discuss our release / hard fork schedule?<br>1:28 PM iDunk&gt; I used to build a fully static GUI 1-1.5 years ago.<br>1:28 PM medusa_&gt; no i didnt mean the build TheCharlatan :D just that issues can arise out of nowehere, so the actual date of the dreeze isnt known rly<br>1:29 PM medusa_&gt; sorry im confused<br>1:29 PM iDunk&gt; But, IIRC, the opensource Qt version license forbids statically linking Qt libs.<br>1:29 PM TheCharlatan&gt; lol, if so, bitcoin would operate illegally since years.<br>1:30 PM iDunk&gt; We’d probably need to buy the license.<br>1:30 PM rbrunner&gt; The CLI </em>is<em> statically linked?<br>1:30 PM rbrunner&gt; But not the GUI<br>1:30 PM pigeons&gt; you can build the cli statically linked or link it dynamically to shared libs<br>1:30 PM iDunk&gt; Ah, yes, the cli is static.<br>1:30 PM → doubleyousee23 joined (<a href="mailto:~doubleyou@cpe-72-227-89-58.ne.res.rr.com" target="_blank" rel="noopener">~doubleyou@cpe-72-227-89-58.ne.res.rr.com</a>)<br>1:31 PM @ArticMine&gt; There is no license problem with statically linking to QT libs. The resulting license would be LGPL v3<br>1:31 PM Slack_1&gt; needkovri90&gt; Do we know the status of the Monero Observer and related FFS?<br>1:31 PM anonimal&gt; fluffypony: I don’t want to ruin the icing on the cake of #3429 with #3432. Are more commits expected to come for branch release-v0.12 (like for #3401)?<br>1:31 PM Slack_1&gt; needkovri90&gt; Hasnt been updated for a while, and I link it in the xmrtrader daily threads<br>1:31 PM gingeropolous&gt; basically, it seems we pack a lot into releases. And because of our hard forks, we’ve ended up cutting it close multiple times now, for this that or the other reason. Would there be any benefit to focusing on consensus critical stuff for hard fork releases, and adding soft-fork stuff in between?<br>1:31 PM @fluffypony&gt; anonimal: we can have extra commits to the branch, don’t stress about it<br>1:31 PM Slack_1&gt; needkovri90&gt; If anyone has info, I would like to relay it to the subreddit.<br>1:31 PM KnifeOfPi_&gt; needmoney90: i think monerooby_doo is busy with his family<br>1:31 PM anonimal&gt; k<br>1:31 PM KnifeOfPi_&gt; but monero observer should be back soon<br>1:32 PM @fluffypony&gt; gingeropolous: I think the problem are the unknown unknowns<br>1:32 PM Slack_1&gt; needkovri90&gt; Thanks KoP<br>1:32 PM KnifeOfPi_&gt; you’re welcome<br>1:32 PM TheCharlatan&gt; iDunk static linking qt should be fine as long as the licence used is gpl compatible.<br>1:32 PM @fluffypony&gt; eg. we wouldn’t have picked a fork point in December because of the risk<br>1:33 PM iDunk&gt; I must have misread something then.<br>1:33 PM gingeropolous&gt; fluffypony, true. from my perspective, it would just seem easier if, for instance, all we had to worry about breaking this release was the PoW and ringsize bump<br>1:33 PM gingeropolous&gt; those are the consensus critical things.<br>1:33 PM gingeropolous&gt; unless the sorted input one is too.. which it seems to be<br>1:33 PM @fluffypony&gt; gingeropolous: we could<br>1:34 PM +moneromooo&gt; It’ll just add more work.<br>1:34 PM @fluffypony&gt; we could’ve put out a point release in Jan but there weren’t any critical bug fixes<br>1:34 PM @fluffypony&gt; what moneromooo said<br>1:34 PM gingeropolous&gt; yeah<br>1:34 PM @fluffypony&gt; if we put out a release based off master every month that’s just going to create so much more work<br>1:34 PM gingeropolous&gt; if we had a mid fork release thing, then it’d be a whole nother round of the release work<br>1:34 PM @fluffypony&gt; because then there are bugs and urgent fixes etc. etc.<br>1:35 PM thrmo → bearrorist<br>1:35 PM +moneromooo&gt; The coming release is special due to the unexpected need for a PoW change and key reuse mitigations.<br>1:35 PM +moneromooo&gt; The next one is not expected to have those wrenches thrown at it.<br>1:36 PM @fluffypony&gt; but it’ll have other wrenches :-P<br>1:36 PM gingeropolous&gt; well, i guess the thought is to partition efforts into consensus critical and non-consensus<br>1:36 PM cryptochangement&gt; but there is always more unexpected to expect :P<br>1:36 PM +moneromooo&gt; Maybe… :)<br>1:36 PM gingeropolous&gt; but i guess that happens organically<br>1:37 PM +moneromooo&gt; So what would you do exactly ? Get 0.11.1.0, merge just PoW change and ring size bump, and release that ?<br>1:37 PM +moneromooo&gt; Then… another release with all the other stuff ?<br>1:37 PM gingeropolous&gt; yeah, like 3 months ago<br>1:37 PM gingeropolous&gt; subaddresses… whatever else happened<br>1:38 PM KnifeOfPi_&gt; multisig<br>1:38 PM +moneromooo&gt; 3 months ago would have been useless since we just recently merged the final PoW changes.<br>1:38 PM gingeropolous&gt; no, i mean the soft forky stuff thats been sitting unused by testers<br>1:38 PM gingeropolous&gt; testers i.e., users<br>1:38 PM +moneromooo&gt; Well, if someone wants to test, they don’t need a release.<br>1:38 PM → p0nziph0ne joined (p0nziph0ne@gateway/vpn/privateinternetaccess/p0nziph0ne)<br>1:39 PM gingeropolous&gt; well indeed … but more stuff gets found when more ppl use it<br>1:39 PM TheCharlatan&gt; if tests are run for every pr, ci is run on all platforms and everything can be cross compiled, it should be possible to have higher frequency releases, right?<br>1:39 PM +moneromooo&gt; It’d be nice, but it requires more pony time.<br>1:39 PM @fluffypony&gt; TheCharlatan: that already happens<br>1:39 PM @fluffypony&gt; gingeropolous: but again, 3 months ago it was unstable<br>1:39 PM gingeropolous&gt; simple. clone pony<br>1:39 PM @fluffypony&gt; so you release<br>1:39 PM +moneromooo&gt; Do it.<br>1:40 PM @fluffypony&gt; and then everyone is trying to fix brokenness and merge PRs to master and branch<br>1:40 PM +moneromooo&gt; Dolly the sheep, and not Fluffy the pony…<br>1:40 PM +moneromooo&gt; now</em><br>1:40 PM @fluffypony&gt; I think that a nice cadence is tag-and-release 3 months before forkheight<br>1:41 PM @fluffypony&gt; and then testers have bins and can test<br>1:41 PM KnifeOfPi_&gt; tick-tock<br>1:41 PM KnifeOfPi_&gt; basically<br>1:41 PM iDunk&gt; TheCharlatan: can you make Depends not destructive to the current build system ?<br>1:41 PM @fluffypony&gt; and emergency things like PoW change can be put into the branch<br>1:41 PM +moneromooo&gt; Except… 3 months is a bit much now that we have to poke at PoW.<br>1:41 PM gingeropolous&gt; ^^<br>1:41 PM +moneromooo&gt; That gives evildoers 9 months.<br>1:41 PM cryptochangement&gt; wasn’t the idea of a 3 month code freeze brought up in september? whatever happened to that?<br>1:42 PM gingeropolous&gt; hence, splitting consensus critical from feature stuff<br>1:42 PM +moneromooo&gt; What does that have to do with it…<br>1:42 PM rbrunner&gt; it … melted away?<br>1:42 PM @fluffypony&gt; cryptochangement: we were going to tag and release in December<br>1:42 PM @fluffypony&gt; then we stalled that to make a decision on Bulletproofs<br>1:42 PM @fluffypony&gt; and then the PoW thing happened<br>1:42 PM cryptochangement&gt; ah ok<br>1:42 PM TheCharlatan&gt; iDunk sure, I just messed up some things along the way. Probably commited a Makefile, that I was not supposed to commit.<br>1:42 PM gingeropolous&gt; so stuff just needs to stop happening, and then we’ll be on schedule<br>1:42 PM @fluffypony&gt; it’s an unusual set of circumstances<br>1:43 PM @fluffypony&gt; gingeropolous: lol<br>1:43 PM gingeropolous&gt; i’ll make the PR<br>1:43 PM ⇐ msvb-lab quit (<a href="mailto:~michael@x55b54176.dyn.telefonica.de" target="_blank" rel="noopener">~michael@x55b54176.dyn.telefonica.de</a>) Ping timeout: 256 seconds<br>1:43 PM @fluffypony&gt; but yes<br>1:43 PM gingeropolous&gt; well, just wanted to kick the tires on it.<br>1:43 PM @fluffypony&gt; from this I’d like us to go back to 3mths<br>1:44 PM @binaryFate&gt; “go back” did we ever do it?<br>1:44 PM medusa_&gt; well together with the pint releases, frequency can be quite high<br>1:44 PM @fluffypony&gt; moneromooo: if we merged the PoW changes 3 months before fork point that’s fine, tho<br>1:44 PM @fluffypony&gt; binaryFate: go back to the idea of 3 months I mean<br>1:45 PM @fluffypony&gt; ok we can continue this discussion later, I think we have a solid path forward<br>1:45 PM @fluffypony&gt; 6. Confirm next meeting date/time<br>1:46 PM +moneromooo&gt; You’d want them to be in github for a bit though, so people like schernyk (IIRC) can see it.<br>1:46 PM +moneromooo&gt; So that means PoW changes known before 3 months early.<br>1:46 PM @fluffypony&gt; is everyone ok for next Sunday? the once-a-week cadence is nice until fork<br>1:46 PM @fluffypony&gt; moneromooo: good point<br>1:46 PM @ArticMine&gt; Sure<br>1:46 PM @fluffypony&gt; moneromooo: let’s think about it and figure it out<br>1:46 PM — anonimal ok<br>1:46 PM rbrunner&gt; Ok<br>1:46 PM @fluffypony&gt; thanks for the meeting guys</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2018/03/19/devmeeting-20180318/" data-id="cjuun08js007r6ckgckxcd2ka" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lithium-Luna/">Lithium Luna</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MultiSig/">MultiSig</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Subaddresses/">Subaddresses</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/環狀簽名/">環狀簽名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/金鑰映像/">金鑰映像</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/27/devmeeting-20180422/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          開發者會議紀錄 DevMeeting 20180422
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/19/devmeeting-20180311/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">開發者會議紀錄 DevMeeting 20180311</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+<h3 class="widget-title">Monero Taiwan 正體中文站</h3>
+<div class="widget">
+  <p>本站是由非官方的 Monero (XMR, 門羅幣)愛好者自發性熱血建置，旨在轉貼翻譯專案開發訊息與便利服務以推廣 Monero 在台灣/中文世界的應用普及。</p>
+</div>
+</div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">桌面版錢包/節點下載</h3>
+    <div class="widget">
+        <a href="https://getmonero.org/downloads" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"></a>
+            <p>目前節點軟體最新版本: v0.14.0.2</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">行動版錢包</h3>
+    <div class="widget">
+        <div><p>Android 版： Monero: Monerujo Wallet</p>
+        <a href="https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img style="width:80%;max-width:400px;" alt="Google Play 立即下載" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg"></a></div>
+        <div><p>Apple iOS 版： Cake Wallet</p>
+        <a href="https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8"><img style="width:80%;max-width:400px;" alt="App Store 下載" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"></a></div>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">試用好專案支持本站</h3>
+    <div class="widget">
+        <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"></a>
+            <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
+    <div class="widget">
+    	<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">即時價格</h3>
+    <div class="widget">
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowtransparency="true" border="0" hidefocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="no"></iframe>
+</div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">XMR常用連結</h3>
+    <div class="widget">
+        <ul>
+        	<dt>區塊瀏覽器</dt>
+            <dd><a href="https://community.xmr.to/explorer/mainnet/" target="_blank" rel="noopener">XMR.to 區塊瀏覽器</a></dd>
+            <dd><a href="https://xmrchain.net/" target="_blank" rel="noopener">XMRchain 區塊瀏覽器</a></dd>
+            <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
+            <dt>兌換服務</dt>
+            <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
+            <dd><a href="https://xmr.to/" target="_blank" rel="noopener">XMR.TO</a> - 將XMR快速兌換至BTC</dd>
+            <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
+            <dt>視覺化資料</dt>
+            <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
+            <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
+        </ul>
+    </div></div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-小秘訣/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-新聞/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/區塊鏈分叉消息/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方新版本釋出/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方消息宣布/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/站務消息/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 10px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/23/2018-Monero-review/">Monero 2018 年發展回顧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/monero-0-14-0-release/">Monero發布新版本v0.14.0更新</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181216/">開發者會議記錄 DevMeeting 20181216</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議記錄 DevMeeting 20181014</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/10/devmeeting-20181007/">開發者會議記錄 DevMeeting 20181007</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <div>
+                <p>如果你覺得這個網站有幫助到你，請考慮贊助我們一點XMR以補貼網站運作的支出<br></p>
+                <p style="color:#FFFFFF"><strong>45XMRtw5de1EYjtsZPuLgmG3vo2n5vW8iLPM9NmT2MSG65vZSCf1cXBgaNQJtxLx45aaFYZJQawERJJV9yuHiLYsCk82j8Z</strong></p>
+                <p>亦可發送至OpenAlias地址: donate.xmr-tw.org</p>
+            </div>
+            <div>
+                <p>&copy;
+                    2019 Monero - Taiwan 正體中文站<br>
+                    本網站內容採用<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+            </div>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/advantage" class="mobile-nav-link">Monero是什麼？</a>
+  
+    <a href="/nodes" class="mobile-nav-link">公共節點(Node)</a>
+  
+    <a href="/xmr-eta" class="mobile-nav-link">區塊鏈動態(XMR-ETA)</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

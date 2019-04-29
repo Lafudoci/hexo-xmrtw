@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101869289-1');
+  </script>
+  
+  <title>開發者會議紀錄 DevMeeting 20170709 | Monero - 台灣正體中文站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Mac智慧挖礦(Mac Smart Mining) PR#1936 在OSX Background Mining的幫忙下完成了 ZeroMQ 距離提交到github上不遠了。 JSON PRC跟ZeroMQ的指令可能在初期還會更動。 MRL 開始著手寫打算跟SubAddresses 一起發布的文案 hyc 想要聽聽看各方對於LMDB使用條款改變的想法 Pigeons 開始彙整在Android N">
+<meta name="keywords" content="Mining,LMDB,Subaddresses,FFS,ZeroMQ,手機錢包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="開發者會議紀錄 DevMeeting 20170709">
+<meta property="og:url" content="https://xmr-tw.org/2017/07/16/devmeeting-20170709/index.html">
+<meta property="og:site_name" content="Monero - 台灣正體中文站">
+<meta property="og:description" content="Mac智慧挖礦(Mac Smart Mining) PR#1936 在OSX Background Mining的幫忙下完成了 ZeroMQ 距離提交到github上不遠了。 JSON PRC跟ZeroMQ的指令可能在初期還會更動。 MRL 開始著手寫打算跟SubAddresses 一起發布的文案 hyc 想要聽聽看各方對於LMDB使用條款改變的想法 Pigeons 開始彙整在Android N">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-04-21T13:23:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="開發者會議紀錄 DevMeeting 20170709">
+<meta name="twitter:description" content="Mac智慧挖礦(Mac Smart Mining) PR#1936 在OSX Background Mining的幫忙下完成了 ZeroMQ 距離提交到github上不遠了。 JSON PRC跟ZeroMQ的指令可能在初期還會更動。 MRL 開始著手寫打算跟SubAddresses 一起發布的文案 hyc 想要聽聽看各方對於LMDB使用條款改變的想法 Pigeons 開始彙整在Android N">
+  <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-square310x310logo" src="/images/site/favicons/favicon-310.png">
+  <link rel="apple-touch-icon" href="/images/site/favicons/favicon-180.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/advantage">Monero是什麼？</a>
+        
+          <a class="main-nav-link" href="/nodes">公共節點(Node)</a>
+        
+          <a class="main-nav-link" href="/xmr-eta">區塊鏈動態(XMR-ETA)</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xmr-tw.org"></form>
+      </div>
+    </div>
+    <div id="logo-wrap" class="outer">
+        <a href="/">
+          <img id="logo" src="/images/site/logowspace.png" alt="Monero Taiwan logo">
+        </a>
+      </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="y2017-devmeeting-20170709" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/16/devmeeting-20170709/" class="article-date">
+  <time datetime="2017-07-16T14:30:42.000Z" itemprop="datePublished">2017-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      開發者會議紀錄 DevMeeting 20170709
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><a href="https://github.com/monero-project/monero/pull/1936" target="_blank" rel="noopener">Mac智慧挖礦(Mac Smart Mining) PR#1936</a> 在<a href="https://github.com/monero-project/monero/pull/2055" target="_blank" rel="noopener">OSX Background Mining</a>的幫忙下完成了</li>
+<li><a href="https://github.com/monero-project/monero/pull/2044" target="_blank" rel="noopener">ZeroMQ 距離提交到github上不遠了</a>。 JSON PRC跟ZeroMQ的指令可能在初期還會更動。</li>
+<li>MRL 開始著手寫打算跟<a href="https://github.com/monero-project/monero/pull/2056" target="_blank" rel="noopener">SubAddresses</a> 一起發布的文案</li>
+<li>hyc 想要聽聽看各方對於<a href="https://github.com/monero-project/meta/issues/85" target="_blank" rel="noopener">LMDB使用條款改變</a>的想法</li>
+<li>Pigeons 開始彙整在Android NDK上加入Docker file的事宜</li>
+<li>FFS(論壇資助系統)的重新規劃<ul>
+<li>讓整個流程更明確一點<ul>
+<li>拿超額募款來說好了, 現在超額的部分就流入一般公積金, 準備給以後的FFS計畫使用</li>
+</ul>
+</li>
+<li>對某些計畫來說需要有里程碑不是甚麼好事</li>
+<li>FFS的處理狀況容得下沒資助的人置喙的空間嗎?<ul>
+<li>Mooo 建議說他應該可以寫一個投票平台來確認那些人是有資助的</li>
+</ul>
+</li>
+<li>如果有人有資助, 可是不真的”夠格”討論技術問題呢?</li>
+</ul>
+</li>
+<li>gkruja 提供了一些新開發的Android 錢包的螢幕截圖: <a href="http://imgur.com/a/mluUb" target="_blank" rel="noopener">http://imgur.com/a/mluUb</a></li>
+</ul>
+<a id="more"></a>
+<p>以上翻譯來自於紀錄原文: <a href="https://monerobase.com/wiki/DevMeeting_2017-07-09" target="_blank" rel="noopener">https://monerobase.com/wiki/DevMeeting_2017-07-09</a> </p>
+<p>完整會議記錄<br>fluffypony&gt; 1. Greetings<br>fluffypony&gt; 2. Brief review of what’s been completed since the previous meeting<br>fluffypony&gt; 3. Code + ticket discussion / Q &amp; A<br>fluffypony&gt; 4. Reimagining the FFS (discussion)<br>fluffypony&gt; 5. Any additional meeting items<br>fluffypony&gt; 6. Confirm next meeting date/time<br>fluffypony&gt; going to skip 1 because I think we’re all mostly here<br>fluffypony&gt; 2. Brief review of what’s been completed since the previous meeting<br>fluffypony&gt; loads of stuff, lots of PRs in process and getting close to merge<br>fluffypony&gt; and then the new website of course<br>fluffypony&gt; 3. Code + ticket discussion / Q &amp; A<br>fluffypony&gt; so I’d like to just have a quick step through some PRs that are still in the wings<br>hyc&gt; been getting deluged by readline and new sync commits<br>fluffypony&gt; #1936: any input?<br>moneromooo&gt; It’s marked as do not merge, so I’ve not looked in ages. Not sure whether revler’s still around.<br>hyc&gt; He commented 9 days ago to close it in favor of #2055<br>pero&gt; ^<br>fluffypony&gt; oh I missed that<br>fluffypony&gt; thanks hyc<br>dEBRUYNE&gt; Which is merged already :-P<br>hyc&gt; even better ;)<br>nioc&gt; moneromooo: yes revler is still around<br>fluffypony&gt; ok - 2023 is waiting until after the Sept fork, right? <em> monero (<a href="mailto:~monero@192.30.252.42" target="_blank" rel="noopener">~monero@192.30.252.42</a>) has joined<br>monero&gt; [monero] fluffypony closed pull request #1936: DO NOT MERGE - Mac smart mining (master…smart-mining-mac) <a href="https://git.io/vSmfU" target="_blank" rel="noopener">https://git.io/vSmfU</a> </em> monero (<a href="mailto:~monero@192.30.252.42" target="_blank" rel="noopener">~monero@192.30.252.42</a>) has left<br>moneromooo&gt; Yes.<br>fluffypony&gt; ok<br>fluffypony&gt; #2044: tewinget, there are pending comments<br>fluffypony&gt; maybe we can get this merged sometime in the next century<br>dEBRUYNE&gt; tewinget commented on that here fwiw <em> asshat360 has quit (Read error: Connection reset by peer)<br>dEBRUYNE&gt;<br>tewinget&gt; dternyak: seems reasonable. it’d have to be on a case-by-case basis as some other things are ramping up to keep me a little busier, but for now I plan to have all the suggestions / notes from moneromooo addressed by the end of today.<br>moneromooo&gt; What concerns me is that there were misc commits adding/changing RPC, and some of the stuff (ie, getinfo) is kinda reverting those. </em> asshat360 (<a href="mailto:~AndChat39@cpe-98-151-12-203.hawaii.res.rr.com" target="_blank" rel="noopener">~AndChat39@cpe-98-151-12-203.hawaii.res.rr.com</a>) has joined<br>nioc&gt; fluffypony: tewinget said he would deal with it by the end of the day<br>moneromooo&gt; It might be a pita to go through everything to check all is ported. <em> vtnerd_ has quit (Ping timeout: 276 seconds)<br>fluffypony&gt; moneromooo: we’ll run both JSON RPC and 0MQ in parallel for the moment anyway<br>fluffypony&gt; so that should reveal it<br>fluffypony&gt; #2056: needs to be backed up by a final MRL write-up </em> vtnerd_ (<a href="mailto:~holoirc@173-23-171-240.client.mchsi.com" target="_blank" rel="noopener">~holoirc@173-23-171-240.client.mchsi.com</a>) has joined<br>fluffypony&gt; which I believe is WIP<br>fluffypony&gt; kenshi84: ^^<br>knaccc&gt; i.e. 2056 should not be merged prior to an MRL being published?<br>_Slack&gt;<br>jollymort&gt; speaking of which, wouldn’t it be simpler to c&amp;p the write-up from #2056 into a .md file?<br>_Slack&gt;<br>jollymort&gt; i mean, it’s all there; but not in fancy TEX format<br>fluffypony&gt; @jollymort nobody wants to review it unless it’s in fancy TeX :-P<br>hyc&gt; phototypesetter-ready copy or go home<br>fluffypony&gt; lol<br>fluffypony&gt; ok everything else is still WIP<br>hyc&gt; Is this a good time to mention, <a href="https://github.com/monero-project/meta/issues/85" target="_blank" rel="noopener">https://github.com/monero-project/meta/issues/85</a> still hasn’t gotten much feedback<br>hyc&gt; which is a bit surprising, considering the intensity of the IRC chat<br>ArticMine&gt; Yes this needs feedback<br>ArticMine&gt; Project licensing<br>moneromooo&gt; Those can get merged: 2126 2131 2132 2133 (if diff agrees) 2135 2140 2142<br>moneromooo&gt; Some newer ones are also simple, but too new I guess.<br>fluffypony&gt; moneromooo: tks<br>fluffypony&gt; hyc: cross-post it to Reddit maybe?<br>moneromooo&gt; 2138 too if someone is qualified to review (I am not).<br>fluffypony&gt; ok<br>hyc&gt; hmm. reluctant to face the low signal-to-noise ratio on reddit with that ticket, but perhaps that’s the only way to get eyes on it<br>fluffypony&gt; anything else on this or can we move ahead?<br>moneromooo&gt; I’d like to get guinea pigs for <a href="https://github.com/moneromooo-monero/bitmonero/tree/sync" target="_blank" rel="noopener">https://github.com/moneromooo-monero/bitmonero/tree/sync</a> :)<br>moneromooo&gt; It’s mostly working fine (pending iDunk’s latest test).<br>iDunk&gt; …ahem…<br>moneromooo&gt; :/<br>fluffypony&gt; lol<br>moneromooo&gt; Well, maybe later.<br>hyc&gt; would be nice to include a script to monitor network stats<br>vtnerd_&gt; moneromooo : I have a review in progress of that branch that I hope to get out <em> iDunk envisions more #2149 commits :)<br>moneromooo&gt; Ah, I’ve got to squash before it’s reviewable.<br>hyc&gt; and quantify difference in bandwidth usage<br>vtnerd_&gt; ah so its not reviewable?<br>vtnerd_&gt; oh you mean squash the commit history<br>hyc&gt; the commit msgs are all so enlightening so far ;)<br>moneromooo&gt; Well, if you look at the diff itself, it should be. But it’s a lot of shitty commits atm.<br>moneromooo&gt; hyc: there’s a new sync_info command which kinda does that.<br>hyc&gt; oh, cool<br>hyc&gt; but you’d also need that cmd in a before- patch, for comparison<br>mattcode&gt; can we frame the commit messages from #2149 and put them in a gallery?<br>moneromooo&gt; Ah, it doesn’t really apply before the patch. I expect people would just time a sync before and after.<br>hyc&gt; :D<br>hyc&gt; I think we could just grab ifconfig stats or something instead.<br>hyc&gt; but whatever<br>moneromooo&gt; I used iftop.<br>moneromooo&gt; A bit handwavy though.<br>moneromooo&gt; But at some point after startup, it’s the CPU that’s the bottleneck.<br>pero&gt; nethogs does it per process<br>hyc&gt; ok. that’s a good position to be in then. </em> LIndvidu_ (<a href="mailto:~LIndividu@modemcable166.154-177-173.mc.videotron.ca" target="_blank" rel="noopener">~LIndividu@modemcable166.154-177-173.mc.videotron.ca</a>) has joined<br>fluffypony&gt; ok<br>fluffypony&gt; moving on?<br>iDunk&gt; Damn monero users. It would sync in no time if only there weren’t any transactions.<br>hyc&gt; Who is familiar with Docker to review #2138?<br>hyc&gt; obviously I’ve already done those steps manually, to build Android binaries. <em> LIndividu has quit (Ping timeout: 255 seconds)<br>pigeons&gt; I’ll take a look, but I find new docker oddities and workarounds daily<br>hyc&gt; cool<br>tewinget&gt; oh dear, late. sorry about that.<br>hyc&gt; ok I guess that’s it for open tickets<br>tewinget&gt; on my laptop; idk if I ever checked if I got my irc set up right on here; hyc ACK if you see this.<br>hyc&gt; tewinget yes?<br>tewinget&gt; kk<br>fluffypony&gt; ok<br>fluffypony&gt; 4. Reimagining the FFS (discussion)<br>moneromooo&gt; So… moving on… luigi1111, any news about N-1/N multisig theory ? :)<br>moneromooo&gt; nevermind<br>fluffypony&gt; so </em> rbrunner (<a href="mailto:~rbrunner@dyn-cable-customer.208.38.138.91.yetnet.ch" target="_blank" rel="noopener">~rbrunner@dyn-cable-customer.208.38.138.91.yetnet.ch</a>) has joined<br>fluffypony&gt; the FFS has worked fine the last few years, but we need to formalise some of the processes<br>fluffypony&gt; for eg. what do we do with over-funding? currently we put it into the general fund and then use that for future FFS proposals<br>fluffypony&gt; but I’m open to suggestions<br>_Slack&gt;<br>rehrar&gt; I wrote something up for it, and it had mixed feedback. <a href="https://github.com/rehrar/meta/tree/master/FFS" target="_blank" rel="noopener">https://github.com/rehrar/meta/tree/master/FFS</a><br>moneromooo&gt; Maybe there could be a running “monero core team” ffs, with<br>pinky up&gt; 1 million monero limit…<br>_Slack&gt;<br>rehrar&gt; A good deal of feedback said it was too formal, and in the Terms the Conclusion should go at the top as an Intro instead, but yeah. Any feedback is welcome. :)<br>hyc&gt; does that mean the next FFS proposal that gets submitted automatically gets a head start?<br>fluffypony&gt; hyc: we give every FFS proposals a head start anyway<br>hyc&gt; ok <em> m8tion has quit (Ping timeout: 260 seconds)<br>fluffypony&gt; also pero had some thoughts<br>fluffypony&gt; iirc on time frames and so on<br>pero&gt; hmmm yea i could look at this<br>pero&gt; timeframes and scope i’d like to see more detailed in my SOWs than i have seen so far in the FFSs </em> papa123 (2edf8002@gateway/web/freenode/ip.46.223.128.2) has joined <em> tewinget runs and hides<br>pero&gt; ;)<br>pero&gt; it’s really hard to manage work if these things arent defined<br>pero&gt; and mediation/dispute resolution is impossible<br>pero&gt; what i was thinking really was to have some sort of template for prospective fundraisers<br>gkruja&gt; maybe have 2 week sprints where the devs report there work so people know thats its being worked on actively even though the time frame is pushed back due to difficulties that could come up?<br>tewinget&gt; “sprints” …<br>pero&gt; -_-<br>moneromooo&gt; You run if you want dude. I’m coding.<br>tewinget&gt; gkruja, other than the term “sprints” which has a bit of a negative connotation from what I can tell, that doesn’t seem like a bad idea.<br>pero&gt; maybe 2 weeks isnt that bad to have it coincide with the dev meetings - but not all FFS work is dev wwork<br>pero&gt; yea precisely tewinget<br>fluffypony&gt; milestones are the reporting periods<br>mattcode&gt; The Monero Enterprise Alliance needs to promote agility in the workplace, so we should all sprint every two weeks.<br>fluffypony&gt; mattcode: hence the creation of MEAT<br>tewinget&gt; we know how fluffypony loves his MEAT.<br>pero&gt; well i typically insert checkpoints before milestones in projects<br>fluffypony&gt; the problem with milestones is that they aren’t always backed up by timeframes<br>pero&gt; so i know if my milestones arent going to be hit<br>pero&gt; and something can be actively done about it<br>fluffypony&gt; pero: that might work, but might also be too formal, we need to balance it with it being accessible to part-time contributors<br>hyc&gt; and what are our choices of things that can be done about it? Should we have a list of those spelled out?<br>pero&gt; usually solutions arent that clear cut ;p<br>pero&gt; might just be a matter of documenting a pattern of missed deadlines<br>gkruja&gt; the progress updates could be determined on a per project basis<br>endogenic&gt; better would be to list potential problems<br>endogenic&gt; answers w/o the problems are sure not to match </em> tewinget runs and hides again<br>tewinget&gt; &gt;_&gt;<br>pero&gt; ;p<br>_Slack&gt;<br>rehrar&gt; In my write up, the contract that was funded is the active contract, and if a change needs to be made for reasons then it needs to be brought before the community where the reasons for change and the proposed changes are brought up, and the community can decide whether it is acceptable or not.<br>fluffypony&gt; rehrar: but then where’s the forum for that? the dev meetings?<br>_Slack&gt;<br>rehrar&gt; Or community meeting<br>_Slack&gt;<br>rehrar&gt; Whichever is more appropriate<br>_Slack&gt;<br>rehrar&gt; Dev meeting for coding things, community for non-coders things<br>pero&gt; well the missed deadline example is from ‘real world’ tewinget … usually you need a documented pattern like that if you want to sever a contract and fire someone<br>pero&gt; bring on a new resource/vendor<br>fluffypony&gt; yeah true, I think the dev workgroup is better suited to analysing whether something is acceptable or not<br>_Slack&gt;<br>rehrar&gt; And as long as it’s announced that a decision will be made in the upcoming meeting well beforehand, there should be no complaints that someone wasn’t able to be present to vote.<br>endogenic&gt; voting is a tricky concept<br>moneromooo&gt; OTOH, decision ought to be in the hands of the donators for that particular project. Maybe I need to code some voting thing where one can prove they paid to a ffs…<br>pero&gt; another thing with better defined scope/schedule/budget<br>_Slack&gt;<br>rehrar&gt; And that’s a good point Moneromooo, should a person who didn’t donate have any sway in the vote?<br>pero&gt; is that we can manage what happens when ‘contractors’ go over budget<br>pero&gt; tweinget and rehrar surely went much over what they estimated<br>endogenic&gt; i don’t think voting should be used, personally, unless it’s limited to people who are actually qualified<br>pero&gt; and unhappy resources are poorly performing resources from my experience<br>_Slack&gt;<br>rehrar&gt; I did?<br>ArticMine&gt; Yes but should it be donators overall or donators to a specific FFS?<br>iDunk&gt; When I donated to moneromooo’s latest FFS, I was late and he was already funded. I donated anyway and wished I had a way to direct the donation to him anyway.<br>ArticMine&gt; I mean we are putting general funds into these<br>endogenic&gt; we only need to resort to voting in the absence of being able to determine what the problem actually is<br>endogenic&gt; in any given case<br>_Slack&gt;<br>rehrar&gt; Can we vote via masternode?<br>endogenic&gt; genius<br>fluffypony&gt; lol<br>moneromooo&gt; I didn’t say anything becuse I am this biased, but Alice donating to Bob’s clearly shows the intent.<br>fluffypony&gt; soon™<br>moneromooo&gt; *thus<br>pero&gt; so the FFS should have an ability or mechanism for the contractor to demonstrate a need for increased budget as well<br>pero&gt; and the excess donations can be used partly for this ‘contingency fund’<br>endogenic&gt; one problem is that it will be difficult to achieve consensus on what the problem is if some people who are voting have an interest in people not agreeing that such a thing is a problem<br>_Slack&gt;<br>rehrar&gt; Maybe we can tackle this in Community Meeting too.<br>endogenic&gt; so there needs to be some kind of standard about what is more important - maintaining those interests, or the solution to the actual problems<br>fluffypony&gt; pero: increased budget = new proposal<br>hyc&gt; dunno. as I see it, FFS means you pitch a flat rate for a project. Then how you manage your time is your own business, but there’s no such thing as a budget overrun<br>tewinget&gt; pero: on that note, I had trouble deciding originally for the zmq thing whether to do hourly milestones or progress milestones. I think requiring both might be a good idea. Either one can be the milestones for payouts, but the other should be tracked for progress as well imo. * Lloydimiller4 (~Lloydimil@unaffiliated/lloydimiller4) has joined<br>tewinget&gt; I’m just going off of “what would I do differently”.<br>moneromooo&gt; FTR, the kovri meeting is just starting too.<br>hyc&gt; ah we need to wrap this up then * lithiumpt (<a href="mailto:~lithiumpt@6530.hostserv.eu" target="_blank" rel="noopener">~lithiumpt@6530.hostserv.eu</a>) has joined<br>gkruja&gt; if that’s it then i can post my small gallery again for you guys and all the nice people on Reddit to see<br>gkruja&gt; <a href="http://imgur.com/a/mluUb" target="_blank" rel="noopener">http://imgur.com/a/mluUb</a><br>moneromooo&gt; I’ll still be around in an hour :)<br>moneromooo&gt; (to prod luigi, arf arf)<br>endogenic&gt; see y’all again in 2 weeks?<br>luigi1111&gt; making lunch :-)<br>tewinget&gt; I’ll be out cold in like 5 minutes. I’ll update sometime tonight (well, tomorrow morning/early afternoon probably for you EU folks – I seem to be on like GMT - 10 as far as sleep goes)<br>fluffypony&gt; yup<br>fluffypony&gt; two weeks™</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/07/16/devmeeting-20170709/" data-id="cjuun08gl00516ckgaj4alpvb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FFS/">FFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LMDB/">LMDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mining/">Mining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Subaddresses/">Subaddresses</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ZeroMQ/">ZeroMQ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手機錢包/">手機錢包</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/20/monero-ring-signatures/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Monero 技術介紹 (二) – 環狀簽名
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/12/monero-ringct-will-rise/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Monero的預設環簽交易(RingCT)大小將調升</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+<h3 class="widget-title">Monero Taiwan 正體中文站</h3>
+<div class="widget">
+  <p>本站是由非官方的 Monero (XMR, 門羅幣)愛好者自發性熱血建置，旨在轉貼翻譯專案開發訊息與便利服務以推廣 Monero 在台灣/中文世界的應用普及。</p>
+</div>
+</div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">桌面版錢包/節點下載</h3>
+    <div class="widget">
+        <a href="https://getmonero.org/downloads" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"></a>
+            <p>目前節點軟體最新版本: v0.14.0.2</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">行動版錢包</h3>
+    <div class="widget">
+        <div><p>Android 版： Monero: Monerujo Wallet</p>
+        <a href="https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img style="width:80%;max-width:400px;" alt="Google Play 立即下載" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg"></a></div>
+        <div><p>Apple iOS 版： Cake Wallet</p>
+        <a href="https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8"><img style="width:80%;max-width:400px;" alt="App Store 下載" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"></a></div>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">試用好專案支持本站</h3>
+    <div class="widget">
+        <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"></a>
+            <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
+    <div class="widget">
+    	<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">即時價格</h3>
+    <div class="widget">
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowtransparency="true" border="0" hidefocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="no"></iframe>
+</div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">XMR常用連結</h3>
+    <div class="widget">
+        <ul>
+        	<dt>區塊瀏覽器</dt>
+            <dd><a href="https://community.xmr.to/explorer/mainnet/" target="_blank" rel="noopener">XMR.to 區塊瀏覽器</a></dd>
+            <dd><a href="https://xmrchain.net/" target="_blank" rel="noopener">XMRchain 區塊瀏覽器</a></dd>
+            <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
+            <dt>兌換服務</dt>
+            <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
+            <dd><a href="https://xmr.to/" target="_blank" rel="noopener">XMR.TO</a> - 將XMR快速兌換至BTC</dd>
+            <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
+            <dt>視覺化資料</dt>
+            <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
+            <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
+        </ul>
+    </div></div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-小秘訣/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-新聞/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/區塊鏈分叉消息/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方新版本釋出/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方消息宣布/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/站務消息/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 10px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/23/2018-Monero-review/">Monero 2018 年發展回顧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/monero-0-14-0-release/">Monero發布新版本v0.14.0更新</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181216/">開發者會議記錄 DevMeeting 20181216</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議記錄 DevMeeting 20181014</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/10/devmeeting-20181007/">開發者會議記錄 DevMeeting 20181007</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <div>
+                <p>如果你覺得這個網站有幫助到你，請考慮贊助我們一點XMR以補貼網站運作的支出<br></p>
+                <p style="color:#FFFFFF"><strong>45XMRtw5de1EYjtsZPuLgmG3vo2n5vW8iLPM9NmT2MSG65vZSCf1cXBgaNQJtxLx45aaFYZJQawERJJV9yuHiLYsCk82j8Z</strong></p>
+                <p>亦可發送至OpenAlias地址: donate.xmr-tw.org</p>
+            </div>
+            <div>
+                <p>&copy;
+                    2019 Monero - Taiwan 正體中文站<br>
+                    本網站內容採用<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+            </div>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/advantage" class="mobile-nav-link">Monero是什麼？</a>
+  
+    <a href="/nodes" class="mobile-nav-link">公共節點(Node)</a>
+  
+    <a href="/xmr-eta" class="mobile-nav-link">區塊鏈動態(XMR-ETA)</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

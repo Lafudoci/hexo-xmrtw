@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101869289-1');
+  </script>
+  
+  <title>開發者會議紀錄 DevMeeting 20171203 | Monero - 台灣正體中文站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MRL 已有可運作的多筆交易輸出的bulletproofs的java測試程式碼了 目前正在轉換為C++的版本(不包含多筆輸出的部分) 此技術對於手續費架構的影響也在研究中(輸出筆數若很大量可能會造成DoS) 單筆輸出的bulletproofs大小約略是704bytes，雙筆輸出則是768bytes左右。而依照目前門羅幣現行的版本，單筆輸出的大小是6k，雙筆輸出則是12k。 多數的bulletpr">
+<meta name="keywords" content="BulletProofs,ZeroMQ,MultiSig">
+<meta property="og:type" content="article">
+<meta property="og:title" content="開發者會議紀錄 DevMeeting 20171203">
+<meta property="og:url" content="https://xmr-tw.org/2017/12/05/devmeeting-20171203/index.html">
+<meta property="og:site_name" content="Monero - 台灣正體中文站">
+<meta property="og:description" content="MRL 已有可運作的多筆交易輸出的bulletproofs的java測試程式碼了 目前正在轉換為C++的版本(不包含多筆輸出的部分) 此技術對於手續費架構的影響也在研究中(輸出筆數若很大量可能會造成DoS) 單筆輸出的bulletproofs大小約略是704bytes，雙筆輸出則是768bytes左右。而依照目前門羅幣現行的版本，單筆輸出的大小是6k，雙筆輸出則是12k。 多數的bulletpr">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-04-21T13:23:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="開發者會議紀錄 DevMeeting 20171203">
+<meta name="twitter:description" content="MRL 已有可運作的多筆交易輸出的bulletproofs的java測試程式碼了 目前正在轉換為C++的版本(不包含多筆輸出的部分) 此技術對於手續費架構的影響也在研究中(輸出筆數若很大量可能會造成DoS) 單筆輸出的bulletproofs大小約略是704bytes，雙筆輸出則是768bytes左右。而依照目前門羅幣現行的版本，單筆輸出的大小是6k，雙筆輸出則是12k。 多數的bulletpr">
+  <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-square310x310logo" src="/images/site/favicons/favicon-310.png">
+  <link rel="apple-touch-icon" href="/images/site/favicons/favicon-180.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/advantage">Monero是什麼？</a>
+        
+          <a class="main-nav-link" href="/nodes">公共節點(Node)</a>
+        
+          <a class="main-nav-link" href="/xmr-eta">區塊鏈動態(XMR-ETA)</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xmr-tw.org"></form>
+      </div>
+    </div>
+    <div id="logo-wrap" class="outer">
+        <a href="/">
+          <img id="logo" src="/images/site/logowspace.png" alt="Monero Taiwan logo">
+        </a>
+      </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="y2017-devmeeting-20171203" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/05/devmeeting-20171203/" class="article-date">
+  <time datetime="2017-12-04T16:03:21.000Z" itemprop="datePublished">2017-12-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      開發者會議紀錄 DevMeeting 20171203
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>MRL 已有可運作的多筆交易輸出的bulletproofs的java測試程式碼了<ul>
+<li>目前正在轉換為C++的版本(不包含多筆輸出的部分)</li>
+<li>此技術對於手續費架構的影響也在研究中(輸出筆數若很大量可能會造成DoS)</li>
+<li>單筆輸出的bulletproofs大小約略是704bytes，雙筆輸出則是768bytes左右。而依照目前門羅幣現行的版本，單筆輸出的大小是6k，雙筆輸出則是12k。</li>
+<li>多數的bulletproofs在測試時平均大小約為2.2k</li>
+<li>bulletproofs可能會包含於門羅幣的2018九月硬分叉</li>
+<li>供測試網路使用的版本可能會在一周內完成</li>
+</ul>
+</li>
+<li>為了準備發布新版本，程式碼將會在本月(2017十二月)底凍結</li>
+<li>Surae Noether 的multiSig植入工作已經差不多完成檢查</li>
+<li>程式碼凍結時預計會包含到multiSig (因此multisig也會出現在下一發布版本中)<ul>
+<li>若有開發者對multiSig的開發方向和程式碼有興趣，<strong>現在是最好的時機</strong>到github上看看</li>
+</ul>
+</li>
+<li>ZeroMQ(0MQ) 也預計會出現在下一個版本中，但此刻還有缺一些功能</li>
+<li>依然在研究是否可以把門羅幣的亂數生產器(Random Number Generator)換成比特幣用的版本</li>
+</ul>
+<a id="more"></a>
+<p>以上翻譯來自於紀錄原文: <a href="https://monerobase.com/wiki/DevMeeting_2017-12-03" target="_blank" rel="noopener">https://monerobase.com/wiki/DevMeeting_2017-12-03</a> </p>
+<p>完整會議記錄：<br>fluffypony&gt; 1. Greetings<br>fluffypony&gt; 2. Brief review of what’s been completed since the previous meeting<br>fluffypony&gt; 3. Code + ticket discussion / Q &amp; A<br>fluffypony&gt; 4. Any additional meeting items<br>fluffypony&gt; 5. Confirm next meeting date/time<br>fluffypony&gt; so 1. Greetings<br>fluffypony&gt; hi<br>ArticMine&gt; Hi<br>iDunk&gt; o/<br>fluffypony&gt; luigi1111 (if you’re back) / smooth / hyc / moneromooo etc.<br>moneromooo&gt; here<br>gingeropolous&gt; etc here <em> hotoatmeal watching </em> WWW-XMRTalk-Org| (b84bd44d@gateway/web/cgi-irc/kiwiirc.com/ip.184.75.212.77) has joined<br>fluffypony&gt; 2. Brief review of what’s been completed since the previous meeting<br>Slack_3&gt;<br>serhack&gt; hi :slightly_smiling_face:<br>fluffypony&gt; lots of stuff<br>sarang&gt; MRL has working Java test code for complete multi-output bulletproofs<br>sarang&gt; It’s being ported over to C++<br>moneromooo&gt; (not the multi output one)<br>sarang&gt; The Java part is complete<br>moneromooo&gt; Sorry, I meant just about the port ^_^<br>sarang&gt; Discussions are ongoing about if/how the fee structure would be modified to prevent large-output txn DoS<br>fluffypony&gt; what’s wrong with per-byte fees?<br>sarang&gt; You can load a txn with tons of outputs<br>sarang&gt; but verification is linear in the # of outputs<br>dEBRUYNE&gt; fluffypony: verification is linear, whilst size is log<br>dEBRUYNE&gt; basically<br>sarang&gt; So for low fees you can force the network to verify<br>fluffypony&gt; ah ok, makes sense<br>sarang&gt; So we need to incentivize the use of aggregate BPs while basically scaling the fee to the number of outputs etc.<br>sarang&gt; But things are looking good<br>sarang&gt; Verification is still quite efficient<br>sarang&gt; and with the multi-output setup, space savings are unreal<br>moneromooo&gt; In fact, the per byte fee needs to be done first, as per kB is way too coarse for this.<br>sarang&gt; Yeah a single output BP is about 704 bytes, while a 2-output BP is something like 768 bytes<br>sarang&gt; (including commitments)<br>sarang&gt; it’s just too damn good<br>fluffypony&gt; nice<br>dEBRUYNE&gt; For clarification, a single output is currently ~ 6 kB, whereas a 2-output is ~ 12 kB <em> hotoatmeal was about to ask<br>sarang&gt; So we’ll continue moving forward with porting and testing<br>manifest&gt; serhack here?<br>dEBRUYNE&gt; A typical Monero transaction has 2 ins + 2 outs<br>Slack_3&gt;<br>serhack&gt; yep manifest<br>manifest&gt; i was wondering who was the m8 that was gonna work on the go-library since i started on it myself a little bit swell<br>fluffypony&gt; dEBRUYNE: this would also be a major cost-saving for pool payments<br>fluffypony&gt; manifest: we’re in a meeting<br>sarang&gt; For reference, the size of an M-output BP is 32</em>(2*log(64*M)+9) bytes (this doesn’t count the amount commitments)<br>sarang&gt; add 32 bytes for each of the M amount commitments if you want to include them<br>sarang&gt; (log is base 2)<br>Slack_3&gt;<br>rehrar&gt; manifest you can hop on mattermost.getmonero.org. Serhack is also there and you guys can PM and chat so as not to disrupt the meeting. Thanks. :)<br>ArticMine&gt; I have to give some thought to the fees to deal with the verification issue<br>fluffypony&gt; ok so beyond BP is there anything else worth noting?<br>sarang&gt; We do require a power of 2 in the # of outputs <em> Gdhhyfjjs467 (adf42c28@gateway/web/cgi-irc/kiwiirc.com/ip.173.244.44.40) has joined<br>pigeons&gt; So sometimes you just create an additional change output, or how do you cause always a power of 2?<br>sarang&gt; We’ll need to either pad with dummy outputs or split into power-of-2 proofs<br>ArticMine&gt; Split the change into two tx </em> WWW-XMRTalk-Org| has quit (Quit: <a href="http://www.kiwiirc.com/" target="_blank" rel="noopener">http://www.kiwiirc.com/</a> - A hand crafted IRC client)<br>pigeons&gt; OK<br>sarang&gt; The dummy output doesn’t need to actually represent anything<br>sarang&gt; It just needs to be there for the proof<br>sarang&gt; It can be amount 0<br>ArticMine&gt; that will work also<br>sarang&gt; Anyway, that’s my 3 cents<br>luigi1111&gt; Better to split<br>luigi1111&gt; Space is cheap gp<br>luigi1111&gt; Cpu is expensive<em><br>ArticMine&gt; We will have to price cpu<br>moneromooo&gt; There’s a possible optimization for “filler” outs AIUI.<br>luigi1111&gt; Probably not as good as not using them :)<br>sarang&gt; There aren’t any security proofs for a non-power-of-2 proof<br>moneromooo&gt; I was led to think it was not inherent in the scheme, though ?<br>sarang&gt; It is<br>moneromooo&gt; aw…<br>sarang&gt; At least for right now<br>sarang&gt; There’s a recursive step that split arrays in half<br>ArticMine&gt; The issue I see is that the penalty only prices space<br>sarang&gt; The authors of the paper are looking into a generalization, but it doesn’t exist yet<br>luigi1111&gt; That’s interesting<br>fluffypony&gt; ok so<br>fluffypony&gt; anything else from the last two weeks worth noting?<br>sarang&gt; suraeNoether is completing review for multisig<br>sarang&gt; He is unable to be here today </em> amiuhle (<a href="mailto:~amiuhle@206.223.178.27" target="_blank" rel="noopener">~amiuhle@206.223.178.27</a>) has joined<br>Gdhhyfjjs467&gt; Has a code freeze date for the next for been set yet?<br>fluffypony&gt; Gdhhyfjjs467: yeah we’ll be branching towards the end of the month<br>fluffypony&gt; assuming our comfort levels are ok<br>Slack_3&gt;<br>rehrar&gt; This was discussed briefly in MRL channel with the idea that if BPs are not too far off, would it be worth delaying the next hard fork by a couple months so it can be in?<br>dEBRUYNE&gt; The plan is to include multisig right?<br>dEBRUYNE&gt; ^ fluffypony<br>luigi1111&gt; Yes<br>fluffypony&gt; no need to delay the hard fork<br>luigi1111&gt; I don’t think the upcoming fork does anything useful though<br>luigi1111&gt; So there’s that<br>fluffypony&gt; if BP is ready it’ll go into the Sept fork<br>dEBRUYNE&gt; Should we fork if there’s nothing to fork for?<br>luigi1111&gt; Who knows ^_^<br>fluffypony&gt; luigi1111: consistency, then<br>fluffypony&gt; well, that’s what we committed to with the fork schedule<br>fluffypony&gt; “even if it’s just bumping the block version number”<br>dEBRUYNE&gt; Sure, but didn’t we also discuss slowing things down once the ecosystem got bigger?<br>moneromooo&gt; We did not commit to an exact fork schedule.<br>luigi1111&gt; And who is this we :)<br>moneromooo&gt; I, at least, did not :P<br>hotoatmeal&gt; does the wallet release schedule track the protocol fork schedule exactly?<br>hotoatmeal&gt; or do they have different cadences<br>moneromooo&gt; The wallet needs to update for a fairly large subset of consensus changes.<br>pigeons&gt; the wallet-cli and wallet-rpc are included with the daemon release that supports the fork<br>moneromooo&gt; So it’s convenient to release at the same time.<br>fluffypony&gt; dEBRUYNE: I don’t think we’re at a point where we can go to annual<br>moneromooo&gt; Besides, the wallet and daemon rely on the same libs.<br>Slack_3&gt;<br>rehrar&gt; Isn’t ZMQ also in the new release? Or has that been there for a while now?<br>fluffypony&gt; yes ZMQ is in the new release<br>moneromooo&gt; There’s some of it in, but some of it’s still missing.<br>pigeons&gt; there is some support for zmq over rpc, and more is comming, like tx/block notify and some changes to the existing zmq rpc <em> cialu has quit (Ping timeout: 240 seconds)<br>pigeons&gt; \</em>rpc over zmq<br>hotoatmeal&gt; moneromooo: yeah, mainly thinking about when I need to spend time to get those two memwipe patches (and the third I haven’t written yet) reviewed/merged<br>pigeons&gt; the notify is what the people i hear from are waiting for, and tewinget told me a few weeks ago he’s got the basics worked out<br>Slack_3&gt;<br>rehrar&gt; Are we still waiting on him for stuff?<br>moneromooo&gt; There’s a patch waiting on changes IIRC.<br>moneromooo&gt; (for 0mq)<br>Slack_3&gt;<br>rehrar&gt; *sigh<em> tewinget, can you please get this stuff done? Seriously.<br>moneromooo&gt; Especially as I think some of the large pool speedups were lost.<br>moneromooo&gt; (not 100% sure)<br>hotoatmeal&gt; is there a way to detect that the network has forked, and your client hasn’t gone with it?<br>moneromooo&gt; Kinda.<br>hotoatmeal&gt; my local daemon got left behind on the last one, because I forgot to update<br>fluffypony&gt; you can make an educated guess<br>hotoatmeal&gt; cue colorful headscratching<br>moneromooo&gt; Current daemon should moan if it sees blocks with a higher version than what it knows about.<br>fluffypony&gt; and there’s auto-update records that notify<br>moneromooo&gt; The block verison thing is a bit vulnerable to someone mining a bad block on purpose to make you think there’s been a fork though.<br>fluffypony&gt; yeah<br>moneromooo&gt; Losing 10 monero in the process or whatever it is :)<br>fluffypony&gt; ok let’s move it along, then<br>fluffypony&gt; 3. Code + ticket discussion / Q &amp; A<br>fluffypony&gt; are there any issues that could do with some input / resolution?<br>moneromooo&gt; The handful of oldest ones.<br>moneromooo&gt; The PRNG one.<br>moneromooo&gt; ones.<br>moneromooo&gt; For multisig, I think it’s pretty much ready to go in, stoffu’s done a lot of careful reviewing.<br>fluffypony&gt; ok - what’s the blocker on switching to the Bitcoin one?<br>hotoatmeal&gt; moneromooo: what still needs doing / deciding on your part of the memwipe ones, and how can I help there?<br>moneromooo&gt; Mainly deciding whether we want to, or not.<br>moneromooo&gt; And bitcoin has two RNGs, the one I ported, and one that’s closer to what we have. so there’s the possibility of entropy attrition using only the “good” one.<br>moneromooo&gt; hotoatmeal: the only thing left IIRC was switching from std::vector<br>char&gt; to std::unique_ptr<br>char[]&gt; and I feel more confident getting it right with vector.<br>moneromooo&gt; Other than that, nothing I think.<br>fluffypony&gt; moneromooo: by “good” one you mean the ported one?<br>moneromooo&gt; That can be done later by someoine who’s familiar with how the refcounting works with operators though.<br>moneromooo&gt; Yes. The one that uses getrandom, etc. </em> Gdhhyfjjs467 has quit (Quit: <a href="http://www.kiwiirc.com/" target="_blank" rel="noopener">http://www.kiwiirc.com/</a> - A hand crafted IRC client)<br>fluffypony&gt; ok so I think if they haven’t hit entropy attrition problems over the past few years it’s unlikely we will - thoughts?<br>moneromooo&gt; Let me rephrase:<br>moneromooo&gt; Bitcoin has two RNGs: a good one using HW, and a… hmmm, less good ? one similar to our keccak based one<br>moneromooo&gt; Using the keccak based one does not deplete entropy nearly as fast as using the good one. Monero can use a lot of entropy (eg, range proofs).<br>moneromooo&gt; Therefore, I’m wondering whether using the good one all the time is worse than not.<br>hotoatmeal&gt; moneromooo: ok, I’ll pick up the vector vs unique_ptr part of that later this month<br>moneromooo&gt; Thanks<br>fluffypony&gt; ok so what if we used the good one for critical stuff like privkey generation <em> Gdhhyfjjs467 (adf42c28@gateway/web/cgi-irc/kiwiirc.com/ip.173.244.44.40) has joined<br>fluffypony&gt; and output selection<br>hotoatmeal&gt; and if you give me some pointers, can look at whatever that refcounted operators thing is in Jan<br>fluffypony&gt; and the stream one for range proofs<br>moneromooo&gt; Well, if I knew that, I’d know the answer to my question, since they’re opposites.<br>moneromooo&gt; Anyway, to go back to multisig, I tihnk it’s good to go now. If you haven’t yet reviewed it, and want to do so, do so now. </em> hotoatmeal drops out<br>fluffypony&gt; ok<br>fluffypony&gt; 4. Any additional meeting items<br>moneromooo&gt; When do we want bulletproofs on testnet ?<br>dEBRUYNE&gt; Tomorrow!<br>fluffypony&gt; hah hah<br>moneromooo&gt; A day may be a bit short to get people to update in time.<br>fluffypony&gt; are we going to wait for the multi output stuff?<br>sarang&gt; I think we should<br>moneromooo&gt; Not sure. This is not quite finished (multiple of 2 requirement), and has a non trivial impact on fees.<br>sarang&gt; Hrmm true, the fee thing<br>sarang&gt; :/<br>moneromooo&gt; And I’d really, really like to get smaller txes double plus quick.<br>fluffypony&gt; ok so how would this work<br>ArticMine&gt; A lot of people do<br>sarang&gt; In case it’s relevant, every single-output proof is still a valid multiproof<br>moneromooo&gt; That’s nice.<br>sarang&gt; (provided we define the Gi and Hi in the same order)<br>sarang&gt; (not sure if my extended code addressed that, will check)<br>moneromooo&gt; So, no clear votes for or against. Except me ^_^ so that’s 100% of expressed votes :P <em> sarang checks the math on that<br>fluffypony&gt; moneromooo: I asked how it would work<br>moneromooo&gt; The fork ? I imagine similar to rct. Allow bulletproofs at fork f, optionally disallow borromean at f+1.<br>moneromooo&gt; (the code currently does not do that second part)<br>moneromooo&gt; That might become a bit more complicated if we start allowing aggregated proofs at f+1.<br>moneromooo&gt; But not very much.<br>dEBRUYNE&gt; so moneromooo, you’d like to start with single output right? And then eventually switch to multioutput<br>moneromooo&gt; Yes.<br>Slack_3&gt;<br>rehrar&gt; Sorry if this was answered, but is there an ETA on multioutput port from Java? </em> Huskar has quit (Quit: Konversation terminated!)<br>moneromooo&gt; No. It doesn’t appear to be a lot of work though.<br>fluffypony&gt; so then txs with more than 1 output would use borromean? <em> blasty- (<a href="mailto:~blasty@shadowbroke.rs" target="_blank" rel="noopener">~blasty@shadowbroke.rs</a>) has joined<br>moneromooo&gt; No. They’d use two bulletproofs.<br>sarang&gt; yup<br>Slack_3&gt;<br>rehrar&gt; Which is still a savings.<br>sarang&gt; Still great space savings<br>sarang&gt; And no DoS issues<br>dEBRUYNE&gt; 2 bulletproofs is 1.3 kb give or take right?<br>fluffypony&gt; ok<br>dEBRUYNE&gt; And we can keep our current fee structure<br>sarang&gt; dEBRUYNE: yes<br>moneromooo&gt; Most of it, in fact. Txes are ~2.2 kB.<br>Slack_3&gt;<br>rehrar&gt; I think that’s worth it. And then it can be enhanced even further with multioutput later. But the immediate savings would be appreciated.<br>Slack_3&gt;<br>rehrar&gt; And gives time for the fee dislogue<br>fluffypony&gt; and what’s our confidence level like in this? like is it March-fork-worthy?<br>Slack_3&gt;<br>rehrar&gt; Dialogue</em><br>moneromooo&gt; Well, we can know better if we fork in a couple days on testnet :)<br>ArticMine&gt; I have an idea on the fee issue<br>Slack_3&gt;<br>rehrar&gt; It can be deployed to testnet asap no.<br>Slack_3&gt;<br>rehrar&gt; ?<br>moneromooo&gt; That’s what I’m asking about, yes.<br>fluffypony&gt; could we fork testnet this coming weekend?<br>moneromooo&gt; Works for me. Gives time for review.<br>Slack_3&gt;<br>rehrar&gt; Exciting!<br>sarang&gt; Yes and the code should definitely be reviewed by others<br>endogenic&gt; who?<br>endogenic&gt; if you had your pick<br>JollyMort[m]&gt; could someone do me a favor and send me the log of this channel from 2017-04-18?<br>sarang&gt; Ideally andytoshi since he’s a paper author<br>moneromooo&gt; If I had my pick…<br>sarang&gt; suraeNoether<br>fluffypony&gt; Satoshi<br>endogenic&gt; fluffypony: on it<br>sarang&gt; Someone who digs the maths<br>Gdhhyfjjs467&gt; So Evan duffield?<br>dEBRUYNE&gt; luigi1111 I guess<br>endogenic&gt; vtnerd hyc fyi<br>moneromooo&gt; Oh yeah, luigi1111 is a good one.<br>Slack_3&gt;<br>rehrar&gt; Let’s just get all hands on deck for this?<br>endogenic&gt; ok that means you too rehrar<br>Gdhhyfjjs467&gt; Lol jk. I like andytoshi idea<br>sarang&gt; I’m sure we’ll find additional optimizations… I know for a fact my implementation of scalar operations into vectors could be refactored<br>Slack_3&gt;<br>rehrar&gt; I will understand none of it, but I’ll look at it and either nod approvingly or cringe based on a coin toss.<br>sarang&gt; but I didn’t in Java in order to keep it clean and understandable<br>endogenic&gt; i move to instate rehrar as new RNG<br>moneromooo&gt; The slice op ? Yes, but I don’t think it takes much time compared to the muls.<br>sarang&gt; Random Nod Generator? <em> cialu (<a href="mailto:~cialu@151.41.130.127" target="_blank" rel="noopener">~cialu@151.41.130.127</a>) has joined<br>sarang&gt; Well and operations involving many vector ops could run a single loop per element, instead of per operation<br>sarang&gt; but they’re generally fast and it makes things clean </em> nicksname has quit (Ping timeout: 260 seconds)<br>sarang&gt; I’m not a huge fan of sacrificing clarity for a tiny speedup<br>sarang&gt; I’d like to chat with moneromooo post-meeting about our basepoint selection, to ease the transition into multiproofs later<br>sarang&gt; For those who want to compare code to paper, this is the paper: <a href="http://web.stanford.edu/~buenz/pubs/bulletproofs.pdf" target="_blank" rel="noopener">http://web.stanford.edu/~buenz/pubs/bulletproofs.pdf</a> * nicksname (adf43028@gateway/web/freenode/ip.173.244.48.40) has joined<br>moneromooo&gt; I pushed the patch as 2883 if people want to start reviewing ^_^<br>Slack_3&gt;<br>rehrar&gt; Can I make a Reddit post calling devs to review it?<br>moneromooo&gt; Reddit.. devs ?<br>dEBRUYNE&gt; ^ that lol<br>Slack_3&gt;<br>rehrar&gt; :P nvm then<br>dEBRUYNE&gt; The people able to review it will be watching Github<br>endogenic&gt; rehrar: answer is in the question :P<br>fluffypony&gt; oh<br>fluffypony&gt; I guess meeting ~done<br>fluffypony&gt; 5. Confirm next meeting date/time<br>fluffypony&gt; Sunday the 17th</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/12/05/devmeeting-20171203/" data-id="cjuun08j500796ckgea4qy3xj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BulletProofs/">BulletProofs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MultiSig/">MultiSig</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ZeroMQ/">ZeroMQ</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/05/monero-change-db-location/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          更改錢包/節點的區塊資料庫位置教學
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/23/monerod-node-guide/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">架設Monero獨立節點教學</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+<h3 class="widget-title">Monero Taiwan 正體中文站</h3>
+<div class="widget">
+  <p>本站是由非官方的 Monero (XMR, 門羅幣)愛好者自發性熱血建置，旨在轉貼翻譯專案開發訊息與便利服務以推廣 Monero 在台灣/中文世界的應用普及。</p>
+</div>
+</div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">桌面版錢包/節點下載</h3>
+    <div class="widget">
+        <a href="https://getmonero.org/downloads" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"></a>
+            <p>目前節點軟體最新版本: v0.14.0.2</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">行動版錢包</h3>
+    <div class="widget">
+        <div><p>Android 版： Monero: Monerujo Wallet</p>
+        <a href="https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img style="width:80%;max-width:400px;" alt="Google Play 立即下載" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg"></a></div>
+        <div><p>Apple iOS 版： Cake Wallet</p>
+        <a href="https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8"><img style="width:80%;max-width:400px;" alt="App Store 下載" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"></a></div>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">試用好專案支持本站</h3>
+    <div class="widget">
+        <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"></a>
+            <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
+    <div class="widget">
+    	<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">即時價格</h3>
+    <div class="widget">
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowtransparency="true" border="0" hidefocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="no"></iframe>
+</div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">XMR常用連結</h3>
+    <div class="widget">
+        <ul>
+        	<dt>區塊瀏覽器</dt>
+            <dd><a href="https://community.xmr.to/explorer/mainnet/" target="_blank" rel="noopener">XMR.to 區塊瀏覽器</a></dd>
+            <dd><a href="https://xmrchain.net/" target="_blank" rel="noopener">XMRchain 區塊瀏覽器</a></dd>
+            <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
+            <dt>兌換服務</dt>
+            <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
+            <dd><a href="https://xmr.to/" target="_blank" rel="noopener">XMR.TO</a> - 將XMR快速兌換至BTC</dd>
+            <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
+            <dt>視覺化資料</dt>
+            <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
+            <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
+        </ul>
+    </div></div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-小秘訣/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-新聞/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/區塊鏈分叉消息/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方新版本釋出/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方消息宣布/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/站務消息/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 10px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/23/2018-Monero-review/">Monero 2018 年發展回顧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/monero-0-14-0-release/">Monero發布新版本v0.14.0更新</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181216/">開發者會議記錄 DevMeeting 20181216</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議記錄 DevMeeting 20181014</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/10/devmeeting-20181007/">開發者會議記錄 DevMeeting 20181007</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <div>
+                <p>如果你覺得這個網站有幫助到你，請考慮贊助我們一點XMR以補貼網站運作的支出<br></p>
+                <p style="color:#FFFFFF"><strong>45XMRtw5de1EYjtsZPuLgmG3vo2n5vW8iLPM9NmT2MSG65vZSCf1cXBgaNQJtxLx45aaFYZJQawERJJV9yuHiLYsCk82j8Z</strong></p>
+                <p>亦可發送至OpenAlias地址: donate.xmr-tw.org</p>
+            </div>
+            <div>
+                <p>&copy;
+                    2019 Monero - Taiwan 正體中文站<br>
+                    本網站內容採用<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+            </div>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/advantage" class="mobile-nav-link">Monero是什麼？</a>
+  
+    <a href="/nodes" class="mobile-nav-link">公共節點(Node)</a>
+  
+    <a href="/xmr-eta" class="mobile-nav-link">區塊鏈動態(XMR-ETA)</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101869289-1');
+  </script>
+  
+  <title>開發者會議紀錄 DevMeeting 20170917 | Monero - 台灣正體中文站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本周的v0.11新版發佈因測試跟發佈時間間隔太短了，問題比以往來的多。接下來團隊將會嘗試為測試和新版發佈訂下更嚴格的時程。 硬分叉時間為三月和九月 程式碼則將在六月中與十二月中凍結 這讓新版本在釋出前有更多機會進行測試跟問題的修復 同時也提供更多釋出小數點版本(point release)的機會   因應上述更結構化的步調，較大的更新應該會陸續加入主程式碼中。這些更新都不需要進行分叉。 Sub-">
+<meta name="keywords" content="Monero Research Lab,mymonero,Subaddresses,ZeroMQ,手機錢包,MultiSig">
+<meta property="og:type" content="article">
+<meta property="og:title" content="開發者會議紀錄 DevMeeting 20170917">
+<meta property="og:url" content="https://xmr-tw.org/2017/09/18/devmeeting-20170917/index.html">
+<meta property="og:site_name" content="Monero - 台灣正體中文站">
+<meta property="og:description" content="本周的v0.11新版發佈因測試跟發佈時間間隔太短了，問題比以往來的多。接下來團隊將會嘗試為測試和新版發佈訂下更嚴格的時程。 硬分叉時間為三月和九月 程式碼則將在六月中與十二月中凍結 這讓新版本在釋出前有更多機會進行測試跟問題的修復 同時也提供更多釋出小數點版本(point release)的機會   因應上述更結構化的步調，較大的更新應該會陸續加入主程式碼中。這些更新都不需要進行分叉。 Sub-">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-04-21T13:23:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="開發者會議紀錄 DevMeeting 20170917">
+<meta name="twitter:description" content="本周的v0.11新版發佈因測試跟發佈時間間隔太短了，問題比以往來的多。接下來團隊將會嘗試為測試和新版發佈訂下更嚴格的時程。 硬分叉時間為三月和九月 程式碼則將在六月中與十二月中凍結 這讓新版本在釋出前有更多機會進行測試跟問題的修復 同時也提供更多釋出小數點版本(point release)的機會   因應上述更結構化的步調，較大的更新應該會陸續加入主程式碼中。這些更新都不需要進行分叉。 Sub-">
+  <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-square310x310logo" src="/images/site/favicons/favicon-310.png">
+  <link rel="apple-touch-icon" href="/images/site/favicons/favicon-180.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/advantage">Monero是什麼？</a>
+        
+          <a class="main-nav-link" href="/nodes">公共節點(Node)</a>
+        
+          <a class="main-nav-link" href="/xmr-eta">區塊鏈動態(XMR-ETA)</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xmr-tw.org"></form>
+      </div>
+    </div>
+    <div id="logo-wrap" class="outer">
+        <a href="/">
+          <img id="logo" src="/images/site/logowspace.png" alt="Monero Taiwan logo">
+        </a>
+      </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="y2017-devmeeting-20170917" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/18/devmeeting-20170917/" class="article-date">
+  <time datetime="2017-09-18T06:19:39.000Z" itemprop="datePublished">2017-09-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      開發者會議紀錄 DevMeeting 20170917
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>本周的v0.11新版發佈因測試跟發佈時間間隔太短了，問題比以往來的多。接下來團隊將會嘗試為測試和新版發佈訂下更嚴格的時程。<ul>
+<li>硬分叉時間為三月和九月</li>
+<li>程式碼則將在六月中與十二月中凍結</li>
+<li>這讓新版本在釋出前有更多機會進行測試跟問題的修復</li>
+<li>同時也提供更多釋出小數點版本(point release)的機會</li>
+</ul>
+</li>
+<li>因應上述更結構化的步調，較大的更新應該會陸續加入主程式碼中。這些更新都不需要進行分叉。<ul>
+<li>Sub-Addresses</li>
+<li>Multisig (MRL團隊表示目前看起來還不錯，但還是需要更多驗證，約在2017年十一月底可以完成。)</li>
+<li>ZeroMQ</li>
+</ul>
+</li>
+<li>需要更多的單元測試(Unit Testing) - 這對新的開發者來說是一個很好的入門方式。</li>
+<li>Luigi1111 在GUI跟官方網站的工作上都從”候補維護者”轉為”主要維護者”，FluffyPony則轉為候補維護者。</li>
+<li>關於MyMonero GUI的部分<ul>
+<li>MyMonero 的Apple 鄧白氏編碼依然還沒收到</li>
+<li>為AppStore申請的MyMonero 的Google帳號已經準備好了(但也需要鄧白氏編碼)</li>
+<li>兩者都還是有在增加新東西(將iOS的程式碼改寫成JavaScript 的App)</li>
+</ul>
+</li>
+<li>MRL 的第二次未來規劃(roadmap)已經準備好讓各方校對了: <a href="https://drive.google.com/file/d/0ByPYdEm6O54rZGpTbkcwdWMwcW8/view" target="_blank" rel="noopener">https://drive.google.com/file/d/0ByPYdEm6O54rZGpTbkcwdWMwcW8/view</a></li>
+</ul>
+<a id="more"></a>
+<p>以上翻譯來自於紀錄原文: <a href="https://monerobase.com/wiki/DevMeeting_2017-09-17" target="_blank" rel="noopener">https://monerobase.com/wiki/DevMeeting_2017-09-17</a> </p>
+<p>完整會議記錄：<br>fluffypony&gt; 1. Greetings<br>fluffypony&gt; 2. Brief review of what’s been completed since the previous meeting<br>fluffypony&gt; 3. Code + ticket discussion / Q &amp; A<br>fluffypony&gt; 4. Release timeline: moving releases to 3-months-before-forks or similar<br>fluffypony&gt; 5. Maintainer: migrating luigi1111 from backup maintainer to lead maintainer on GUI and site<br>fluffypony&gt; 5. Any additional meeting items<br>fluffypony&gt; 6. Confirm next meeting date/time<br>fluffypony&gt; let’s start with 1<br>_Slack&gt;<br>serhack&gt; Hi<br>_Slack&gt;<br>hrumag&gt; Hi<br>shillosopher&gt; o/<br>rbrunner7&gt; Grüezi<br>_Slack&gt;<br>rehrar&gt; Yo<br>i2p-relay&gt; {-lightfighter} hola<br>imheretolearn&gt; hola<br>msvb-lab&gt; hello<br>sarang&gt; yo<br>surae&gt; guten tag<br>luigi1111&gt; Oh hai<br>imheretolearn&gt; ni hao <em> foobar__ has quit (Ping timeout: 260 seconds)<br>hyc&gt; hi<br>fluffypony&gt; ArticMine / othe / smooth / moneromooo / tewinget / anonimal / endogenic / gingeropolous / iDunk / JacobJeweler / kenshi84 / knaccc / MoroccanMalinoi- / NoodleDoodle / papa_lazzarou / wallet42 / vtnerd_ / anyone I forgot<br>ArticMine&gt; Greetings<br>iDunk&gt; o/<br>moneromooo&gt; You forgot fluffypony in that list.<br>fluffypony&gt; lol<br>surae&gt; 22nd century historians are going to have a hell of a time writing books on the birth of cryptocurrency.<br>_Slack&gt;<br>moroccanmalinois&gt; Hi<br>fluffypony&gt; pigeons sends his apologies, he let me know yesterday that he wouldn’t make today’s meeting </em> foobar_ (d5e127ca@gateway/web/freenode/ip.213.225.39.202) has joined<br>fluffypony&gt; so anything that is wrong we can comfortably blame on him<br>fluffypony&gt; since he isn’t here to defend himself :-P<br>fluffypony&gt; ok<br>fluffypony&gt; let’s move on to 2<br>fluffypony&gt; so not much has happened since the last meeting<br>fluffypony&gt; a release or something<br>fluffypony&gt; nothing major<br>surae&gt; heh<br>hyc&gt; I heard we spawned XMRclassic<br>fluffypony&gt; Monero ABC<br>surae&gt; i used XMRcash at a coffee shop, but my card was declined :(<br>fluffypony&gt; inb4 XCash<br>fluffypony&gt; on the topic of the release, and now is as good a time to talk about it as any<br>hyc&gt; oooo, I like that one<br>fluffypony&gt; as you may (or may not) have noticed this release was a little rockier than we’d hoped<br>rbrunner7&gt; Yeah <em> TinusMars has quit (Ping timeout: 260 seconds)<br>fluffypony&gt; we’ve known for a while that our testing horizons are too close </em> TinusMars (54c0d41e@gateway/web/freenode/ip.84.192.212.30) has joined<br>fluffypony&gt; a little while ago smooth suggested having MUCH further horizons and sunsets, which I tend to agree with<br>surae&gt; what are the thoughts on modifying that, then?<br>fluffypony&gt; so what we’d like to do moving forward is work our horizons of a 6 month schedule, offset from the hard forks by 3 months<br>fluffypony&gt; in other words<br>fluffypony&gt; hard forks happen March and September<br>fluffypony&gt; and code freezes happen mid-June and mid-December<br>fluffypony&gt; so practically let’s look at the next year as an example<br>ArticMine&gt; … but will we follow the code freezes?<br>fluffypony&gt; we have 3 months from now to put stuff in the code, and then we code-freeze in mid-December<br>imheretolearn&gt; will a 3 month code freeze have a side effect of slowing development?<br>fluffypony&gt; that means we branch in mid-December<br>_Slack&gt;<br>serhack&gt; Okay and then a new release?<br>_Slack&gt;<br>hrumag&gt; You could follow the timeline used bu ubuntu<br>_Slack&gt;<br>hrumag&gt; by<em><br>fluffypony&gt; from mid-December we have some time to test, fix bugs, get the branch stable<br>fluffypony&gt; (and port fixes to and from master)<br>fluffypony&gt; with a view to tagging a release as soon as we think there’s some stability<br>moneromooo&gt; 3 months seems maybe a bit large, but let’s try it. I’m curious to see how much of a pita it’ll be to have to branches.<br>moneromooo&gt; to have 2<br>fluffypony&gt; the nice thing is that the release CAN have bugs, because not everyone will upgrade until closer to the hard fork<br>fluffypony&gt; and so subsequent releases can patch bugs<br>_Slack&gt;<br>serhack&gt; Seems good idea fluffypony </em> floam412 (~floam412@gateway/vpn/privateinternetaccess/floam412) has joined<br>sarang&gt; agreed<br>moneromooo&gt; The only thing is that it only leaves 3 months to get range proof changes in… :/<br>fluffypony&gt; it also means we can have loads of small point releases up to the hard fork, because there isn’t much that changes except bug fixes<br>moneromooo&gt; or 9. or 12.<br>_Slack&gt;<br>hrumag&gt; I totally agree with fluffy<br>fluffypony&gt; moneromooo: if we don’t hit the mid-December target then leave it for the next one, we have 6 months thereafter<br>luigi1111&gt; 3 months seems fine to me. The release can be out a while before the fork with no negatives really<br>fluffypony&gt; yeah exactly<br>luigi1111&gt; Besides maybe some delay in new features<br>fluffypony&gt; and it means that for 3-ish months the network is running both stable and newer versions<br>ArticMine&gt; It is a way safer approach<br>_Slack&gt;<br>hrumag&gt; <a href="https://wiki.ubuntu.com/ArtfulAardvark/ReleaseSchedule" target="_blank" rel="noopener">https://wiki.ubuntu.com/ArtfulAardvark/ReleaseSchedule</a> if it can help<br>fluffypony&gt; most exchanges / pools will stick to the previous stable release<br>luigi1111&gt; Mooo we’ll just have to get it done by December then:)<br>fluffypony&gt; some brave ones will upgrade early<br>moneromooo&gt; ^<em>^<br>luigi1111&gt; Since like, ms is working and such<br>moneromooo&gt; -</em>-<br>_Slack&gt; Command sent from Slack by serhack:<br>_Slack&gt; .-.<br>fluffypony&gt; the real issue is that we have to decide on a new release name within the next 3 months<br>fluffypony&gt; :-P<br>knaccc&gt; Iridium Iris<br>hyc&gt; Lithim lizard <em> braveh4rt has quit (Quit: <a href="http://www.kiwiirc.com/" target="_blank" rel="noopener">http://www.kiwiirc.com/</a> - A hand crafted IRC client)<br>hyc&gt; lithium<br>fluffypony&gt; also as pointed out this will mean that some features take a lot longer to go live in the mainnet codebase than we might hope (emergency patches / forks aside)<br>surae&gt; hypothetical helicopter?<br>fluffypony&gt; so it means we’re going to have to be patient when things don’t progress as rapidly as we’d like<br>fluffypony&gt; we \</em>can* happily deploy stuff on testnet, we’ve had to do massive reorgs on testnet before and it handled it just fine <em> dEBRUYNE grabs torches and pitchforks<br>fluffypony&gt; and iirc Snipa had some experience setting up a mini closed testnet<br>luigi1111&gt; I don’t really think 2 ish months is “a lotc<br>msvb-lab&gt; Dumb question, what’s the name of the current 0.11 release?<br>luigi1111&gt; “lot”<br>fluffypony&gt; msvb-lab: Helium Hydra<br>surae&gt; oh so hypothetical helicotper is right out. :( too bad we missed the possibility for Gluttonous Ganesh?<br>fluffypony&gt; aka Hail Hydra<br>msvb-lab&gt; hyc: Then lithium wouldn’t work would it? It doesn’t start with ‘I’.<br>sarang&gt; Irritable Ibex<br>imheretolearn&gt; i agrree knaccc iridium iris<br>hyc&gt; private testnets are easy, just takes 2 nodes pointed at each other –add-exclusive-node<br>fluffypony&gt; yarp </em> ErCiccione has quit (Quit: Leaving)<br>hyc&gt; release names aren’t alphabetical, they’re elements. periodic table.<br>fluffypony&gt; ^^ <em> amiuhle| has quit (Ping timeout: 264 seconds)<br>fluffypony&gt; there’s a release naming doc in the meta repo<br>imheretolearn&gt; iridium iris will have range proofs improvements, larger ring size multi sig and encrypted payment ids. major release<br>luigi1111&gt; Ugh stop talking about release names<br>moneromooo&gt; ^<br>moneromooo&gt; Get on with it :D<br>fluffypony&gt; let’s move on<br>fluffypony&gt; 3. Code + ticket discussion / Q &amp; A<br>fluffypony&gt; I’d like to start merging in the big PRs that have been hanging around<br>hyc&gt; there’s still a good number of PRs that could be merged soon. should we be planning a point release in the next month or two?<br>fluffypony&gt; sub-addresses, multisig, 0MQ, etc.<br>fluffypony&gt; hyc: yes - I had to first merge the PRs that were already merged in the branch, which I finished a couple of days ago<br>moneromooo&gt; For the record: multisig is not ready yet. It’s got a DO NOT MERGE sign.<br>fluffypony&gt; ok<br>fluffypony&gt; moneromooo: is it waiting on code or MRL stuff?<br>luigi1111&gt; yes<br>knaccc&gt; I just wanted to point out, in case it had slipped through the cracks, that kenshi84 has partially implemented subaddresses in the GUI but there are wireframe mockups he wasn’t able to implement because he’s not used Qt much before. The mockups suggested to be implemented are here <a href="https://github.com/monero-project/monero-core/pull/793#issuecomment-314477091" target="_blank" rel="noopener">https://github.com/monero-project/monero-core/pull/793#issuecomment-314477091</a><br>moneromooo&gt; It’s waiting on me making core tests for it, and cleaning up.<br>moneromooo&gt; And the core tests are a massive pita.<br>fluffypony&gt; moneromooo: ok cool<br>fluffypony&gt; moneromooo: is it worth looking at a different test framework?<br>luigi1111&gt; all of these things are not forking, so could be added whenever<br>moneromooo&gt; Not really, core tests are great, powerful, and I love them. I also hate them.<br>moneromooo&gt; Once they work, they’re really great.<br>fluffypony&gt; knaccc: ok cool, hopefully someone can pick that work up<br>luigi1111&gt; n-1 only recently started working, so I assume it needs some testing etc<br>surae&gt; sarang and i are nearing completion on both the multisig paper, which requires new security definitions, and the sub-address paper (and that scheme looks pretty good!). the multisig stuff, if you held a gun to my head, i would say is secure, but until the proofs are written up, i don’t want to say anything about it definitively<br>fluffypony&gt; knaccc: else if we need to find a QtQuick developer and pay them we can afford to do so<br>hyc&gt; so should we continue to PR to the release branch in addition to master? </em> ErCiccione (<a href="mailto:~erciccion@37-252-190-165.rev.ipax.at" target="_blank" rel="noopener">~erciccion@37-252-190-165.rev.ipax.at</a>) has joined<br>surae&gt; we anticipate both of those papers to be done as MRL bulletins by end of November.<br>moneromooo&gt; I hope not.<br>fluffypony&gt; hyc: no<br>fluffypony&gt; release branch is for bug fixes only<br>fluffypony&gt; surae: ok great<br>hyc&gt; ok <em> _operative (<a href="mailto:~ops@51.37.211.181" target="_blank" rel="noopener">~ops@51.37.211.181</a>) has joined<br>i2p-relay&gt; {-lightfighter} is there a README for writing new tests? if not could one be added?<br>moneromooo&gt; No. Sure.<br>fluffypony&gt; @lightfighter no there isn’t, but it’s something you could tackle if you’re up for it<br>fluffypony&gt; on the topic of tests<br>moneromooo&gt; But really, I start from an existing one.<br>fluffypony&gt; if anyone is unfamiliar with the codebase and wants to learn, adding tests is literally the best way<br>fluffypony&gt; there are tons of things that lack unit tests<br>moneromooo&gt; Unit tests are very easy to add.<br>fluffypony&gt; need moar test coverage plx<br>surae&gt; unit tests are. so. freaking. helpful.<br>moneromooo&gt; Though they might need API changes to expose bits and bobs.<br>hyc&gt; in that regard, might be nice to appoint a release/test manager, responsible to either run tests or collect test results from the community<br>fluffypony&gt; hyc: good idea<br>parasew&gt; will definitely start implementing tests, its in a way comforting :)<br>fluffypony&gt; I wonder if we couldn’t build a little web API that people could submit test results to </em> Guest66881 is now known as expez<br>i2p-relay&gt; {-lightfighter} fluffypony: i’d be happy to start working on test docs. is the GTest primer a good place to start?<br>moneromooo&gt; <a href="https://github.com/monero-project/monero/issues" target="_blank" rel="noopener">https://github.com/monero-project/monero/issues</a> ?<br>vtnerd_&gt; boost has some such framework, but I dont know much about it<br>parasew&gt; on another note: in the current gui-release, the mining has issues – other people also reported at monero meetup.<br>vtnerd_&gt; various members run machines on various processors / platforms <em> amiuhle| (<a href="mailto:~amiuhle@dyn-98-124-30-168.nexicom.net" target="_blank" rel="noopener">~amiuhle@dyn-98-124-30-168.nexicom.net</a>) has joined<br>i2p-relay&gt; {-lightfighter} also agree that writing tests is best way to learn codebase (my main motivation for doing so)<br>fluffypony&gt; parasew: then they must open an issue on GitHub<br>dEBRUYNE&gt; parasew: Already reported on monero-core github repository<br>parasew&gt; fluffypony ofc, will pass that on.<br>parasew&gt; dEBRUYNE which issue?<br>dEBRUYNE&gt; <a href="https://github.com/monero-project/monero-core/issues/877" target="_blank" rel="noopener">https://github.com/monero-project/monero-core/issues/877</a><br>parasew&gt; dEBRUYNE ty, will also have a look!<br>fluffypony&gt; let’s give some thought to a reportable web API that can collate test results, we’ll figure out a nice way of doing it<br>hyc&gt; a web tool sounds like a great idea. I don’t know of one at the moment.<br>dEBRUYNE&gt; hyc: for the GUI release I created a reddit thread with buildbot bins and compiling instructions<br>dEBRUYNE&gt; Subsequently I put up all reports on Github<br>dEBRUYNE&gt; But it’d be preferable if we have a more streamlined process<br>hyc&gt; indeed<br>dEBRUYNE&gt; (to report issues that is)<br>fluffypony&gt; agreed<br>_Slack&gt;<br>rehrar&gt; Will look into it<br>fluffypony&gt; we’d probably have to roll our own tool for this, let’s see<br>moneromooo&gt; Anyone who knows about DNS/DNSSEC btw ? We need to fix how we do that apparently, but I know nothing aobut DNS :/<br>moneromooo&gt; Thoise are the failing unit tests.<br>dEBRUYNE&gt; I suppose though that if we’d create something like that someone still has to create issues on github<br>surae&gt; sarang? know anything about DNS?<br>hyc&gt; DNSSEC in particular<br>sarang&gt; Protocol? Some. Implementations? Negatory<br>hyc&gt; we need to find out why libunbound is complaining now<br>moneromooo&gt; The complaint’s likely unrelated, and due to the openssl config.<br>moneromooo&gt; (assuming you mean the “invalid algorithm” or so) </em> rbrunner7 has quit (Read error: Connection reset by peer)<br>fluffypony&gt; could be openssl related <em> IRC-Source_14236 (d4bab3bb@gateway/web/cgi-irc/kiwiirc.com/ip.212.186.179.187) has joined<br>hyc&gt; yes. I’ve only hit that in the past with a crippled Android libssl<br>hyc&gt; so I’m surprised to see it on an up-to-date desktop build<br>fluffypony&gt; I’m also open to dumping unbound in favour of another library<br>fluffypony&gt; we literally only use it for DNS / DNSSEC </em> rbrunner7 (<a href="mailto:~androirc@static-customer.31.12.138.91.yetnet.ch" target="_blank" rel="noopener">~androirc@static-customer.31.12.138.91.yetnet.ch</a>) has joined<br>moneromooo&gt; Guess I’ll have a look to see what libraries there are for this.<br>parasew&gt; is there an irc log online somewhere? (i came a bit late)<br>fluffypony&gt; ok let’s do that, Unbound has been a PITA for a while<br>moneromooo&gt; Or… leave it till someone who knows about DNS pops in…<br>fluffypony&gt; parasew: it’ll be posted up after<br>surae&gt; parasew the minutes will be posted after the meeting<br>fluffypony&gt; ok let’s move on<br>_Slack&gt;<br>serhack&gt; ;) <em> rbrunner (<a href="mailto:~rbrunner@176.10.116.233" target="_blank" rel="noopener">~rbrunner@176.10.116.233</a>) has joined<br>parasew&gt; thanka fluffypony, surae i just wanted to catch up now, but its ok :( </em> fabian has quit (Remote host closed the connection)<br>fluffypony&gt; 4. Release timeline: moving releases to 3-months-before-forks or similar<br>fluffypony&gt; we already covered that<br>fluffypony&gt; so moving on<br>fluffypony&gt; 5. Maintainer: migrating luigi1111 from backup maintainer to lead maintainer on GUI and site<br>moneromooo&gt; Does he agree to ? :)<br>fluffypony&gt; well, moneromooo, luigi1111 has gone full-time crypto since he’s made millions from the Monero ICO<br>dEBRUYNE&gt; No we forced him :P<br>hyc&gt; lol<br>fluffypony&gt; so he can merge from atop the mountain in his Lambo<br>surae&gt; i hear Lambos work real great on mountains<br>_Slack&gt;<br>rehrar&gt; Congrats Luigi. An example to us all.<br>fluffypony&gt; does anyone have an objection to me moving to backup maintainer on the GUI and the site, and luigi1111 moving to lead maintainer? I’d probably still do GUI releases since they’re done in conjunction with the CLI <em> rbrunner7 has quit (Client Quit)<br>_Slack&gt;<br>serhack&gt; A little fun fact<br>_Slack&gt;<br>serhack&gt; Oh great Luigi<br>hyc&gt; Sounds like a good move<br>fluffypony&gt; or we’ll do it together or something<br>_Slack&gt;<br>rehrar&gt; Will Luigi just merge the site repo, or also put it on the server?<br>_Slack&gt;<br>serhack&gt; Congratulations<br>hyc&gt; but that reminds me we need to move forward on deterministic builds<br>fluffypony&gt; rehrar: pulling on the site is still manual in case the repo gets compromised<br>_Slack&gt;<br>rehrar&gt; Right.<br>surae&gt; is this marking a fundamental shift in the power dynamics of Monero?<br>_Slack&gt;<br>rehrar&gt; So will he do that manual task too, or is that still you?<br>fluffypony&gt; which would be embarrassing, but not as embarrassing as the site being compromised via the repo<br>fluffypony&gt; rehrar: still me, but it takes me ten seconds<br>fluffypony&gt; so he’ll ping me<br>_Slack&gt;<br>rehrar&gt; K.<br>fluffypony&gt; surae: yes, we’re appointing luigi1111 as CTO (Chief Trolling Officer), whilst I focus on my role as CEO (Chief Entertainment Officer)<br>fluffypony&gt; I can’t do both any more, it’s too much for one troll<br>surae&gt; oh man, can luigi make fancy videos of people wistfully walking through the wheat? i’m not sure if anyone can do that like you. :( (moving on…)<br>fluffypony&gt; lol<br>fluffypony&gt; ok<br>fluffypony&gt; 5. Any additional meeting items<br>imheretolearn&gt; globee or mymonero updates?<br>scoobybejesus&gt; Mooo and other FFS to fund, perhaps<br>hyc&gt; app store progress?<br>_Slack&gt;<br>serhack&gt; Ffs?<br>fluffypony&gt; MyMonero Google account is ready<br>fluffypony&gt; waiting on our D-U-N-S number for Apple<br>fluffypony&gt; or as endogenic joked, we’re waiting on our DUNCE number </em> Olufunmilayo raises hand<br>_Slack&gt;<br>serhack&gt; How many monero have we collected for ffs? <em> anonimobile (~anonimobi@gateway/tor-sasl/anonimobile) has joined<br>fluffypony&gt; scoobybejesus: huh?<br>dEBRUYNE&gt; I think scoobybejesus suggests to discuss the FFS proposals (if we want to)<br>fluffypony&gt; serhack: open them and check<br>fluffypony&gt; Olufunmilayo: don’t ask to ask, just ask :)<br>scoobybejesus&gt; Really just bringing them to light. Yes.<br>_Slack&gt;<br>serhack&gt; :+1::skin-tone-2:<br>surae&gt; MRL is about to put out our second roadmap (which includes an update to the first one). hyc already provided some copy-editing comments. we are currently looking for 1) typos and copy-editing stuff, but more importantly 2) any projects the developers feel should be included that are not being included, and 3) any inaccuracies in the statements we’ve made already.<br>surae&gt; <a href="https://drive.google.com/open?id=0ByPYdEm6O54rZGpTbkcwdWMwcW8" target="_blank" rel="noopener">https://drive.google.com/open?id=0ByPYdEm6O54rZGpTbkcwdWMwcW8</a><br>sarang&gt; We’ll wait while everyone reads all 12 pages<br>surae&gt; PM us with edits and comments. sarang and i both have edit access<br>fluffypony&gt; surae: only thing I’d like to add there in section 7 is a note about zk-STARKs being preferable since no trustless setup, but memory / CPU requirements are too high atm, so maybe we just stick to zk-SNARKs in the interim<br>moneromooo&gt; We’ll have to decide on an ordering for merging stuff, because there’s a glut again, and that means conflicts.<br>moneromooo&gt; How about 0MQ first ?<br>Olufunmilayo&gt; fluffypony, nvm, now that I typed it up and re read scroll back it has already been addressed<br>surae&gt; fluffypony: zk-starks aren’t published yet and afaik only the creators have even pseudocode. currently, unless i’m wrong, zk-starks are a myth, and until i see some proofs otherwise, i’m going to pretend like they aren’t available yet. but i can mention them as a “next step” under section 7<br>hyc&gt; yeah, let’s go with older PRs first<br>hyc&gt; although for gdb sanity I would like threadpool to go in soon.<br>Jaquee&gt; shouldnt threadpool be added to release branch?<br>sarang&gt; On a meta-MRL note, I’d like to offer my thanks to everyone who supported the FFS to bring me aboard </em> foobar_ has quit (Quit: Page closed)<br>msvb-lab&gt; moneromooo: I think it’s pretty great we’re integrating 0MQ, but I’m not that qualified to vote on PR arangement.<br>fluffypony&gt; surae: sounds good<br>fluffypony&gt; moneromooo: I agree - 0MQ and DRY PRs, and then threadpool?<br>moneromooo&gt; OK<br>hyc&gt; Jaquee: not sure threadpool counts as a bugfix<br>dEBRUYNE&gt; moneromooo: Did you manage to provide feedback to tewinget?<br>moneromooo&gt; Many times.<br>dEBRUYNE&gt; I think he asked for that, but you were busy with the release<br>surae&gt; also, the section on untraceability in monero… i need some opinions on that, too, but i want people’s fresh impressions of that section. i had a certain intention when i was writing it and i want to see how well it came across<br>tewinget&gt; sorry, was slightly afk<br>moneromooo&gt; Is there a list of things he wanted feedback on ?<br>dEBRUYNE&gt; tewinget ^<br>tewinget&gt; saw my screen blink<br>fluffypony&gt; Jaquee: I agree with hyc - let’s avoid merging anything that could be wonky if we can, release seems to be reasonably stable<br>Jaquee&gt; all right<br>Jaquee&gt; we can live with a little unresponsiveness i guess<br>Jaquee&gt; in gui ^^<br>moneromooo&gt; er… did you check it fixed your problenm in the first place ? <em> PuebloZag has quit (Ping timeout: 260 seconds)<br>moneromooo&gt; I’m pretty sure it won’t.<br>Jaquee&gt; no i havent<br>hyc&gt; it’s worth checking. I also see responsiveness issues in current 0.11, monerod spawns too many threads during verification<br>aerbax&gt; With regards to the MyMonero AppStore deployments. If Google/Android is ready, are there any ongoing issues that would prevent a release?<br>dEBRUYNE&gt; I think they want to release all platforms in conjunction<br>Jaquee&gt; are we using the same DUNS/account for monero apps?<br>fluffypony&gt; Jaquee: no, completely separate one<br>fluffypony&gt; have to have that distinction </em> cardboardoranges has quit (Quit: <a href="http://www.kiwiirc.com/" target="_blank" rel="noopener">http://www.kiwiirc.com/</a> - A hand crafted IRC client)<br>parasew&gt; are there plans of putting the GUI into apple appstore?<br>fluffypony&gt; both are waiting on D-U-N-S numbers<br>Jaquee&gt; ok<br>fluffypony&gt; parasew: yes, check previous meeting logs<br>parasew&gt; fluffypony ok, will do :)<br>msvb-lab&gt; What’s the main reason for one mobile platform release to wait until others are ready?<br>fluffypony&gt; Jaquee: we registered “Monero Distribution Company” as the name * xpto (cee14816@gateway/web/freenode/ip.206.225.72.22) has joined<br>_Slack&gt;<br>serhack&gt; Fluffypony: I have an android phone, can I test mymonero ? Can you send me an apk?<br>fluffypony&gt; msvb-lab: on the Monero GUI side, nothing, we can push it into the Google Play store whenever<br>moneromooo&gt; Are we done with the dev stuff ?<br>fluffypony&gt; on the MyMonero side we’re still busy adding some stuff<br>msvb-lab&gt; Additional meeting items: Might be worth mentioning that both mattermost.getmonero.org and taiga.getmonero.org are quite bad ans.<br>fluffypony&gt; mostly porting stuff from the iOS app to the JS app<br>hyc&gt; coming up to top of the hour<br>fluffypony&gt; thanks hyc<br>fluffypony&gt; msvb-lab: we can discuss that after<br>fluffypony&gt; ok so next meeting in 2 weeks<br>fluffypony&gt; 1st October</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/09/18/devmeeting-20170917/" data-id="cjuun08j7007d6ckge21t1w6d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Monero-Research-Lab/">Monero Research Lab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MultiSig/">MultiSig</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Subaddresses/">Subaddresses</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ZeroMQ/">ZeroMQ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mymonero/">mymonero</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手機錢包/">手機錢包</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/22/using-coinhive/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          本站使用網頁挖礦服務公告
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/11/monero-gui-build-from-git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">從原始碼編譯Monero GUI錢包</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+<h3 class="widget-title">Monero Taiwan 正體中文站</h3>
+<div class="widget">
+  <p>本站是由非官方的 Monero (XMR, 門羅幣)愛好者自發性熱血建置，旨在轉貼翻譯專案開發訊息與便利服務以推廣 Monero 在台灣/中文世界的應用普及。</p>
+</div>
+</div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">桌面版錢包/節點下載</h3>
+    <div class="widget">
+        <a href="https://getmonero.org/downloads" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"></a>
+            <p>目前節點軟體最新版本: v0.14.0.2</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">行動版錢包</h3>
+    <div class="widget">
+        <div><p>Android 版： Monero: Monerujo Wallet</p>
+        <a href="https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img style="width:80%;max-width:400px;" alt="Google Play 立即下載" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg"></a></div>
+        <div><p>Apple iOS 版： Cake Wallet</p>
+        <a href="https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8"><img style="width:80%;max-width:400px;" alt="App Store 下載" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"></a></div>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">試用好專案支持本站</h3>
+    <div class="widget">
+        <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"></a>
+            <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
+    <div class="widget">
+    	<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">即時價格</h3>
+    <div class="widget">
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowtransparency="true" border="0" hidefocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="no"></iframe>
+</div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">XMR常用連結</h3>
+    <div class="widget">
+        <ul>
+        	<dt>區塊瀏覽器</dt>
+            <dd><a href="https://community.xmr.to/explorer/mainnet/" target="_blank" rel="noopener">XMR.to 區塊瀏覽器</a></dd>
+            <dd><a href="https://xmrchain.net/" target="_blank" rel="noopener">XMRchain 區塊瀏覽器</a></dd>
+            <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
+            <dt>兌換服務</dt>
+            <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
+            <dd><a href="https://xmr.to/" target="_blank" rel="noopener">XMR.TO</a> - 將XMR快速兌換至BTC</dd>
+            <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
+            <dt>視覺化資料</dt>
+            <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
+            <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
+        </ul>
+    </div></div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-小秘訣/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-新聞/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/區塊鏈分叉消息/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方新版本釋出/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方消息宣布/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/站務消息/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 10px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/23/2018-Monero-review/">Monero 2018 年發展回顧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/monero-0-14-0-release/">Monero發布新版本v0.14.0更新</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181216/">開發者會議記錄 DevMeeting 20181216</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議記錄 DevMeeting 20181014</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/10/devmeeting-20181007/">開發者會議記錄 DevMeeting 20181007</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <div>
+                <p>如果你覺得這個網站有幫助到你，請考慮贊助我們一點XMR以補貼網站運作的支出<br></p>
+                <p style="color:#FFFFFF"><strong>45XMRtw5de1EYjtsZPuLgmG3vo2n5vW8iLPM9NmT2MSG65vZSCf1cXBgaNQJtxLx45aaFYZJQawERJJV9yuHiLYsCk82j8Z</strong></p>
+                <p>亦可發送至OpenAlias地址: donate.xmr-tw.org</p>
+            </div>
+            <div>
+                <p>&copy;
+                    2019 Monero - Taiwan 正體中文站<br>
+                    本網站內容採用<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+            </div>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/advantage" class="mobile-nav-link">Monero是什麼？</a>
+  
+    <a href="/nodes" class="mobile-nav-link">公共節點(Node)</a>
+  
+    <a href="/xmr-eta" class="mobile-nav-link">區塊鏈動態(XMR-ETA)</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
