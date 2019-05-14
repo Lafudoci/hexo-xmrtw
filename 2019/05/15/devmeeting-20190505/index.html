@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101869289-1');
+  </script>
+  
+  <title>開發者會議紀錄 DevMeeting 20190505 | Monero - 台灣正體中文站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="內容概要  Monero 開發部分 下一次發佈的版本號差不多確定是 0.14.1.0。 在建立發佈分支前，正在等待 vtnerd 審查完 SSL 功能實作的 PR，該功能將會加密節點與錢包的連線。   GUI 錢包開發部分 基本上已準備好這次的發佈了。 操作介面大幅的改進、最佳化。 新加入了白色系的佈景主題。 對 Trezor 硬體錢包的支援已經完成了。 為了解決 Qt 5.7 的一些問題與使用新">
+<meta name="keywords" content="RandomX,GUI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="開發者會議紀錄 DevMeeting 20190505">
+<meta property="og:url" content="https://xmr-tw.org/2019/05/15/devmeeting-20190505/index.html">
+<meta property="og:site_name" content="Monero - 台灣正體中文站">
+<meta property="og:description" content="內容概要  Monero 開發部分 下一次發佈的版本號差不多確定是 0.14.1.0。 在建立發佈分支前，正在等待 vtnerd 審查完 SSL 功能實作的 PR，該功能將會加密節點與錢包的連線。   GUI 錢包開發部分 基本上已準備好這次的發佈了。 操作介面大幅的改進、最佳化。 新加入了白色系的佈景主題。 對 Trezor 硬體錢包的支援已經完成了。 為了解決 Qt 5.7 的一些問題與使用新">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-05-14T16:46:46.294Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="開發者會議紀錄 DevMeeting 20190505">
+<meta name="twitter:description" content="內容概要  Monero 開發部分 下一次發佈的版本號差不多確定是 0.14.1.0。 在建立發佈分支前，正在等待 vtnerd 審查完 SSL 功能實作的 PR，該功能將會加密節點與錢包的連線。   GUI 錢包開發部分 基本上已準備好這次的發佈了。 操作介面大幅的改進、最佳化。 新加入了白色系的佈景主題。 對 Trezor 硬體錢包的支援已經完成了。 為了解決 Qt 5.7 的一些問題與使用新">
+  <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-square310x310logo" src="/images/site/favicons/favicon-310.png">
+  <link rel="apple-touch-icon" href="/images/site/favicons/favicon-180.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/advantage">Monero是什麼？</a>
+        
+          <a class="main-nav-link" href="/nodes">公共節點(Node)</a>
+        
+          <a class="main-nav-link" href="/xmr-eta">區塊鏈動態(XMR-ETA)</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xmr-tw.org"></form>
+      </div>
+    </div>
+    <div id="logo-wrap" class="outer">
+        <a href="/">
+          <img id="logo" src="/images/site/logowspace.png" alt="Monero Taiwan logo">
+        </a>
+      </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="y2019-devmeeting-20190505" class="article article-type-y2019" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/devmeeting-20190505/" class="article-date">
+  <time datetime="2019-05-14T16:00:00.000Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      開發者會議紀錄 DevMeeting 20190505
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>內容概要</p>
+<ul>
+<li>Monero 開發部分<ul>
+<li>下一次發佈的版本號差不多確定是 0.14.1.0。</li>
+<li>在建立發佈分支前，正在等待 vtnerd 審查完 SSL 功能實作的 PR，該功能將會加密節點與錢包的連線。</li>
+</ul>
+</li>
+<li>GUI 錢包開發部分<ul>
+<li>基本上已準備好這次的發佈了。</li>
+<li>操作介面大幅的改進、最佳化。</li>
+<li>新加入了白色系的佈景主題。</li>
+<li>對 Trezor 硬體錢包的支援已經完成了。</li>
+<li>為了解決 Qt 5.7 的一些問題與使用新功能，Qt 版本更新至 5.9.7。</li>
+<li>新增桌面彈出式通知功能, 按<a href="https://github.com/monero-project/monero-gui/pull/2100" target="_blank" rel="noopener">這裡</a>搶先看！</li>
+<li>加入現金價顯示方式(預設為關閉)。</li>
+<li>預計在 0.15 的版本會將發送交易的介面和流程設計得更直覺，點<a href="https://github.com/monero-project/monero-gui/issues/2148" target="_blank" rel="noopener">這裡</a>查看最新進度。</li>
+</ul>
+</li>
+<li>RandomX 開發部分<ul>
+<li>程式碼已於 4/30 進入凍結階段。</li>
+<li>目前已有兩個外部審查的提案，還有第三個提案在準備中。</li>
+<li>RandomX 與 monerod 的初步整合實作已經在 hyc 的 github repository 中了。</li>
+<li>CPU 的最佳化還在進行中。</li>
+<li>CUDA版本約已有80%完成，按<a href="https://github.com/SChernykh/RandomX\_CUDA/" target="_blank" rel="noopener">這裡</a>看目前的進度</li>
+</ul>
+</li>
+</ul>
+<!--[image](https://user-images.githubusercontent.com/40871101/56464941-d1619680-63a8-11e9-8660-b91d9b3b5d73.gif) -->
+<a id="more"></a>
+<p>以上翻譯來自於紀錄原文: <a href="https://repo.getmonero.org/monero-project/monero-site/blob/31ee489b3a57d930b91be50c4934e6b1612756d9/_posts/2019-05-05-logs-for-the-dev-meeting-held-on-2019-05-05.md" target="_blank" rel="noopener">https://repo.getmonero.org/monero-project/monero-site/blob/31ee489b3a57d930b91be50c4934e6b1612756d9/_posts/2019-05-05-logs-for-the-dev-meeting-held-on-2019-05-05.md</a> </p>
+<p>完整會議紀錄<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line">&lt;xmrmatterbridge&gt; &lt;rehrar&gt; Meeting?</span><br><span class="line">&lt;rbrunner&gt; It would be time for one, yes</span><br><span class="line">&lt;rehrar&gt; 1. Meetings Greetings</span><br><span class="line">&lt;rehrar&gt; h&apos;lo</span><br><span class="line">&lt;moneromooo&gt; We&apos;re waiting for 5509 to be finished before branching.</span><br><span class="line">&lt;rehrar&gt; that&apos;s how moneromooo always says hello, don&apos;t worry</span><br><span class="line">&lt;hyc&gt; hi</span><br><span class="line">&lt;rehrar&gt; 2. What&apos;s been done since the previous meeting?</span><br><span class="line">&lt;rbrunner&gt; ... a month ago, if I remember correctly</span><br><span class="line">&lt;rehrar&gt; Something like that. :P So in theory at least a few things got done.</span><br><span class="line">&lt;rehrar&gt; is dsc_ dEBRUYNE selsta around give a gui update?</span><br><span class="line">&lt;rehrar&gt; and maybe moneromooo can say something, although he kind of did already</span><br><span class="line">&lt;moneromooo&gt; hi</span><br><span class="line">&lt;dEBRUYNE&gt; I am here</span><br><span class="line">&lt;dEBRUYNE&gt; Suppose I can give a quick GUI update</span><br><span class="line">&lt;rehrar&gt; please do</span><br><span class="line">&lt;dEBRUYNE&gt; The white theme got merged finally! It also includes a lot of other UI improvements</span><br><span class="line">&lt;dEBRUYNE&gt; Trezor support has been finalized</span><br><span class="line">&lt;dEBRUYNE&gt; We&apos;ve also updated the QT version to 5.9.7, because QT 5.7 was kind of holding us back due to a few bugs being present in it</span><br><span class="line">&lt;dEBRUYNE&gt; Also QT 5.9.7 allows us to use more features etc.</span><br><span class="line">&lt;dEBRUYNE&gt; An update popup was also implemented, it basically checks whether a new version is available and shows a little pop up if yes</span><br><span class="line">&lt;dEBRUYNE&gt; Fiat pricing will also be merged soon^tm, note that it will be turned off by default</span><br><span class="line">&lt;dEBRUYNE&gt; Update popup can be seen here fwiw -&gt; https://github.com/monero-project/monero-gui/pull/2100</span><br><span class="line">&lt;dEBRUYNE&gt; Other than that, the usual lots of optimizations and bug fixes :P</span><br><span class="line">&lt;dEBRUYNE&gt; We&apos;re essentially ready for the upcoming release too</span><br><span class="line">&lt;dEBRUYNE&gt; Just need to merge a few remaining PRs, wait for the translations, and do some testing</span><br><span class="line">&lt;dEBRUYNE&gt; That&apos;s kind of it I guess :p</span><br><span class="line">&lt;dEBRUYNE&gt; Oh one more thing, for 0.15 we&apos;ll be revamping the send page / flow to make it more intuitive -&gt; https://github.com/monero-project/monero-gui/issues/2148</span><br><span class="line">&lt;rbrunner&gt; Looks like it will be a interesting release</span><br><span class="line">&lt;rehrar&gt; Awesome. And where&apos;s the core software in the process of point release? they are planning to have one, right?</span><br><span class="line">&lt;rehrar&gt; oh, well moneromooo did kind of state at the start</span><br><span class="line">&lt;dEBRUYNE&gt; Yeah after 5509 is resolved we&apos;re branching as far as I know</span><br><span class="line">&lt;moneromooo&gt; It just needs vtnerd to review (and hopefully not say it&apos;s total shite and needs rewriting :P)</span><br><span class="line">&lt;rehrar&gt; and then waiting on pony shenanigans?</span><br><span class="line">&lt;rbrunner&gt; Is it sure already that it will have the version 0.14.1.0?</span><br><span class="line">&lt;rbrunner&gt; If yes, I can make the few trivial updates for the installer for that</span><br><span class="line">&lt;moneromooo&gt; Almost certainly.</span><br><span class="line">&lt;moneromooo&gt; But there will likely be 0.14.0.1 etc soon afterwards.</span><br><span class="line">&lt;rbrunner&gt; You mean 0.14.1.1?</span><br><span class="line">&lt;dsc_&gt; Ill focus on: pruning/moneroseed handler/automatic mining from within the GUI next, after that TOR/I2P</span><br><span class="line">&lt;moneromooo&gt; Yes, I do, thanks.</span><br><span class="line">&lt;rehrar&gt; sad dsc_. Mobile one day?</span><br><span class="line">&lt;dEBRUYNE&gt; moneromooo: Are we building directly after branching or will there be some time for testing first?</span><br><span class="line">&lt;dsc_&gt; rehrar: Where&apos;s my Librem dev kit? :)</span><br><span class="line">&lt;moneromooo&gt; Both I think.</span><br><span class="line">&lt;dEBRUYNE&gt; Oki</span><br><span class="line">&lt;dEBRUYNE&gt; Anyone from the RandomX team here to provide an update?</span><br><span class="line">&lt;dEBRUYNE&gt; tevador, sech1, hyc?</span><br><span class="line">&lt;rehrar&gt; dsc_: I&apos;ll literally beg on the streets for you to get one</span><br><span class="line">&lt;selsta&gt; 19:15 &lt;rehrar&gt; sad dsc_. Mobile one day? &lt;-- We don’t really have resources for mobile atm.</span><br><span class="line">&lt;hyc&gt; sure</span><br><span class="line">&lt;hyc&gt; randomx code freeze was april39</span><br><span class="line">&lt;hyc&gt; 30</span><br><span class="line">&lt;hyc&gt; we have 2 review proposals and a 3rd team isprepping one</span><br><span class="line">&lt;hyc&gt; I have a preliminary randomx integration with monerod in my github repo</span><br><span class="line">&lt;hyc&gt; tevador is still playing with cpu optimizations</span><br><span class="line">&lt;rehrar&gt; the review proposals will require XMR, yes?</span><br><span class="line">&lt;rehrar&gt; via CCS?</span><br><span class="line">&lt;hyc&gt; sech1 has nearly finished a CUDAversion</span><br><span class="line">&lt;hyc&gt; yes</span><br><span class="line">&lt;rehrar&gt; let me know if you guys require any help getting the CCS proposal up for them</span><br><span class="line">&lt;rbrunner&gt; Will be intesting to see how fast CUDA will be</span><br><span class="line">&lt;hyc&gt; thanks. waiting for 3rd proposal</span><br><span class="line">&lt;sech1&gt; I estimate CUDA version will have the same hashrate on RandomX as with Cryptonight, maybe even faster</span><br><span class="line">&lt;sech1&gt; It&apos;s like 80% complete now</span><br><span class="line">&lt;rehrar&gt; this is kind of really exciting stuff, and I&apos;m super giddy that Monero (via you guys) are on the forefront of this</span><br><span class="line">&lt;rbrunner&gt; Is that earlier than originally feared / planned?</span><br><span class="line">&lt;hyc&gt; rbrunner wdy mean</span><br><span class="line">&lt;rbrunner&gt; The CUDA version. I am a little surprised it&apos;s almost ready already</span><br><span class="line">&lt;sech1&gt; It&apos;s not hard to implement</span><br><span class="line">&lt;rbrunner&gt; But somebody must do it :)</span><br><span class="line">&lt;sech1&gt; But the remaining 20% might take longer, it&apos;s the hardest part to do without losing much hashrate</span><br><span class="line">&lt;hyc&gt; yes, so it&apos;s beingdone</span><br><span class="line">&lt;hyc&gt; lol. the last 20% always takes the most time...</span><br><span class="line">&lt;rbrunner&gt; True that</span><br><span class="line">&lt;rehrar&gt; hyc any time frame on the 3rd team proposal?</span><br><span class="line">&lt;rehrar&gt; and kind of the CCS in general?</span><br><span class="line">&lt;rehrar&gt; this probably won&apos;t get in this upcoming fork, correct?</span><br><span class="line">&lt;hyc&gt; I suppose we&apos;ll see the 3rd proposal this week</span><br><span class="line">&lt;hyc&gt; we&apos;ll present all 3 for discussion in this channel, decide what to move forward on</span><br><span class="line">&lt;sech1&gt; You can watch my progress with CUDA version here: https://github.com/SChernykh/RandomX\_CUDA/</span><br><span class="line">&lt;hyc&gt; if we have reviews completed by July I think we can roll out in October</span><br><span class="line">&lt;hyc&gt; I expect to have fully working testnet monerod in time for monerokon</span><br><span class="line">&lt;dEBRUYNE&gt; rehrar: I don&apos;t see why not if we have integration ready + reviews finished by the end of June</span><br><span class="line">&lt;rehrar&gt; That&apos;s awfully exciting. Thanks for sharing the news on this.</span><br><span class="line">&lt;dEBRUYNE&gt; The october fork is then still ~3.5 months away</span><br><span class="line">&lt;rehrar&gt; so I guess I shouldn&apos;t buy any more GPUs at the moment for my little 2 GPU miner</span><br><span class="line">&lt;hyc&gt; as sech1 noted, GPU hashrate will be comparable to cryptonight</span><br><span class="line">&lt;hyc&gt; but CPU rate is much higher than cryptonight</span><br><span class="line">&lt;dEBRUYNE&gt; I guess we&apos;ll see GPU mining as long as it is profitable</span><br><span class="line">&lt;hyc&gt; yeah, no reason why not</span><br><span class="line">&lt;hyc&gt; anyone interested in writing minig</span><br><span class="line">&lt;hyc&gt; mining code can get current rev from randomx repo</span><br><span class="line">&lt;hyc&gt; final docs/specs arethere now</span><br><span class="line">&lt;sech1&gt; actually, it&apos;s the dev branch of randomx repo which is up to date</span><br><span class="line">&lt;hyc&gt; ^ tevador says all merged to master now</span><br><span class="line">&lt;sech1&gt; nice</span><br><span class="line">&lt;rehrar&gt; I have a mac (for website testing). Maybe I can give it a shot.</span><br><span class="line">&lt;rehrar&gt; But I&apos;d have to build from source, right?</span><br><span class="line">&lt;moneromooo&gt; Yes.</span><br><span class="line">&lt;moneromooo&gt; Or I guess you can grab a binary from that PR.</span><br><span class="line">&lt;dsc_&gt; what does &apos;SSL&apos; between wallet and daemon mean?</span><br><span class="line">&lt;dsc_&gt; between monero-wallet-cli and monerod?</span><br><span class="line">&lt;moneromooo&gt; Data sent back and forth gets encrypted.</span><br><span class="line">&lt;moneromooo&gt; Yes.</span><br><span class="line">&lt;vtnerd_&gt; moneromooo : I have a mac for testing too</span><br><span class="line">&lt;dsc_&gt; gotcha. Ill try to test..</span><br><span class="line">&lt;vtnerd_&gt; the issue is that I think I have a custom openssl build instead of whatever comes with the system, which is probably what you want to be tested ?</span><br><span class="line">&lt;moneromooo&gt; Well, mostly, but a custom one can&apos;t be bad either. Might find some corner case.</span><br><span class="line">&lt;rehrar&gt; moneromooo: I&apos;ll put it in the Revuo as well as a volunteer opportunity?</span><br><span class="line">&lt;rehrar&gt; though it&apos;d help to have instructions on how to test</span><br><span class="line">&lt;rehrar&gt; maybe I can talk with you later and do a write up</span><br><span class="line">&lt;moneromooo&gt; Well, I kinda hope it&apos;ll be done and merged within a day now that vtnerd&apos;s around to review ^_^</span><br><span class="line">&lt;rehrar&gt; ah, I see.</span><br><span class="line">&lt;rehrar&gt; no worries then</span><br><span class="line">&lt;moneromooo&gt; Thanks though</span><br><span class="line">&lt;rehrar&gt; alright, any other meeting items?</span><br><span class="line">&lt;rehrar&gt; Just the logs of this meeting (if/when posted) will be enough to excite the community I think</span><br><span class="line">&lt;rehrar&gt; pump back up to 500 dollah</span><br><span class="line">&lt;rehrar&gt; jk jk don&apos;t ban</span><br><span class="line">&lt;rehrar&gt; Alright, if there&apos;s nothing else, I think we can call it here. thanks for the check in everyone.</span><br><span class="line">&lt;hyc&gt; byebye</span><br><span class="line">&lt;rbrunner&gt; Thanks</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2019/05/15/devmeeting-20190505/" data-id="cjvo0dric00000sucdvq54t0x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GUI/">GUI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RandomX/">RandomX</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/23/2018-Monero-review/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Monero 2018 年發展回顧</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+<h3 class="widget-title">Monero Taiwan 正體中文站</h3>
+<div class="widget">
+  <p>本站是由非官方的 Monero (XMR, 門羅幣)愛好者自發性熱血建置，旨在轉貼翻譯專案開發訊息與便利服務以推廣 Monero 在台灣/中文世界的應用普及。</p>
+</div>
+</div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">桌面版錢包/節點下載</h3>
+    <div class="widget">
+        <a href="https://getmonero.org/downloads" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"></a>
+            <p>目前節點軟體最新版本: v0.14.0.2</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">行動版錢包</h3>
+    <div class="widget">
+        <div><p>Android 版： Monero: Monerujo Wallet</p>
+        <a href="https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img style="width:80%;max-width:400px;" alt="Google Play 立即下載" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg"></a></div>
+        <div><p>Apple iOS 版： Cake Wallet</p>
+        <a href="https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8"><img style="width:80%;max-width:400px;" alt="App Store 下載" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"></a></div>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">試用好專案支持本站</h3>
+    <div class="widget">
+        <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"></a>
+            <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
+    </div></div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
+    <div class="widget">
+    	<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">即時價格</h3>
+    <div class="widget">
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowtransparency="true" border="0" hidefocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="no"></iframe>
+</div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">XMR常用連結</h3>
+    <div class="widget">
+        <ul>
+        	<dt>區塊瀏覽器</dt>
+            <dd><a href="https://community.xmr.to/explorer/mainnet/" target="_blank" rel="noopener">XMR.to 區塊瀏覽器</a></dd>
+            <dd><a href="https://xmrchain.net/" target="_blank" rel="noopener">XMRchain 區塊瀏覽器</a></dd>
+            <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
+            <dt>兌換服務</dt>
+            <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
+            <dd><a href="https://xmr.to/" target="_blank" rel="noopener">XMR.TO</a> - 將XMR快速兌換至BTC</dd>
+            <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
+            <dt>視覺化資料</dt>
+            <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
+            <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
+        </ul>
+    </div></div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-小秘訣/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-新聞/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/區塊鏈分叉消息/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方新版本釋出/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方消息宣布/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/站務消息/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI/" style="font-size: 10px;">GUI</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 11px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/devmeeting-20190505/">開發者會議紀錄 DevMeeting 20190505</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/23/2018-Monero-review/">Monero 2018 年發展回顧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/monero-0-14-0-release/">Monero發布新版本v0.14.0更新</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181216/">開發者會議紀錄 DevMeeting 20181216</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議紀錄 DevMeeting 20181014</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <div>
+                <p>如果你覺得這個網站有幫助到你，請考慮贊助我們一點XMR以補貼網站運作的支出<br></p>
+                <p style="color:#FFFFFF"><strong>45XMRtw5de1EYjtsZPuLgmG3vo2n5vW8iLPM9NmT2MSG65vZSCf1cXBgaNQJtxLx45aaFYZJQawERJJV9yuHiLYsCk82j8Z</strong></p>
+                <p>亦可發送至OpenAlias地址: donate.xmr-tw.org</p>
+            </div>
+            <div>
+                <p>&copy;
+                    2019 Monero - Taiwan 正體中文站<br>
+                    本網站內容採用<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+            </div>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/advantage" class="mobile-nav-link">Monero是什麼？</a>
+  
+    <a href="/nodes" class="mobile-nav-link">公共節點(Node)</a>
+  
+    <a href="/xmr-eta" class="mobile-nav-link">區塊鏈動態(XMR-ETA)</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

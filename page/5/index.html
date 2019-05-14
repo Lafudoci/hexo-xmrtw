@@ -75,6 +75,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="y2017-devmeeting-20170903" class="article article-type-y2017" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/04/devmeeting-20170903/" class="article-date">
+  <time datetime="2017-09-04T04:32:09.000Z" itemprop="datePublished">2017-09-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/04/devmeeting-20170903/">開發者會議紀錄 DevMeeting 20170903</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>大多數的開發人員都在準備這個月將釋出的新版本<ul>
+<li>由於全網算力的大幅提升，原先預估應分叉的日子會是2017年九月二十一號可能會提早到九月十六號</li>
+<li>正在討論是否要將硬分叉的區塊高度調整到某個會比較接近九月二十一號的日子</li>
+</ul>
+</li>
+<li>hyc 已經將 SafeSync模式植入了<ul>
+<li>monerod 將會預設使用”FAST”模式來同步區塊, 並在初次同步完成後自動改成”SAFE”模式繼續同步</li>
+<li>這項更新將會使同步更加快速並避免資料庫的毀損</li>
+<li>另外，也多了一個”salvage”功能來協助修復損毀的資料庫</li>
+</ul>
+</li>
+<li>knacc 已經在著手設計RuffCT的原型<ul>
+<li>目前正在等Sarang與Surae來解決一些註釋問題(notation issues)</li>
+<li>在這之後他們就能夠為RuffCT決定一個合理的ringsize了</li>
+</ul>
+</li>
+<li>SerHack 已經準備好釋出PrestaShop 的插件了<ul>
+<li>未來將會釋出WHMCS，Magento，跟Shopify的插件</li>
+</ul>
+</li>
+<li>vtnerd 正在改善MyMonero的使用經驗。現在資料庫的呈現有些問題</li>
+<li>正在等待Dun跟Bradstreet(以Apple的名義)認證iOS版的MyMonero</li>
+<li>lessless 有做了一份改良版的<a href="https://lessless.github.io" target="_blank" rel="noopener">API文件</a></li>
+<li>目前還有兩個Monero硬體錢包的提案正在開放討論<ul>
+<li><a href="https://forum.getmonero.org/7/open-tasks/88160/monero-firmware-for-ledger-wallet/" target="_blank" rel="noopener">Ledger Fimrware port</a></li>
+<li><a href="https://forum.getmonero.org/7/open-tasks/88149/dedicated-monero-hardware-wallet/" target="_blank" rel="noopener">Dedicated Monero Hardware Wallet</a></li>
+</ul>
+</li>
+<li>Rehrar 正在製作Monero Project Quarterly Review文件：<ul>
+<li><a href="https://drive.google.com/file/d/0B0vhnWCa9J5QYW1yc2lRNWE2NzA/view?usp=sharing" target="_blank" rel="noopener">WIP</a></li>
+</ul>
+</li>
+<li>MoneroMooo 正在處理 Luigi’s N-1/N MultiSig</li>
+<li>下一次開發者會議將會在2017年的九月十七號舉行</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2017/09/04/devmeeting-20170903/#more">繼續閱讀...</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2017/09/04/devmeeting-20170903/" data-id="cjvnzlsjx0073jkuc2y4c859a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MultiSig/">MultiSig</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RuffCT/">RuffCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mymonero/">mymonero</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬分叉/">硬分叉</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬體錢包/">硬體錢包</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/輕錢包/">輕錢包</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="y2017-paymentid" class="article article-type-y2017" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/08/31/paymentid/" class="article-date">
@@ -103,7 +185,7 @@
       
         <p>你在使用Monero付款時是否會感到困惑有時要附payment id有時卻不用呢？ 那就快來好好看看這篇文章嘍！<br>首先介紹一下Monero的<strong>地址(address)</strong> 它會是一組格式以4為首的95字元字串，像這樣落落長：</p>
 <p> <code>45vzSchYNDcMtFngCX8KAjPUKHDtkqa2yJiHgnAAQMisV3YVs9MPFgxhuBUw4wmFM1Q7Jd36Gcvu91mkNo7L5kkbJmxm5f5</code> </p>
-<p> 一個錢包只對應到一個地址，是在創建錢包時由種子碼(seed)產生而來，由於Monero的地址不會直接記錄在區塊鏈上，所以同一組地址是可以放心公開並重複使用的，就像是若公開你的銀行帳號也不需擔心會被他人窺視餘額。 </p>
+<p> 一個錢包只對應到一個地址，是在創建錢包時由種子碼(seed)產生而來，由於Monero的地址不會直接紀錄在區塊鏈上，所以同一組地址是可以放心公開並重複使用的，就像是若公開你的銀行帳號也不需擔心會被他人窺視餘額。 </p>
 <p> 接著是<strong>付款ID(payment id)</strong>，譬如像這樣短短一條： </p>
 <p> <code>bfa232d70e4579ba</code> </p>
 <p> 這是一個使用者可選擇性使用的交易附帶資訊，但各位若在交易所應該都遇過強制要求附上付款id吧？這原因就來自於Monero的匿名性，假設今天有人直接轉了10XMR進交易所的錢包地址，交易所根本無從分辨是哪一個客戶轉的，總不能每次都要求客戶提供tx key證明吧？所以付款ID就像是在寄包裹到某地址時的署名，收款方才得以知道這筆費用是做什麼用的，譬如商家分辨這是來自哪一筆訂單的付款，或是多個好友同時要還你同金額的錢的時候，提供付款ID就可以讓你快速辨別交易，所以有個結論很重要：</p>
@@ -118,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2017/08/31/paymentid/" data-id="cjuun08dr00116ckghnbjsql6" class="article-share-link">Share</a>
+      <a data-url="https://xmr-tw.org/2017/08/31/paymentid/" data-id="cjvnzlsfs000ujkuckc4chuad" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/payment-id/">payment id</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/付款ID/">付款ID</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/整合型地址/">整合型地址</a></li></ul>
@@ -188,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2017/08/21/devmeeting-20170820/" data-id="cjuun08mg00ah6ckgt2kd6rnb" class="article-share-link">Share</a>
+      <a data-url="https://xmr-tw.org/2017/08/21/devmeeting-20170820/" data-id="cjvnzlsly00anjkucqgz8edya" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Monero-Research-Lab/">Monero Research Lab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MultiSig/">MultiSig</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT2-0/">RingCT2.0</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RuffCT/">RuffCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手機錢包/">手機錢包</a></li></ul>
@@ -235,7 +317,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2017/08/18/helium-hydra-testnetob/" data-id="cjuun08do000x6ckg7dw86qyf" class="article-share-link">Share</a>
+      <a data-url="https://xmr-tw.org/2017/08/18/helium-hydra-testnetob/" data-id="cjvnzlsfq000rjkuclo4q7j9l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Helium-Hydra/">Helium Hydra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/testnet/">testnet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/環狀簽名/">環狀簽名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬分叉/">硬分叉</a></li></ul>
@@ -297,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2017/08/10/devmeeting-20170806/" data-id="cjuun08iu006u6ckgs5hdm8gl" class="article-share-link">Share</a>
+      <a data-url="https://xmr-tw.org/2017/08/10/devmeeting-20170806/" data-id="cjvnzlsju0071jkucita3fpkq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT/">RingCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mymonero/">mymonero</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手機錢包/">手機錢包</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/環狀簽名/">環狀簽名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬分叉/">硬分叉</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/輕錢包/">輕錢包</a></li></ul>
@@ -352,7 +434,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2017/07/25/ringct/" data-id="cjuun08dj000r6ckg0acwhyew" class="article-share-link">Share</a>
+      <a data-url="https://xmr-tw.org/2017/07/25/ringct/" data-id="cjvnzlsfk000njkuckg34kx81" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT/">RingCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/環簽交易/">環簽交易</a></li></ul>
@@ -394,7 +476,7 @@
 <p>在<a href="https://xmr-tw.org/2017/06/30/monero-stealth_addresses/">上一篇文章</a>中，我們討論了 Monero 是如何藉由隱匿性地址來避免交易輸出被連結到收款者的公開地址。這是使用了一次性公鑰所達成的效果。一次性公鑰僅能被收款者所再花費，且僅有收款者得以查看其在區塊鏈上所擁有的交易輸出。因此所有的交易輸出都是無法被追蹤的，可以確保收款者的隱私無虞。 </p>
 <p>而在交易輸入的這端，也就是付款者的隱私，則是藉由環狀簽名(ring signatures)來保護。 </p>
 <p>環狀簽名是一種數位形式的簽署方式，藉由混合一群簽署者的簽名來製造一份無法分辨來源的簽名，而得以授權一份交易。這可以類比是從一個共同銀行帳戶發出的支票，但無法得知真正的簽署者是誰。這份數位簽名是由一位簽署者與多位非簽署者組成的”環”所簽署，每一位參與者都是同等的。其中真正用來簽署的一次性花費金鑰，是來自於該付款者的前一筆收款交易輸出。其餘非簽署用的數個來源是來自區塊鏈上舊有的交易輸出，作為誘餌。這些輸出將被合成一個新的交易輸入。從第三方的角度來看，每一個交易輸入都是相同而無法區分彼此的。這個過程可以幫助付款者隱藏其先前的交易來源。 </p>
-<p>此時您可能會產生疑問，如果第三方無法驗證哪一個交易輸出尚未被花費，那要如何防止有人重複的花費同一筆交易輸出呢? 這種狀況可以用金鑰映像(key image)來解決。 金鑰映像是來自於交易輸出被花費時產生的一組加密金鑰，會被包含在每一筆環狀簽名的交易中。基於加密學的原理，每一個交易輸出只會對應一個金鑰映像存在於區塊鏈上，但無法回推是哪一組金鑰映像是由哪一筆交易輸出產生。所有的金鑰映像清單會被記錄於區塊鏈中，使礦工得以驗證交易輸出沒有被重複花費。 </p>
+<p>此時您可能會產生疑問，如果第三方無法驗證哪一個交易輸出尚未被花費，那要如何防止有人重複的花費同一筆交易輸出呢? 這種狀況可以用金鑰映像(key image)來解決。 金鑰映像是來自於交易輸出被花費時產生的一組加密金鑰，會被包含在每一筆環狀簽名的交易中。基於加密學的原理，每一個交易輸出只會對應一個金鑰映像存在於區塊鏈上，但無法回推是哪一組金鑰映像是由哪一筆交易輸出產生。所有的金鑰映像清單會被紀錄於區塊鏈中，使礦工得以驗證交易輸出沒有被重複花費。 </p>
 <p>讓我們用一個例子來看看這是怎麼運作的。 </p>
 <p>Alice 想要用環簽大小(ringsize)為5的方式付 Monero 給 Bob。此時5個交易輸入的其中1個輸入即會是來自於 Alice 的錢包，將會在交易中被消耗。其餘4個交易輸入則是隨意的在區塊鏈中挑選而來，作為誘餌。這就會形成一個5個輸入的環狀簽名，每一個輸入皆有可能為真的簽名。 對一個外部的觀察者，包括 Bob 本人，都無法得知哪一個輸入才是真正來自 Alice 的一次性花費金鑰。如此一來，藉由使用環狀簽名的技術來混淆交易輸入的來源， Monero 可以保護付款者的隱私安全，確保每一個 Monero 的來源都是無法追蹤的。 </p>
 <p>為了要提高交易雙方的隱私保護，環狀簽名保密交易，通常簡稱為 RingCT，被用來隱藏 Monero 的交易金額。</p>
@@ -405,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2017/07/20/monero-ring-signatures/" data-id="cjuun08dh000p6ckgam68go88" class="article-share-link">Share</a>
+      <a data-url="https://xmr-tw.org/2017/07/20/monero-ring-signatures/" data-id="cjvnzlsfi000mjkucd63ih75a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT/">RingCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/環狀簽名/">環狀簽名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/金鑰映像/">金鑰映像</a></li></ul>
@@ -472,7 +554,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2017/07/16/devmeeting-20170709/" data-id="cjuun08gl00516ckgaj4alpvb" class="article-share-link">Share</a>
+      <a data-url="https://xmr-tw.org/2017/07/16/devmeeting-20170709/" data-id="cjvnzlsi90057jkucl137vv4o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FFS/">FFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LMDB/">LMDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mining/">Mining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Subaddresses/">Subaddresses</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ZeroMQ/">ZeroMQ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手機錢包/">手機錢包</a></li></ul>
@@ -523,7 +605,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2017/07/12/monero-ringct-will-rise/" data-id="cjuun08dn000w6ckg1plri7l4" class="article-share-link">Share</a>
+      <a data-url="https://xmr-tw.org/2017/07/12/monero-ringct-will-rise/" data-id="cjvnzlsfd000ijkuclnq8at2i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Monero-Research-Lab/">Monero Research Lab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT/">RingCT</a></li></ul>
@@ -566,7 +648,7 @@
 <p>我們知道 Monero 使用了去分散式的點對點共識網路去紀錄區塊鏈中的交易輸出。 如果 Alice 擁有 Monero，這代表著她擁有著某些交易輸出的控制權。 當 Alice 轉帳一些 Monero 給 Bob 時，Alice 其實是在對交易網路宣布她想要把某些她可以控制的交易輸出重新打包成一個新的交易輸出並把控制權完全轉移到 Bob的手上。</p>
 <p>換句話說，一個交易即是指，屬於某個錢包的舊交易經過轉形之後，轉移到屬於另一個錢包的新交易輸出的過程。 </p>
 <p>接著讓我們再更進一步，了解隱匿性地址是如何增加使用者的隱私權。 </p>
-<p>在每一個交易中，隱匿性的地址，也就是一次性的公鑰，將會被自動產生並記錄在交易之中來表明是誰在之後的交易中可以使用這些交易輸出。 以旁觀者的角度來看，並無法從區塊鏈上得知資金是否從 Alice 移動到 Bob 或是任何錢包的地址與這此筆交易相關。 因此，當Alice 轉帳 Monero 給 Bob 時，Bob 所收到的交易輸出並不會與 Bob 的錢包地址出現關聯。 </p>
+<p>在每一個交易中，隱匿性的地址，也就是一次性的公鑰，將會被自動產生並紀錄在交易之中來表明是誰在之後的交易中可以使用這些交易輸出。 以旁觀者的角度來看，並無法從區塊鏈上得知資金是否從 Alice 移動到 Bob 或是任何錢包的地址與這此筆交易相關。 因此，當Alice 轉帳 Monero 給 Bob 時，Bob 所收到的交易輸出並不會與 Bob 的錢包地址出現關聯。 </p>
 <p>但是，如果 Alice 需要證明她真的有轉帳 Monero 給 Bob，她的錢包亦可做出交易有確實傳送的的驗證。 所以 Bob 可以確信沒有其他人能夠得知這筆 Monero 的交易發生在何時或甚至是否存在。 如果 Bob 是一個商人，那這個功能就非常有好處，因為沒有其他人可以從區塊鏈上得知他的客戶組成和數量。</p>
 <p>好了，接下來要注意了，因為我們將要深入到技術層面的解釋。 </p>
 <p>每一個 Monero 地址是95字元的字串，是由 public view key 與 public spend key 組成。 當Alice 轉帳 Monero 給 Bob 時， Alice 的錢包會使用 Bob 的 public view key 與 public spend key 再加上一些隨機資料來產生獨特的一次性公鑰供 Bob 的後續交易使用。 所有人都能夠在區塊鏈上看見一次性公鑰，但只有 Alice 和 Bob 自己知道他們的錢包之間有交易的發生。 </p>
@@ -578,75 +660,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2017/06/30/monero-stealth-addresses/" data-id="cjuun08d5000j6ckgdipfowme" class="article-share-link">Share</a>
+      <a data-url="https://xmr-tw.org/2017/06/30/monero-stealth-addresses/" data-id="cjvnzlsfc000hjkucn3stsxmv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RingCT/">RingCT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/隱匿性地址/">隱匿性地址</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="y2017-devmeeting-20170625" class="article article-type-y2017" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/30/devmeeting-20170625/" class="article-date">
-  <time datetime="2017-06-30T14:28:30.000Z" itemprop="datePublished">2017-06-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/30/devmeeting-20170625/">開發者會議紀錄 DevMeeting 20170625</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>內容概要</p>
-<ul>
-<li>twinget在ZeroMQ RPC Daemon/Server上的植入工作的快要完成，接著將會植入錢包。</li>
-<li>vtnerd已開始著手處理:<ul>
-<li>更快速的Mymonero後台importing</li>
-<li>x86 ASM的錢包匯入功能已上線約莫一個月了</li>
-<li>更快、更強、更好的mempool後台處理程序</li>
-</ul>
-</li>
-<li>Jaquee正在為官方的GUI錢包上加上能夠使用 MyMonero/OpenMonero 的輕錢包功能<ul>
-<li>這將同時支援Android跟iOS的客戶端</li>
-</ul>
-</li>
-<li>kenshi84正在處理錢包的subaddress，<a href="https://github.com/monero-project/monero/pull/2056" target="_blank" rel="noopener">已幾乎準備好、僅剩些許的檢查和測試了</a><ul>
-<li>僅是個錢包的更動，不需要硬分岔</li>
-</ul>
-</li>
-<li>對於預設Ring的大小的討論依然在進行中</li>
-<li>從Kovri會議中得知，rehrar已將Monero網站重新設計完成，正等待上線中
-        
-          <p class="article-more-link">
-            <a href="/2017/06/30/devmeeting-20170625/#more">繼續閱讀...</a>
-          </p>
-        
-      
-    </li></ul></div>
-    <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2017/06/30/devmeeting-20170625/" data-id="cjuun08iw006v6ckg230fjbpx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/輕錢包/">輕錢包</a></li></ul>
 
     </footer>
   </div>
@@ -748,7 +765,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 10px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI/" style="font-size: 10px;">GUI</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 11px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 19px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
     </div>
   </div>
 
@@ -770,6 +787,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/15/devmeeting-20190505/">開發者會議紀錄 DevMeeting 20190505</a>
+          </li>
+        
+          <li>
             <a href="/2019/03/23/2018-Monero-review/">Monero 2018 年發展回顧</a>
           </li>
         
@@ -778,15 +799,11 @@
           </li>
         
           <li>
-            <a href="/2019/02/16/devmeeting-20181216/">開發者會議記錄 DevMeeting 20181216</a>
+            <a href="/2019/02/16/devmeeting-20181216/">開發者會議紀錄 DevMeeting 20181216</a>
           </li>
         
           <li>
-            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議記錄 DevMeeting 20181014</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/10/devmeeting-20181007/">開發者會議記錄 DevMeeting 20181007</a>
+            <a href="/2019/02/16/devmeeting-20181014-2/">開發者會議紀錄 DevMeeting 20181014</a>
           </li>
         
       </ul>
