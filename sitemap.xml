@@ -2,247 +2,282 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xmr-tw.org/2018/08/01/devmeeting-20180729/</loc>
+    <loc>https://xmr-tw.org/2020/04/13/migration-github/</loc>
     
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
+    <lastmod>2020-04-28T13:10:12.383Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2020/03/19/monero-0-15-0-5-release/</loc>
+    
+    <lastmod>2020-04-28T13:03:25.893Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/09/26/mortem-of-the-burning-bug/</loc>
+    
+    <lastmod>2020-04-28T13:02:02.205Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2019/11/24/monero-0-15-0-1-release/</loc>
+    
+    <lastmod>2020-04-28T12:38:16.160Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2019/02/21/monero-0-14-0-release/</loc>
+    
+    <lastmod>2020-04-28T11:19:21.400Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/09/15/devmeeting-20180909/</loc>
     
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/03/12/devmeeting-20170312/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/12/05/devmeeting-20171203/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/11/21/devmeeting-20171119/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/10/02/devmeeting-20171001/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/10/23/devmeeting-20171022/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/08/21/devmeeting-20170820/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/09/04/devmeeting-20170903/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/09/18/devmeeting-20170917/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/07/20/monero-ring-signatures/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/06/30/monero-stealth-addresses/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/08/10/devmeeting-20170806/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/08/31/paymentid/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/06/30/devmeeting-20170625/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/05/24/devmeeting-20180520/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/04/27/devmeeting-20180422/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/06/26/devmeeting-20180617/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/03/08/devmeeting-20180304/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/05/11/devmeeting-20180506/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/07/29/devmeeting-20180715/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/03/05/devmeeting-20180225/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/03/19/devmeeting-20180311/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/03/19/devmeeting-20180318/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/01/30/devmeeting-20180128/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2019/02/16/devmeeting-20181014-2/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/07/10/devmeeting-20180701/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/08/29/devmeeting-20180826/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
+    <lastmod>2019-08-13T14:08:55.723Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/10/10/devmeeting-20181007/</loc>
     
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
+    <lastmod>2019-08-13T14:08:55.723Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xmr-tw.org/2019/05/15/devmeeting-20190505/</loc>
+    <loc>https://xmr-tw.org/2019/02/16/devmeeting-20181014-2/</loc>
     
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/07/16/devmeeting-20170709/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
+    <lastmod>2019-08-13T14:08:55.723Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2019/02/16/devmeeting-20181216/</loc>
     
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
+    <lastmod>2019-08-13T14:08:55.723Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2019/05/15/devmeeting-20190505/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.723Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/03/19/devmeeting-20180311/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/03/19/devmeeting-20180318/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/04/27/devmeeting-20180422/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/05/11/devmeeting-20180506/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/06/26/devmeeting-20180617/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/05/24/devmeeting-20180520/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/07/10/devmeeting-20180701/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/07/29/devmeeting-20180715/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/08/01/devmeeting-20180729/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/08/29/devmeeting-20180826/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/11/21/devmeeting-20171119/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/12/05/devmeeting-20171203/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/12/20/devmeeting-20171217/</loc>
     
-    <lastmod>2019-08-13T14:08:55.000Z</lastmod>
+    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/01/30/devmeeting-20180128/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/03/05/devmeeting-20180225/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/03/08/devmeeting-20180304/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/07/20/monero-ring-signatures/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/08/10/devmeeting-20170806/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/08/31/paymentid/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/08/21/devmeeting-20170820/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/09/04/devmeeting-20170903/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/09/18/devmeeting-20170917/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/10/02/devmeeting-20171001/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/10/23/devmeeting-20171022/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/03/12/devmeeting-20170312/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.709Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/06/30/devmeeting-20170625/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.709Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/06/30/monero-stealth-addresses/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.709Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/07/16/devmeeting-20170709/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.709Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2019/03/23/2018-Monero-review/</loc>
     
-    <lastmod>2019-04-22T03:43:30.543Z</lastmod>
+    <lastmod>2019-04-22T03:43:30.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/12/16/a-note-on-xmr-fees/</loc>
     
-    <lastmod>2019-04-22T03:24:36.284Z</lastmod>
+    <lastmod>2019-04-22T03:24:36.000Z</lastmod>
     
   </url>
   
@@ -261,13 +296,6 @@
   </url>
   
   <url>
-    <loc>https://xmr-tw.org/2017/10/26/monero-0-11-1-0/</loc>
-    
-    <lastmod>2019-04-21T13:23:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://xmr-tw.org/2017/05/17/disclosure-of-a-major-bug-in-cryptonote-based-currencies/</loc>
     
     <lastmod>2019-04-21T13:23:39.000Z</lastmod>
@@ -282,9 +310,9 @@
   </url>
   
   <url>
-    <loc>https://xmr-tw.org/2019/02/21/monero-0-14-0-release/</loc>
+    <loc>https://xmr-tw.org/2017/10/26/monero-0-11-1-0/</loc>
     
-    <lastmod>2019-04-21T13:23:38.000Z</lastmod>
+    <lastmod>2019-04-21T13:23:39.000Z</lastmod>
     
   </url>
   
@@ -320,13 +348,6 @@
     <loc>https://xmr-tw.org/2018/09/06/multiple-counting-bug/</loc>
     
     <lastmod>2019-04-20T21:24:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/09/26/mortem-of-the-burning-bug/</loc>
-    
-    <lastmod>2019-04-20T19:27:48.000Z</lastmod>
     
   </url>
   
@@ -410,21 +431,21 @@
   <url>
     <loc>https://xmr-tw.org/nodes/index.html</loc>
     
-    <lastmod>2019-04-17T10:24:42.710Z</lastmod>
+    <lastmod>2019-04-17T10:24:42.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/advantage/index.html</loc>
     
-    <lastmod>2019-04-17T10:17:49.691Z</lastmod>
+    <lastmod>2019-04-17T10:17:49.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/xmr-eta/index.html</loc>
     
-    <lastmod>2019-04-17T07:26:22.026Z</lastmod>
+    <lastmod>2019-04-17T07:26:22.000Z</lastmod>
     
   </url>
   
