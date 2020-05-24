@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xmr-tw.org/2020/05/23/monero-0.16-released/</loc>
+    
+    <lastmod>2020-05-24T03:27:43.721Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xmr-tw.org/2020/04/18/dandelion-implemented/</loc>
     
     <lastmod>2020-05-01T07:47:28.623Z</lastmod>
@@ -86,13 +93,6 @@
   </url>
   
   <url>
-    <loc>https://xmr-tw.org/2018/05/11/devmeeting-20180506/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://xmr-tw.org/2018/03/19/devmeeting-20180318/</loc>
     
     <lastmod>2019-08-13T14:08:55.719Z</lastmod>
@@ -114,6 +114,13 @@
   </url>
   
   <url>
+    <loc>https://xmr-tw.org/2018/05/11/devmeeting-20180506/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xmr-tw.org/2018/07/10/devmeeting-20180701/</loc>
     
     <lastmod>2019-08-13T14:08:55.719Z</lastmod>
@@ -128,6 +135,13 @@
   </url>
   
   <url>
+    <loc>https://xmr-tw.org/2018/07/29/devmeeting-20180715/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xmr-tw.org/2018/08/01/devmeeting-20180729/</loc>
     
     <lastmod>2019-08-13T14:08:55.719Z</lastmod>
@@ -136,13 +150,6 @@
   
   <url>
     <loc>https://xmr-tw.org/2018/08/29/devmeeting-20180826/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/07/29/devmeeting-20180715/</loc>
     
     <lastmod>2019-08-13T14:08:55.719Z</lastmod>
     
@@ -212,13 +219,6 @@
   </url>
   
   <url>
-    <loc>https://xmr-tw.org/2017/08/21/devmeeting-20170820/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://xmr-tw.org/2017/09/04/devmeeting-20170903/</loc>
     
     <lastmod>2019-08-13T14:08:55.713Z</lastmod>
@@ -226,7 +226,7 @@
   </url>
   
   <url>
-    <loc>https://xmr-tw.org/2017/10/23/devmeeting-20171022/</loc>
+    <loc>https://xmr-tw.org/2017/08/21/devmeeting-20170820/</loc>
     
     <lastmod>2019-08-13T14:08:55.713Z</lastmod>
     
@@ -247,6 +247,13 @@
   </url>
   
   <url>
+    <loc>https://xmr-tw.org/2017/10/23/devmeeting-20171022/</loc>
+    
+    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xmr-tw.org/2017/03/12/devmeeting-20170312/</loc>
     
     <lastmod>2019-08-13T14:08:55.709Z</lastmod>
@@ -254,14 +261,14 @@
   </url>
   
   <url>
-    <loc>https://xmr-tw.org/2017/06/30/devmeeting-20170625/</loc>
+    <loc>https://xmr-tw.org/2017/06/30/monero-stealth-addresses/</loc>
     
     <lastmod>2019-08-13T14:08:55.709Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xmr-tw.org/2017/06/30/monero-stealth-addresses/</loc>
+    <loc>https://xmr-tw.org/2017/06/30/devmeeting-20170625/</loc>
     
     <lastmod>2019-08-13T14:08:55.709Z</lastmod>
     
