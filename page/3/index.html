@@ -76,6 +76,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="y2018-multiple-counting-bug" class="article article-type-y2018" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/06/multiple-counting-bug/" class="article-date">
+  <time datetime="2018-09-06T09:49:51.000Z" itemprop="datePublished">2018-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AE%98%E6%96%B9%E6%B6%88%E6%81%AF%E5%AE%A3%E5%B8%83/">官方消息宣布</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/06/multiple-counting-bug/">關於重複計數漏洞的事後檢討</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>這篇文章要來談重複計數(multiple counting)的漏洞，其包括了兩個變種。這篇文章的目標是對上述的漏洞提供完整的細節，解釋這是如何被用來攻擊線上服務、商家與交易所，並且 Monero (開發)社群是如何處理這個漏洞。</p>
+<p>重複計數漏洞的兩個變種存在於子地址(subaddress)功能中，這功能用了個不同的交易金鑰程式碼架構。第一個漏洞的變種簡單來說就是沒有對重複的公鑰進行檢查，因此攻擊者可以重複將同份交易公鑰包含在交易中，這結果導致了接收者的錢包會回報收到了x倍於其真正收到的的交易數量(x是代表收到幾次交易金鑰的一個整數)，所有用來回報收到交易的指令(如show_transfers (CLI), get_transfers (RPC))都被此漏洞影響。但是餘額並沒有受到影響，錢包依舊會回報正常的資金餘額。可惜的是，大多數的交易所都是利用 get_transfers 或 get_payments RPC指令在運作，因此重複的交易公鑰將會導致計算出錯誤的金額。 </p>
+<p>不幸的是，這個漏洞的變種非常容易被使用，攻擊者可以輕易的利用在 src/cryptonote_core/cryptonote_tx_utils.cpp 中的 add_tx_pub_key_to_extra(tx, txkey_pub) 來附加重複的交易公鑰。實際上的運作如下: 攻擊者在 src/cryptonote_core/cryptonote_tx_utils.cpp 中附加了譬如三次的金鑰，因此在他的交易中就會出現四筆相同的交易公鑰。這導致了當攻擊者將一筆 1 XMR 的交易發送至目標交易所的時候，交易所很有可能就會計帳給攻擊者 4 XMR 的餘額，於是攻擊者就可以領出4 XMR的資金而惡意盜取了交易所 3 XMR 的資金。若交易所沒有進行對餘額與進出交易金額的核對或檢查熱錢包的異常狀況，那麼攻擊者基本上可以重複上述攻擊直到交易所的熱錢包被領空或更慘的是到整個交易所的資金耗盡為止。 </p>
+<p>本漏洞的第二個變種，<a target="_blank" rel="noopener" href="https://hackerone.com/reports/379049">在 HackerOne 上有完整的報告</a>，原理是程式碼沒有對假冒的交易公鑰進行檢查。因此攻擊者可以利用變造後的交易公鑰欺騙錢包使其將交易輸出計算為實際收到的兩倍，而與第一個變種類似，錢包餘額並不會受到此漏洞影響。 本漏洞的第一個變種<a target="_blank" rel="noopener" href="https://github.com/monero-project/monero/issues/3983">最早是在 GitHub 上被提出</a>並迅速地在<a target="_blank" rel="noopener" href="https://github.com/monero-project/monero/pull/3985">這份 PR 中被 moneromooo 修正</a>。 不幸的是，這個漏洞的嚴重性被低估，直到 (i) 一個交易所的 Monero 分叉幣被利用此手法攻擊 (ii) 在 HackerOne 上的一位資安研究員(jagerman)提供了<a target="_blank" rel="noopener" href="https://hackerone.com/reports/377592">完整報告關於如何利用此漏洞</a>竊取交易所資金。而漏洞的第二變種是由 <a target="_blank" rel="noopener" href="https://hackerone.com/reports/379049">HackerOne 上的 phiren 所提出</a>，並也被快速的<a target="_blank" rel="noopener" href="https://github.com/monero-project/monero/pull/4118">在此份PR中修正</a>。兩份修正都已由 fluffypony 合併在 v0.12.3.0 的發布版本中。 </p>
+<p>在 v0.12.3.0 定版之後，筆者(dEBRUYNE)與其他開發者們私下地盡可能通知了所有的交易所、線上服務、與商家。但顯然這不是個最好的方法: (i)這不可避免地排除了與我們沒有聯絡管道但又是 Monero 生態中重要的對象。(ii) 這可能導致差別待遇的觀感。此外，這個漏洞消息應該要於公開地郵件列表中發布，但可惜的是並沒有，我們應要能從這樣的疏忽中記取教訓。我們是一個 Monero 的社群，應該要找出一個更順暢的資安弱點處理流程(譬如回報重要漏洞給交易所、線上服務與商家的的流程)，一個只提供給交易所、線上服務與商家的”祕密”郵件列表或許符合這個概念。加上需要一些繁瑣的認證程序或許會比公開的郵件列表安全，因為聰明的攻擊者會毫不猶豫地訂閱這份郵件列表。 </p>
+<p>總而言之，在錢包中的一個重要漏洞，在初期被低估其嚴重性，導致在攻擊者得以在 Monero 生態中的竊取交易所的資金。幸好，這個漏洞僅限於影響錢包軟體中的計帳功能，而在交易協定和貨幣發行量上沒有受到影響。我們必須在此次事件中記取教訓去改進使我們在未來遇到類似漏洞時能夠阻緩其帶來的影響。此外，這個事件也是一個重要的提醒，加密貨幣與其軟體都還是在發展中階段，容易出現(重大)漏洞。因此對於提供服務的單位，盡可能納入完整性檢查是比較好的(替如檢查交易總和是否吻合真實帳戶餘額)，此外，Monero 開發社群也正在研究加入這類核對功能至 RPC 錢包中的可行性。 </p>
+<p>註記: 1. 一份包含著50份相同交易公鑰的交易範例: (01ede13f013833f8aef14a9397b83fd5171833ab55bc480104dd6ba86ca8f13558) 可以<a target="_blank" rel="noopener" href="https://xmrchain.net/tx/705501446556cb9dfed7997c6f3e31e76c43bdf459ae8c5485b8d1600bb7e142">在此查看</a>這份交易內容。 </p>
+<p>本篇消息譯自核心開發團隊網站: <a target="_blank" rel="noopener" href="https://getmonero.org/2018/09/05/a-post-mortum-of-the-multiple-counting-bug-2018-09-05.html">https://getmonero.org/2018/09/05/a-post-mortum-of-the-multiple-counting-bug-2018-09-05.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2018/09/06/multiple-counting-bug/" data-id="ckoglwldd004p65wye1tlgpe9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Subaddresses/" rel="tag">Subaddresses</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%BC%8F%E6%B4%9E/" rel="tag">漏洞</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="y2018-devmeeting-20180826" class="article article-type-y2018" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/29/devmeeting-20180826/" class="article-date">
@@ -663,71 +713,6 @@
 
 
   
-    <article id="y2018-devmeeting-20180311" class="article article-type-y2018" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/19/devmeeting-20180311/" class="article-date">
-  <time datetime="2018-03-19T13:50:41.000Z" itemprop="datePublished">2018-03-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%96%8B%E7%99%BC%E8%80%85%E6%9C%83%E8%AD%B0%E7%B4%80%E9%8C%84/">開發者會議紀錄</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/19/devmeeting-20180311/">開發者會議紀錄 DevMeeting 20180311</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>  防彈協定委外審核的募資完成了，將有三方的審核開始分頭進行。</li>
-<li>  Moneromooo 在GUI上作出了一些當金鑰映像被重複使用下造成之風險的<a target="_blank" rel="noopener" href="https://github.com/monero-project/monero/pull/3322/files">緩解措施</a>。</li>
-<li>  Ledger的程式碼已經合併入Monero codebase了，但這不代表Monero已經可以在Ledger上使用了，Ledger 團隊還正在將功能植入他們的軟體中。</li>
-<li>  Stagenet 已經被建立起來了。</li>
-<li>  surae將在近日公布一個”神奇的”事情。針對讓學生學習加密貨幣與興建學校所創立的一個非營利教育組織。</li>
-<li>  Moneromooo的波羅米安簽名加速(Borromean Signature Speedup)(約可加快10%的簽名驗證時間)若趕不及在三月底一起發布，就會在之後使用小數版號更新的方式發布。</li>
-<li>  某些鼓勵不要使用Payment ID的措施已經在做了。但這”至少”在九月以前不會啟用-且基於兼容的問題，其相關功能(在可預見未來內)並不會被完全移除。</li>
-<li>Endogenic 與vtnerd 正埋首於”門羅幣共識函式庫”(libMoneroConsensus)<ul>
-<li>  是個可以輕易存取Monero的核心服務來發送交易的程式/工具函式庫</li>
-<li>  將會減少開發一個新的軟體時把 Monero”import”所需要的工作</li>
-<li>  他們需要各方的協助。_有興趣的開發者們請注意_，快去看看有什麼能幫忙的。</li>
-</ul>
-</li>
-<li>驚爆!發布版本名稱還沒有被訂出來!<ul>
-<li>  可能會是Lithium Luna</li>
-</ul>
-</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2018/03/19/devmeeting-20180311/#more">繼續閱讀...</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2018/03/19/devmeeting-20180311/" data-id="ckoglwld1003t65wy6mf74wh1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Borromean-Signature-Speedup/" rel="tag">Borromean Signature Speedup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BulletProofs/" rel="tag">BulletProofs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/libMoneroConsensus/" rel="tag">libMoneroConsensus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%98%E6%AC%BEID/" rel="tag">付款ID</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A1%AC%E9%AB%94%E9%8C%A2%E5%8C%85/" rel="tag">硬體錢包</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -819,7 +804,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC%E7%A4%A6%E6%A9%9F/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/CLSAG/" style="font-size: 12px;">CLSAG</a> <a href="/tags/Carbon-Chamaeleon/" style="font-size: 11px;">Carbon Chamaeleon</a> <a href="/tags/Community/" style="font-size: 11px;">Community</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI/" style="font-size: 10px;">GUI</a> <a href="/tags/GUI%E9%8C%A2%E5%8C%85/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/Nitrogen-Nebula/" style="font-size: 11px;">Nitrogen Nebula</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Oxygen-Orion/" style="font-size: 14px;">Oxygen Orion</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 11px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy%E5%8D%80%E5%A1%8A/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/%E4%BB%98%E6%AC%BEID/" style="font-size: 12px;">付款ID</a> <a href="/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/" style="font-size: 11px;">密碼學</a> <a href="/tags/%E5%BF%83%E5%BE%97%E4%BB%8B%E7%B4%B9/" style="font-size: 10px;">心得介紹</a> <a href="/tags/%E6%89%8B%E6%A9%9F%E9%8C%A2%E5%8C%85/" style="font-size: 14px;">手機錢包</a> <a href="/tags/%E6%89%8B%E7%BA%8C%E8%B2%BB/" style="font-size: 11px;">手續費</a> <a href="/tags/%E6%95%B4%E5%90%88%E5%9E%8B%E5%9C%B0%E5%9D%80/" style="font-size: 10px;">整合型地址</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E9%96%8B%E7%99%BC%E5%9C%98%E9%9A%8A/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/%E6%BC%8F%E6%B4%9E/" style="font-size: 12px;">漏洞</a> <a href="/tags/%E7%92%B0%E7%8B%80%E7%B0%BD%E5%90%8D/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/%E7%92%B0%E7%B0%BD%E4%BA%A4%E6%98%93/" style="font-size: 10px;">環簽交易</a> <a href="/tags/%E7%A1%AC%E5%88%86%E5%8F%89/" style="font-size: 20px;">硬分叉</a> <a href="/tags/%E7%A1%AC%E9%AB%94%E9%8C%A2%E5%8C%85/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/%E8%BC%95%E9%8C%A2%E5%8C%85/" style="font-size: 15px;">輕錢包</a> <a href="/tags/%E9%81%A0%E7%AB%AF%E7%AF%80%E9%BB%9E/" style="font-size: 11px;">遠端節點</a> <a href="/tags/%E9%87%91%E9%91%B0%E6%98%A0%E5%83%8F/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/" style="font-size: 11px;">開發日誌</a> <a href="/tags/%E9%9A%B1%E5%8C%BF%E6%80%A7%E5%9C%B0%E5%9D%80/" style="font-size: 11px;">隱匿性地址</a>
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC%E7%A4%A6%E6%A9%9F/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/CLSAG/" style="font-size: 12px;">CLSAG</a> <a href="/tags/Carbon-Chamaeleon/" style="font-size: 11px;">Carbon Chamaeleon</a> <a href="/tags/Community/" style="font-size: 12px;">Community</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI/" style="font-size: 10px;">GUI</a> <a href="/tags/GUI%E9%8C%A2%E5%8C%85/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/Nitrogen-Nebula/" style="font-size: 11px;">Nitrogen Nebula</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Oxygen-Orion/" style="font-size: 14px;">Oxygen Orion</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 11px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy%E5%8D%80%E5%A1%8A/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/%E4%BB%98%E6%AC%BEID/" style="font-size: 12px;">付款ID</a> <a href="/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/" style="font-size: 11px;">密碼學</a> <a href="/tags/%E5%BF%83%E5%BE%97%E4%BB%8B%E7%B4%B9/" style="font-size: 10px;">心得介紹</a> <a href="/tags/%E6%89%8B%E6%A9%9F%E9%8C%A2%E5%8C%85/" style="font-size: 14px;">手機錢包</a> <a href="/tags/%E6%89%8B%E7%BA%8C%E8%B2%BB/" style="font-size: 11px;">手續費</a> <a href="/tags/%E6%95%B4%E5%90%88%E5%9E%8B%E5%9C%B0%E5%9D%80/" style="font-size: 10px;">整合型地址</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E9%96%8B%E7%99%BC%E5%9C%98%E9%9A%8A/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/%E6%BC%8F%E6%B4%9E/" style="font-size: 12px;">漏洞</a> <a href="/tags/%E7%92%B0%E7%8B%80%E7%B0%BD%E5%90%8D/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/%E7%92%B0%E7%B0%BD%E4%BA%A4%E6%98%93/" style="font-size: 10px;">環簽交易</a> <a href="/tags/%E7%A1%AC%E5%88%86%E5%8F%89/" style="font-size: 20px;">硬分叉</a> <a href="/tags/%E7%A1%AC%E9%AB%94%E9%8C%A2%E5%8C%85/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/%E8%BC%95%E9%8C%A2%E5%8C%85/" style="font-size: 15px;">輕錢包</a> <a href="/tags/%E9%81%A0%E7%AB%AF%E7%AF%80%E9%BB%9E/" style="font-size: 11px;">遠端節點</a> <a href="/tags/%E9%87%91%E9%91%B0%E6%98%A0%E5%83%8F/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/" style="font-size: 11px;">開發日誌</a> <a href="/tags/%E9%9A%B1%E5%8C%BF%E6%80%A7%E5%9C%B0%E5%9D%80/" style="font-size: 11px;">隱匿性地址</a>
     </div>
   </div>
 
@@ -841,6 +826,10 @@
       <ul>
         
           <li>
+            <a href="/2021/04/24/this-year-in-monero/">Monero 的 2021 年概況</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/14/monero-GUI-0-17-2-1-released/">Monero GUI 錢包發布新版本 v0.17.2.1（代號：氧氣獵戶座）</a>
           </li>
         
@@ -854,10 +843,6 @@
         
           <li>
             <a href="/2020/09/27/monero-0-17-0-1-released/">Monero 發布新版本 v0.17.0.1（代號：氧氣獵戶座）</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/17/monero-0-17-0-released/">Monero 發布新版本 v0.17.0.0（代號：氧氣獵戶座）</a>
           </li>
         
       </ul>

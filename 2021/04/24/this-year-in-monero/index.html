@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101869289-1');
+  </script>
+  
+  <title>Monero 的 2021 年概況 | Monero - 台灣正體中文站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原文作者：sethsimmons 前言為了慶祝 Monero 的 7 周年，我要來節錄一些數據與社群貼文來突顯 Monero 在過去這一年的成長。首先要提到有個重要的成長就是接受 Monero 捐款或是支付的人們越來越多了：  接受 Monero 付款的商家 接受 Monero 捐款的自由開源軟體專案與隱私倡議團體">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Monero 的 2021 年概況">
+<meta property="og:url" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/index.html">
+<meta property="og:site_name" content="Monero - 台灣正體中文站">
+<meta property="og:description" content="原文作者：sethsimmons 前言為了慶祝 Monero 的 7 周年，我要來節錄一些數據與社群貼文來突顯 Monero 在過去這一年的成長。首先要提到有個重要的成長就是接受 Monero 捐款或是支付的人們越來越多了：  接受 Monero 付款的商家 接受 Monero 捐款的自由開源軟體專案與隱私倡議團體">
+<meta property="og:locale">
+<meta property="og:image" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/monero-6y-transactions.png">
+<meta property="og:image" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/monero-7y-transactions.png">
+<meta property="og:image" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/monero-6y-blockchain.png">
+<meta property="og:image" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/monero-7y-blockchain.png">
+<meta property="og:image" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/monero-6y-emissions.png">
+<meta property="og:image" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/monero-6y-fees.png">
+<meta property="og:image" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/monero-hashrate-2020.png">
+<meta property="og:image" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/monero-hashrate-2021.png">
+<meta property="og:image" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/subreddit_2020.png">
+<meta property="og:image" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/subreddit_2021.png">
+<meta property="article:published_time" content="2021-04-24T01:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-09T05:08:59.454Z">
+<meta property="article:author" content="XMR-TW.org">
+<meta property="article:tag" content="Community">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xmr-tw.org/2021/04/24/this-year-in-monero/monero-6y-transactions.png">
+  <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/site/favicons/favicon-192.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-square310x310logo" src="/images/site/favicons/favicon-310.png">
+  <link rel="apple-touch-icon" href="/images/site/favicons/favicon-180.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首頁</a>
+        
+          <a class="main-nav-link" href="/advantage">Monero是什麼？</a>
+        
+          <a class="main-nav-link" href="/nodes">公共節點(Node)</a>
+        
+          <a class="main-nav-link" href="/xmr-eta">區塊鏈動態(XMR-ETA)</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xmr-tw.org"></form>
+      </div>
+    </div>
+    <div id="logo-wrap" class="outer">
+        <a href="/">
+          <img id="logo" src="/images/site/logowspace.png" alt="Monero Taiwan logo">
+        </a>
+      </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="y2021-this-year-in-monero" class="article article-type-y2021" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/04/24/this-year-in-monero/" class="article-date">
+  <time datetime="2021-04-24T01:00:00.000Z" itemprop="datePublished">2021-04-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Monero-%E6%96%B0%E8%81%9E/">Monero 新聞</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Monero 的 2021 年概況
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原文作者：sethsimmons</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>為了慶祝 Monero 的 7 周年，我要來節錄一些數據與社群貼文來突顯 Monero 在過去這一年的成長。<br>首先要提到有個重要的成長就是接受 Monero 捐款或是支付的人們越來越多了：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.getmonero.org/community/merchants/">接受 Monero 付款的商家</a></li>
+<li><a target="_blank" rel="noopener" href="https://sethsimmons.me/posts/foss-donations/">接受 Monero 捐款的自由開源軟體專案與隱私倡議團體</a><span id="more"></span></li>
+</ul>
+<h1 id="數據分析"><a href="#數據分析" class="headerlink" title="數據分析"></a>數據分析</h1><p>要推論 Monero 的成長情形，我們可以從區塊鏈上(幸好為數不多)的公開資料觀察一些端倪。<br>以下每個段落將會重點節錄前一年的(2019/04-2020/04)與這一年(2020/04-2021/04)的比較。</p>
+<h2 id="交易數量"><a href="#交易數量" class="headerlink" title="交易數量"></a>交易數量</h2><p><em>2019/04-2020/04</em></p>
+<ul>
+<li>Monero 交易量從 ~7,000 筆/日 成長至 ~10,000 筆/日</li>
+<li>全年共有 2,811,244 筆交易，平均每日有 7,702 筆交易<p><img src="/2021/04/24/this-year-in-monero/monero-6y-transactions.png" class="" title="monero-6y-transactions.png"></p></li>
+</ul>
+<p><em>2020/04-2021/04</em></p>
+<ul>
+<li>Monero 交易量從 ~10,000 筆/日 成長至 ~23,000 筆/日</li>
+<li>全年共有 5,868,096 筆交易，平均每日有 16,076 筆交易<p><img src="/2021/04/24/this-year-in-monero/monero-7y-transactions.png" class="" title="monero-7y-transactions.png"></p></li>
+</ul>
+<h3 id="年成長"><a href="#年成長" class="headerlink" title="年成長"></a>年成長</h3><p>Monero 的鏈上交易年成長量達到了 208%！每一筆交易皆是預設保護隱私，保護發送者、接收者、金額不被窺視。</p>
+<h2 id="區塊鏈成長"><a href="#區塊鏈成長" class="headerlink" title="區塊鏈成長"></a>區塊鏈成長</h2><p><em>2019/04-2020/04</em></p>
+<ul>
+<li>Monero 的區塊鏈成長了 7.41GB</li>
+<li>總共有 292,651 區塊，平均一個區塊容量為 29.56KB</li>
+<li>總共有 2,811,244 筆交易，平均一筆交易容量需求為 2.76KB<p><img src="/2021/04/24/this-year-in-monero/monero-6y-blockchain.png" class="" title="monero-6y-blockchain.png"></p></li>
+</ul>
+<p><em>2020/04-2021/04</em></p>
+<ul>
+<li>Monero 的區塊鏈成長了 13.34GB</li>
+<li>總共有 262,588 區塊，平均一個區塊容量為 53.30KB</li>
+<li>總共有 5,868,096 筆交易，平均一筆交易容量需求為 2.38KB<p><img src="/2021/04/24/this-year-in-monero/monero-7y-blockchain.png" class="" title="monero-7y-blockchain.png"></p></li>
+</ul>
+<h3 id="年成長-1"><a href="#年成長-1" class="headerlink" title="年成長"></a>年成長</h3><p>Monero 的區塊鏈年成長量達到了 180%！平均交易所需容量下降了 13.76% (多虧了 CLSAG 更新)！</p>
+<h2 id="發行量"><a href="#發行量" class="headerlink" title="發行量"></a>發行量</h2><p><em>2019/04-2020/04</em></p>
+<ul>
+<li>Monero 區塊獎勵共發行了 599,105.65 XMR</li>
+<li>總共有 292,651 區塊，平均一個區塊獎勵為 2.04 XMR</li>
+<li>Monero 的每日發行量從 ~2,000 XMR 降至 ~1,200XMR<p><img src="/2021/04/24/this-year-in-monero/monero-6y-emissions.png" class="" title="monero-6y-emissions.png"></p></li>
+</ul>
+<p><em>2020/04-2021/04</em></p>
+<ul>
+<li>Monero 區塊獎勵共發行了 362,406.83 XMR</li>
+<li>總共有 262,588 區塊，平均一個區塊獎勵為 1.38 XMR</li>
+<li>Monero 的每日發行量從 ~1,200 XMR 降至 ~750 XMR<p></p></li>
+</ul>
+<h3 id="年變化"><a href="#年變化" class="headerlink" title="年變化"></a>年變化</h3><p>Monero 的通膨率減少了 39.5% 且持續在朝著尾發行的每區塊 0.6 XMR 前進。</p>
+<h2 id="手續費"><a href="#手續費" class="headerlink" title="手續費"></a>手續費</h2><p><em>2019/04-2020/04</em></p>
+<ul>
+<li>Monero 使用者在全年共花費了 1,101.07 XMR 作為交易手續費</li>
+<li>平均每日 3.016 XMR 的手續費</li>
+<li>總共有 292,651 區塊，平均一個區塊可以提供 0.00419288 XMR 給礦工</li>
+<li>總共有 2,811,244 筆交易，平均一筆交易的手續費為 0.000391666 XMR<p><img src="/2021/04/24/this-year-in-monero/monero-6y-fees.png" class="" title="monero-6y-fees.png"></p></li>
+</ul>
+<p><em>2020/04-2021/04</em></p>
+<ul>
+<li>Monero 使用者在全年共花費了 1,884.77 XMR 作為交易手續費</li>
+<li>平均每日 5.16 XMR 的手續費</li>
+<li>總共有 262,588 區塊，平均一個區塊可以提供 0.00717767 XMR 給礦工</li>
+<li>總共有 5,868,096 筆交易，平均一筆交易的手續費為 0.000321189 XMR<p></p></li>
+</ul>
+<h3 id="年變化-1"><a href="#年變化-1" class="headerlink" title="年變化"></a>年變化</h3><p>Monero 的總手續費提昇了 71.11% 但每筆交易的手續費卻下降了 17.99% (多虧了 CLSAG 更新)！</p>
+<h2 id="挖礦"><a href="#挖礦" class="headerlink" title="挖礦"></a>挖礦</h2><p><em>2019/04-2020/04</em><br><em>備註：這個時間區間是在 2019/11/30 啟用 RandomX 之後</em></p>
+<ul>
+<li>全網算力從 0.682GH/s 提昇至 1.21GH/s </li>
+<li>Monero 分叉至可以抵抗 ASIC 礦機的 RandomX 共識演算法</li>
+<li>在 RandomX 升級後擁有 ~27,000 個礦工</li>
+<li>個別礦工數量從 27,247 增加至 37,380<p><img src="/2021/04/24/this-year-in-monero/monero-hashrate-2020.png" class="" title="monero-hashrate-2020.png"></p></li>
+</ul>
+<p><em>2020/04-2021/04</em></p>
+<ul>
+<li>全網算力從 1.21GH/s 提昇至 2.29GH/s </li>
+<li>首次突破 100,000 礦工數量歷史紀錄</li>
+<li>個別礦工數量從 37,380 增加至 102,163<p><img src="/2021/04/24/this-year-in-monero/monero-hashrate-2021.png" class="" title="monero-hashrate-2021.png"></p></li>
+</ul>
+<p><em>聲明：這些礦工數量為低估值，由礦池公開的 API 獲取的資訊，還有許多礦工為獨立挖礦或是在私人礦池而不會公開其資訊。</em></p>
+<h3 id="年成長-2"><a href="#年成長-2" class="headerlink" title="年成長"></a>年成長</h3><p>Monero 全網算力提昇了 89.25%，且礦工數量提昇了 173.30%，在 RandomX 啟用後更是提昇了 274.95%！</p>
+<h2 id="Reddit"><a href="#Reddit" class="headerlink" title="Reddit"></a>Reddit</h2><p><em>2019/04-2020/04</em></p>
+<ul>
+<li>Monero 的主看板 <a target="_blank" rel="noopener" href="https://www.reddit.com/r/Monero">r/Monero</a>的訂閱數從 ~157,000 提昇至 ~168,000，增加了 ~11,000 位訂閱者，<p><img src="/2021/04/24/this-year-in-monero/subreddit_2020.png" class="" title="subreddit_2020.png"></p></li>
+</ul>
+<p><em>2020/04-2021/04</em></p>
+<ul>
+<li>Monero 的主看板 <a target="_blank" rel="noopener" href="https://www.reddit.com/r/Monero">r/Monero</a>的訂閱數從 ~168,000 提昇至 ~211,000，增加了 ~43,000 位訂閱者<p><img src="/2021/04/24/this-year-in-monero/subreddit_2021.png" class="" title="subreddit_2021.png"></p></li>
+</ul>
+<h3 id="年成長-3"><a href="#年成長-3" class="headerlink" title="年成長"></a>年成長</h3><ul>
+<li>訂閱數成長了 25.59% 且與前年相比成長了 290%</li>
+</ul>
+<h3 id="前十大熱門貼文"><a href="#前十大熱門貼文" class="headerlink" title="前十大熱門貼文"></a>前十大熱門貼文</h3><ul>
+<li>I’m glad Monero is used by criminals</li>
+<li>Today was an emotional rollercoaster; first I win a known amount of XMR in the Meme Contest, and then I tragically loose my private keys in a boating accident. * What a day. Thank you for voting!</li>
+<li>Hal Finney, the first person to receive Bitcoin from Satoshi, took 11 days to realized he wanted more anonymity.</li>
+<li>A privacy 🔐 crisis is brewing. Defend yourself against tracking and surveillance</li>
+<li>Monero Visionary</li>
+<li>Satoshi talking about privacy features that got implemented in Monero but not Bitcoin</li>
+<li>I’m happy to announce Haveno: The Monero based DEX for trading XMR for fiat and cryptocurrencies! (PoC)</li>
+<li>Saw this piece of art in 4chan</li>
+<li>Reminder of the sound money report card</li>
+<li>200k subscribers to r/Monero! 🥳</li>
+</ul>
+<h2 id="Twitter"><a href="#Twitter" class="headerlink" title="Twitter"></a>Twitter</h2><p><em>2019/04-2020/04</em><br>Monero 的主帳號  @monero 的追蹤者從 317,010 提昇至 320,512，增加了 3,502 位追蹤者</p>
+<p><em>2020/04-2021/04</em><br>Monero 的主帳號  @monero 的追蹤者從 319,884 提昇至 389,093，增加了 69,209 位追蹤者</p>
+<h3 id="年成長-4"><a href="#年成長-4" class="headerlink" title="年成長"></a>年成長</h3><ul>
+<li>訂閱數成長了 21.63% 且與前年相比成長了 1,870%</li>
+</ul>
+<h3 id="前十大熱門推文"><a href="#前十大熱門推文" class="headerlink" title="前十大熱門推文"></a>前十大熱門推文</h3><ul>
+<li><p>“Love this #Monero cheat sheet. Get your privacy on - @coinbureau”</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/coinbureau/status/1382348948803883010?s=20">https://twitter.com/coinbureau/status/1382348948803883010?s=20</a></li>
+</ul>
+</li>
+<li><p>“‘Arguing that you don’t care about the right to privacy because you have nothing to hide is no different than saying you don’t care about free speech because you have nothing to say.’ ― Edward Snowden #monero $XMR - @girlgone_crypto”</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/girlgone_crypto/status/1275427089294876674?s=20">https://twitter.com/girlgone_crypto/status/1275427089294876674?s=20</a></li>
+</ul>
+</li>
+<li><p>“Over 100k miners securing the #Monero network. New ATH. No ASICs. One CPU. One vote. <a target="_blank" rel="noopener" href="https://miningpoolstats.stream/monero">https://miningpoolstats.stream/monero</a> - @DontTraceMeBruh”</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/DontTraceMeBruh/status/1383481500704788489?s=20">https://twitter.com/DontTraceMeBruh/status/1383481500704788489?s=20</a></li>
+</ul>
+</li>
+<li><p>“I’ll have you know that the words ‘Monero’ and ‘XMR’ are not mentioned in Chainalysis crypto crime report 2021 that just came out. Not even once, over 113 pages. - @binaryFate”</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/binaryFate/status/1359926676138909699?s=20">https://twitter.com/binaryFate/status/1359926676138909699?s=20</a></li>
+</ul>
+</li>
+<li><p>“If #monero came out first, then #bitcoin, everybody would say ‘Why would I give up my privacy?’”</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/vikrantnyc/status/1366375047812812804?s=20">https://twitter.com/vikrantnyc/status/1366375047812812804?s=20</a></li>
+</ul>
+</li>
+<li><p>“”In Nobody We Trust” - #Monero - @girlgone_crypto”</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/girlgone_crypto/status/1326280779643543552?s=20">https://twitter.com/girlgone_crypto/status/1326280779643543552?s=20</a></li>
+</ul>
+</li>
+<li><p>“Now you know why I was so bullish for #Monero last year. The upcoming $XMR - $BTC atomic swaps are going to be a gamechanger. Will be interesting to see how much BTC ‘disappears’ from the #Bitcoin network when it goes live. - @coinbureau”</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/coinbureau/status/1360983149778526213?s=20">https://twitter.com/coinbureau/status/1360983149778526213?s=20</a></li>
+</ul>
+</li>
+<li><p>“And the #Monero network has been upgraded! Enjoy your 20% cheaper, lighter, and faster to verify private by default transactions. #MoneroKeepsBuilding #CLSAG - @sethisimmons”</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/sethisimmons/status/1317258377945374721?s=20">https://twitter.com/sethisimmons/status/1317258377945374721?s=20</a></li>
+</ul>
+</li>
+<li><p>“Bitcoin was envisioned as an anonymous P2P digital cash. However, that title is today best reserved for privacy coins like #Monero. In my video today, I look at Monero once again and explain why I think $XMR is so undervalued - @coinbureau”</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/coinbureau/status/1376204882106068995?s=20">https://twitter.com/coinbureau/status/1376204882106068995?s=20</a></li>
+</ul>
+</li>
+<li><p>“We’re excited to see THORChain, a cross-chain decentralised liquidity network, collaborating with Haven to integrate #Monero!”</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/monero/status/1382646165456498688?s=20">https://twitter.com/monero/status/1382646165456498688?s=20</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="重要的-CCS-成功募資活動"><a href="#重要的-CCS-成功募資活動" class="headerlink" title="重要的 CCS 成功募資活動"></a>重要的 CCS 成功募資活動</h1><ul>
+<li>Bulletproofs+ audits<ul>
+<li><a target="_blank" rel="noopener" href="https://ccs.getmonero.org/proposals/bulletproofs-plus-audit.html">https://ccs.getmonero.org/proposals/bulletproofs-plus-audit.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://ccs.getmonero.org/proposals/bulletproofs-plus-audit-jp.html">https://ccs.getmonero.org/proposals/bulletproofs-plus-audit-jp.html</a></li>
+</ul>
+</li>
+<li>Feather wallet GUI development<ul>
+<li><a target="_blank" rel="noopener" href="https://ccs.getmonero.org/proposals/feather-2020.html">https://ccs.getmonero.org/proposals/feather-2020.html</a></li>
+</ul>
+</li>
+<li>CLSAG audit<ul>
+<li><a target="_blank" rel="noopener" href="https://ccs.getmonero.org/proposals/clsag-audit-take2.html">https://ccs.getmonero.org/proposals/clsag-audit-take2.html</a></li>
+</ul>
+</li>
+<li>Research post-quantum strategies for Monero<ul>
+<li><a target="_blank" rel="noopener" href="https://ccs.getmonero.org/proposals/research-post-quantum-monero.html">https://ccs.getmonero.org/proposals/research-post-quantum-monero.html</a></li>
+</ul>
+</li>
+<li>Monero Atomic Swaps research funding<ul>
+<li><a target="_blank" rel="noopener" href="https://ccs.getmonero.org/proposals/h4sh3d-atomic-swap-research.html">https://ccs.getmonero.org/proposals/h4sh3d-atomic-swap-research.html</a></li>
+</ul>
+</li>
+<li>Monero Atomic Swaps implementation funding<ul>
+<li><a target="_blank" rel="noopener" href="https://ccs.getmonero.org/proposals/h4sh3d-atomic-swap-implementation.html">https://ccs.getmonero.org/proposals/h4sh3d-atomic-swap-implementation.html</a></li>
+</ul>
+</li>
+<li>Add Monero to TxStreet<ul>
+<li><a target="_blank" rel="noopener" href="https://ccs.getmonero.org/proposals/txstreet-2021.html">https://ccs.getmonero.org/proposals/txstreet-2021.html</a></li>
+</ul>
+</li>
+<li>anon: perfect peer to peer protocol from bottom to top<ul>
+<li><a target="_blank" rel="noopener" href="https://ccs.getmonero.org/proposals/anon-perfect-peer-to-peer-protocol.html">https://ccs.getmonero.org/proposals/anon-perfect-peer-to-peer-protocol.html</a></li>
+</ul>
+</li>
+<li>tipxmr.live - a non-custodial livestream donation service for OBS<ul>
+<li><a target="_blank" rel="noopener" href="https://ccs.getmonero.org/proposals/tipxmr.live.html">https://ccs.getmonero.org/proposals/tipxmr.live.html</a></li>
+</ul>
+</li>
+<li>Compilation time reduction and housekeeping<ul>
+<li><a target="_blank" rel="noopener" href="https://ccs.getmonero.org/proposals/mj-compil-time-reduction.html">https://ccs.getmonero.org/proposals/mj-compil-time-reduction.html</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="重要的協定升級"><a href="#重要的協定升級" class="headerlink" title="重要的協定升級"></a>重要的協定升級</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.getmonero.org/resources/moneropedia/clsag.html">CLSAG，新型環狀簽名機制用以提昇交易效率</a><ul>
+<li>CLSAG 帶來 20% 的簽名驗證效率提昇，對於一般的交易至少提昇 10% 的效率，譬如一個典型的 Monero 交易 (2 inputs and 2 outputs) 通常需要 2.5kB 的容量，但在 CLSAG 機制下只需要 1.9kB 的區塊鏈容量，接近 25% 的效率提昇。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://sethsimmons.me/posts/moneros-ongoing-network-attack/">Monero 推出了多次更新以對抗一場持續且激進的 p2p 網路攻擊</a><ul>
+<li>Monero 的 peer-to-peer (p2p) 網路遭受到數種不同的攻擊，來自一個多年持續攻擊、濫發和意圖從中破壞社群的對象。</li>
+</ul>
+</li>
+</ul>
+<h1 id="漏網之魚？"><a href="#漏網之魚？" class="headerlink" title="漏網之魚？"></a>漏網之魚？</h1><p>如果你覺得這篇文章有漏講了什麼重要的亮點，不用吝嗇與我(原文作者)<a target="_blank" rel="noopener" href="https://sethsimmons.me/about/#how-to-contact-me">聯絡</a>，我會盡速添加。</p>
+<h1 id="資料來源"><a href="#資料來源" class="headerlink" title="資料來源"></a>資料來源</h1><ul>
+<li>monero-blockchain-stats:<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/monero-project/monero/pull/4694">https://github.com/monero-project/monero/pull/4694</a></li>
+</ul>
+</li>
+<li>Gnuplot 用於 monero-blockchain-stats 擷取的資料繪圖</li>
+<li><a target="_blank" rel="noopener" href="https://miningpoolstats.stream/monero">https://miningpoolstats.stream/monero</a> 算力與礦工數量資訊</li>
+<li><a target="_blank" rel="noopener" href="https://subredditstats.com/r/monero">https://subredditstats.com/r/monero</a> Reddit訂閱數量資訊</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/oduwsdl/FollowerCountHistory">https://github.com/oduwsdl/FollowerCountHistory</a> Twitter @monero 的追蹤者資訊</li>
+</ul>
+<h1 id="聲明"><a href="#聲明" class="headerlink" title="聲明"></a>聲明</h1><p>本篇為翻譯文章，原文為來自 <a target="_blank" rel="noopener" href="https://www.getmonero.org/2021/04/24/this-year-in-monero.html">https://www.getmonero.org/2021/04/24/this-year-in-monero.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xmr-tw.org/2021/04/24/this-year-in-monero/" data-id="ckogn0if90000gfwydoodc9eg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Community/" rel="tag">Community</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/04/14/monero-GUI-0-17-2-1-released/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Monero GUI 錢包發布新版本 v0.17.2.1（代號：氧氣獵戶座）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+<h3 class="widget-title">Monero Taiwan 正體中文站</h3>
+<div class="widget">
+  <p>本站是由非官方的 Monero (XMR, 門羅幣)愛好者自發性熱血建置，旨在轉貼翻譯專案開發訊息與便利服務以推廣 Monero 在台灣/中文世界的應用普及。</p>
+</div>
+</div>
+
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">桌面版錢包/節點下載</h3>
+    <div class="widget">
+        <a href="https://web.getmonero.org/zh-tw/downloads/index.html" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"/></a>
+    </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">行動版錢包</h3>
+    <div class="widget">
+        <div><p>Android 版： Monero: Monerujo Wallet</p>
+        <a target="_blank" rel="noopener" href='https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img style="width:80%;max-width:400px;" alt='Google Play 立即下載' src='/images/site/zh-tw_badge_web_generic.png' /></a></div>
+        <div><p>Apple iOS 版： Cake Wallet</p>
+        <a target="_blank" rel="noopener" href='https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8'><img style="width:80%;max-width:400px;" alt='App Store 下載' src='/images/site/Download_on_the_App_Store_Badge_CNTC_RGB_blk_100217.svg' /></a></div>
+    </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">試用好專案支持本站</h3>
+    <div class="widget">
+        <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"/></a>
+            <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
+    </div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
+    <div class="widget">
+    	<div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
+    </div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">即時價格</h3>
+    <div class="widget">
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowTransparency="true" border="0" hideFocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameBorder="no"></iframe>
+</div>
+</div>
+  
+    <div class="widget-wrap">
+    <h3 class="widget-title">XMR常用連結</h3>
+    <div class="widget">
+        <ul>
+        	<dt>區塊瀏覽器</dt>
+            <dd><a href="https://community.xmr.to/explorer/mainnet/" target="_blank" rel="noopener">XMR.to 區塊瀏覽器</a></dd>
+            <dd><a href="https://xmrchain.net/" target="_blank" rel="noopener">XMRchain 區塊瀏覽器</a></dd>
+            <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
+            <dt>兌換服務</dt>
+            <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
+            <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
+            <dt>視覺化資料</dt>
+            <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
+            <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
+        </ul>
+    </div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-%E5%B0%8F%E7%A7%98%E8%A8%A3/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-%E6%8A%80%E8%A1%93%E4%BB%8B%E7%B4%B9/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-%E6%96%B0%E8%81%9E/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%80%E5%A1%8A%E9%8F%88%E5%88%86%E5%8F%89%E6%B6%88%E6%81%AF/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%98%E6%96%B9%E6%96%B0%E7%89%88%E6%9C%AC%E9%87%8B%E5%87%BA/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%98%E6%96%B9%E6%B6%88%E6%81%AF%E5%AE%A3%E5%B8%83/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AB%99%E5%8B%99%E6%B6%88%E6%81%AF/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%96%8B%E7%99%BC%E8%80%85%E6%9C%83%E8%AD%B0%E7%B4%80%E9%8C%84/">開發者會議紀錄</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC%E7%A4%A6%E6%A9%9F/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/CLSAG/" style="font-size: 12px;">CLSAG</a> <a href="/tags/Carbon-Chamaeleon/" style="font-size: 11px;">Carbon Chamaeleon</a> <a href="/tags/Community/" style="font-size: 12px;">Community</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI/" style="font-size: 10px;">GUI</a> <a href="/tags/GUI%E9%8C%A2%E5%8C%85/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/Nitrogen-Nebula/" style="font-size: 11px;">Nitrogen Nebula</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Oxygen-Orion/" style="font-size: 14px;">Oxygen Orion</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 11px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy%E5%8D%80%E5%A1%8A/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/%E4%BB%98%E6%AC%BEID/" style="font-size: 12px;">付款ID</a> <a href="/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/" style="font-size: 11px;">密碼學</a> <a href="/tags/%E5%BF%83%E5%BE%97%E4%BB%8B%E7%B4%B9/" style="font-size: 10px;">心得介紹</a> <a href="/tags/%E6%89%8B%E6%A9%9F%E9%8C%A2%E5%8C%85/" style="font-size: 14px;">手機錢包</a> <a href="/tags/%E6%89%8B%E7%BA%8C%E8%B2%BB/" style="font-size: 11px;">手續費</a> <a href="/tags/%E6%95%B4%E5%90%88%E5%9E%8B%E5%9C%B0%E5%9D%80/" style="font-size: 10px;">整合型地址</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E9%96%8B%E7%99%BC%E5%9C%98%E9%9A%8A/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/%E6%BC%8F%E6%B4%9E/" style="font-size: 12px;">漏洞</a> <a href="/tags/%E7%92%B0%E7%8B%80%E7%B0%BD%E5%90%8D/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/%E7%92%B0%E7%B0%BD%E4%BA%A4%E6%98%93/" style="font-size: 10px;">環簽交易</a> <a href="/tags/%E7%A1%AC%E5%88%86%E5%8F%89/" style="font-size: 20px;">硬分叉</a> <a href="/tags/%E7%A1%AC%E9%AB%94%E9%8C%A2%E5%8C%85/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/%E8%BC%95%E9%8C%A2%E5%8C%85/" style="font-size: 15px;">輕錢包</a> <a href="/tags/%E9%81%A0%E7%AB%AF%E7%AF%80%E9%BB%9E/" style="font-size: 11px;">遠端節點</a> <a href="/tags/%E9%87%91%E9%91%B0%E6%98%A0%E5%83%8F/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/" style="font-size: 11px;">開發日誌</a> <a href="/tags/%E9%9A%B1%E5%8C%BF%E6%80%A7%E5%9C%B0%E5%9D%80/" style="font-size: 11px;">隱匿性地址</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/04/24/this-year-in-monero/">Monero 的 2021 年概況</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/monero-GUI-0-17-2-1-released/">Monero GUI 錢包發布新版本 v0.17.2.1（代號：氧氣獵戶座）</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/09/monero-0-17-2-0-released/">Monero 發布新版本 v0.17.2.0（代號：氧氣獵戶座）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/05/monero-GUI-0-17-0-1-released/">Monero GUI 發布新版本 v0.17.0.1（代號：氧氣獵戶座）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/27/monero-0-17-0-1-released/">Monero 發布新版本 v0.17.0.1（代號：氧氣獵戶座）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+    
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <div>
+                <p>如果你覺得這個網站有幫助到你，請考慮贊助我們一點XMR以補貼網站運作的支出<br></p>
+                <p style="color:#FFFFFF"><strong>45XMRtw5de1EYjtsZPuLgmG3vo2n5vW8iLPM9NmT2MSG65vZSCf1cXBgaNQJtxLx45aaFYZJQawERJJV9yuHiLYsCk82j8Z</strong></p>
+                <p>亦可發送至OpenAlias地址: donate.xmr-tw.org</p>
+            </div>
+            <div>
+                <p>&copy; 2017<script>
+                    new Date().getFullYear() > 2017 && document.write("-" + new Date().getFullYear());
+                    </script> Monero-Taiwan 正體中文站<br>
+                    本網站內容採用<a target="_blank" href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+            </div>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首頁</a>
+  
+    <a href="/advantage" class="mobile-nav-link">Monero是什麼？</a>
+  
+    <a href="/nodes" class="mobile-nav-link">公共節點(Node)</a>
+  
+    <a href="/xmr-eta" class="mobile-nav-link">區塊鏈動態(XMR-ETA)</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
