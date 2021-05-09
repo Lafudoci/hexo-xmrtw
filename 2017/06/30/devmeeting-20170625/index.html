@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101869289-1"></script>
@@ -15,18 +15,18 @@
   
   <title>開發者會議紀錄 DevMeeting 20170625 | Monero - 台灣正體中文站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="內容概要  twinget在ZeroMQ RPC Daemon/Server上的植入工作的快要完成，接著將會植入錢包。 vtnerd已開始著手處理: 更快速的Mymonero後台importing x86 ASM的錢包匯入功能已上線約莫一個月了 更快、更強、更好的mempool後台處理程序   Jaquee正在為官方的GUI錢包上加上能夠使用 MyMonero/OpenMonero 的輕錢包功能">
-<meta name="keywords" content="輕錢包">
+  <meta name="description" content="內容概要    twinget在ZeroMQ RPC Daemon&#x2F;Server上的植入工作的快要完成，接著將會植入錢包。 vtnerd已開始著手處理:   更快速的Mymonero後台importing   x86 ASM的錢包匯入功能已上線約莫一個月了   更快、更強、更好的mempool後台處理程序   Jaquee正在為官方的GUI錢包上加上能夠使用 MyMonero&#x2F;OpenMonero">
 <meta property="og:type" content="article">
 <meta property="og:title" content="開發者會議紀錄 DevMeeting 20170625">
 <meta property="og:url" content="https://xmr-tw.org/2017/06/30/devmeeting-20170625/index.html">
 <meta property="og:site_name" content="Monero - 台灣正體中文站">
-<meta property="og:description" content="內容概要  twinget在ZeroMQ RPC Daemon/Server上的植入工作的快要完成，接著將會植入錢包。 vtnerd已開始著手處理: 更快速的Mymonero後台importing x86 ASM的錢包匯入功能已上線約莫一個月了 更快、更強、更好的mempool後台處理程序   Jaquee正在為官方的GUI錢包上加上能夠使用 MyMonero/OpenMonero 的輕錢包功能">
-<meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-08-13T14:08:55.709Z">
+<meta property="og:description" content="內容概要    twinget在ZeroMQ RPC Daemon&#x2F;Server上的植入工作的快要完成，接著將會植入錢包。 vtnerd已開始著手處理:   更快速的Mymonero後台importing   x86 ASM的錢包匯入功能已上線約莫一個月了   更快、更強、更好的mempool後台處理程序   Jaquee正在為官方的GUI錢包上加上能夠使用 MyMonero&#x2F;OpenMonero">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-06-30T14:28:30.000Z">
+<meta property="article:modified_time" content="2019-08-13T14:08:55.709Z">
+<meta property="article:author" content="XMR-TW.org">
+<meta property="article:tag" content="輕錢包">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="開發者會議紀錄 DevMeeting 20170625">
-<meta name="twitter:description" content="內容概要  twinget在ZeroMQ RPC Daemon/Server上的植入工作的快要完成，接著將會植入錢包。 vtnerd已開始著手處理: 更快速的Mymonero後台importing x86 ASM的錢包匯入功能已上線約莫一個月了 更快、更強、更好的mempool後台處理程序   Jaquee正在為官方的GUI錢包上加上能夠使用 MyMonero/OpenMonero 的輕錢包功能">
   <meta property="og:image" content="https://xmr-tw.org/images/site/og_image.png">
   <link rel="manifest" href="/manifest.json">
   <link rel="shortcut icon" sizes="192x192" href="/images/site/favicons/favicon-192.png">
@@ -37,8 +37,10 @@
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/css/style.css">
-</head></html>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
 <body>
   <div id="container">
     <div id="wrap">
@@ -81,7 +83,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a>
+    <a class="article-category-link" href="/categories/%E9%96%8B%E7%99%BC%E8%80%85%E6%9C%83%E8%AD%B0%E7%B4%80%E9%8C%84/">開發者會議紀錄</a>
   </div>
 
   </div>
@@ -102,187 +104,34 @@
       
         <p>內容概要</p>
 <ul>
-<li>twinget在ZeroMQ RPC Daemon/Server上的植入工作的快要完成，接著將會植入錢包。</li>
+<li>  twinget在ZeroMQ RPC Daemon/Server上的植入工作的快要完成，接著將會植入錢包。</li>
 <li>vtnerd已開始著手處理:<ul>
-<li>更快速的Mymonero後台importing</li>
-<li>x86 ASM的錢包匯入功能已上線約莫一個月了</li>
-<li>更快、更強、更好的mempool後台處理程序</li>
+<li>  更快速的Mymonero後台importing</li>
+<li>  x86 ASM的錢包匯入功能已上線約莫一個月了</li>
+<li>  更快、更強、更好的mempool後台處理程序</li>
 </ul>
 </li>
 <li>Jaquee正在為官方的GUI錢包上加上能夠使用 MyMonero/OpenMonero 的輕錢包功能<ul>
-<li>這將同時支援Android跟iOS的客戶端</li>
+<li>  這將同時支援Android跟iOS的客戶端</li>
 </ul>
 </li>
-<li>kenshi84正在處理錢包的subaddress，<a href="https://github.com/monero-project/monero/pull/2056" target="_blank" rel="noopener">已幾乎準備好、僅剩些許的檢查和測試了</a><ul>
-<li>僅是個錢包的更動，不需要硬分岔</li>
+<li>kenshi84正在處理錢包的subaddress，<a target="_blank" rel="noopener" href="https://github.com/monero-project/monero/pull/2056">已幾乎準備好、僅剩些許的檢查和測試了</a><ul>
+<li>  僅是個錢包的更動，不需要硬分岔</li>
 </ul>
 </li>
-<li>對於預設Ring的大小的討論依然在進行中</li>
-<li>從Kovri會議中得知，rehrar已將Monero網站重新設計完成，正等待上線中<a id="more"></a>
-以上翻譯來自於紀錄原文: <a href="https://monerobase.com/wiki/DevMeeting_2017-06-25" target="_blank" rel="noopener">https://monerobase.com/wiki/DevMeeting_2017-06-25</a> </li>
+<li>  對於預設Ring的大小的討論依然在進行中</li>
+<li>  從Kovri會議中得知，rehrar已將Monero網站重新設計完成，正等待上線中<span id="more"></span>
+以上翻譯來自於紀錄原文: <a target="_blank" rel="noopener" href="https://monerobase.com/wiki/DevMeeting_2017-06-25">https://monerobase.com/wiki/DevMeeting_2017-06-25</a> </li>
 </ul>
-<p>完整會議紀錄</p>
-<p><font color="green"><strong>[tewinget]</strong></font> I know it’s a bit out of order, but I can go ahead and share what updates I have while we wait for fluffy.</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> please do :)</p>
-<p><font color="green"><strong>[tewinget]</strong></font> I’m pretty knackered, so I’m afraid I won’t have much useful input on the other topics anyway</p>
-<p><font color="green"><strong>[tewinget]</strong></font> alright, so apart from a couple minor tweaks I still plan to do (but which are by no means necessary I think), the daemon zmq rpc server should be ready to merge pending approval. There are a few things I’d do differently were I to start again from scratch, and may go back and change later, but it’s in pretty decent shape overall I think. Still a good handful of unimplemented calls, but they’re mostly fill-in-the-blank and low priority imo</p>
-<p><font color="green"><strong>[endogenic]</strong></font> nice</p>
-<p><font color="green"><strong>[tewinget]</strong></font> the wallet zmq rpc client (well, not explicitly wallet-only, but for the wallet) is coming along, but not quite to that same point.</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> yeah I had some comments about the design at some point, but I think it something that could be discussed later</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> plus moo may have disliked my C++ suggestions (for a good reason)</p>
-<p><font color="green"><strong>[tewinget]</strong></font> as far as I can tell, I’ll be able to get what I set out to finish finished by the end of the month as planned.</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> so the first cut should be able to push out when a new block is received ?</p>
-<p><font color="green"><strong>[tewinget]</strong></font> vtnerd: yeah, some of your suggestions are the things I considered doing differently, but the amount of re-doing didn’t seem to be worth it short term.</p>
-<p><font color="green"><strong>[pero]</strong></font> im a bit concerned that there has been no new code merged and leaves us with potential for another month or so turnaround on the next iteration</p>
-<p><font color="green"><strong>[tewinget]</strong></font> so {block,tx}notify is something I’d like to have a prototype of working by end of month, but I don’t think I’ll have a polished solution quite then. First week of July though.</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> you did merge my one PR, right? it cut down on some boilerplate type specifying …</p>
-<p><font color="green"><strong>[tewinget]</strong></font> pero: check again ;)</p>
-<p><font color="green"><strong>[tewinget]</strong></font> hadn’t pushed stuff up yet because I had to do an annoying rebase</p>
-<p><font color="green"><strong>[knaccc]</strong></font> does zmq result in initial daemon sync speedup at all? or is it mainly for robustness</p>
-<p><font color="green"><strong>[tewinget]</strong></font> vtnerd: I believe so</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> ok, I will follow that closely, because it matters for the mymonero backend</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> or rather it helps the mymonero backend</p>
-<p><font color="green"><strong>[medusa_]</strong></font> how is that progressing vtnerd ?</p>
-<p><font color="green"><strong>[medusa_]</strong></font> we talk sometimes about it, since the GUi now run on android with lightwallet support, but the mymonero node tis the only node we can connect (for now)</p>
-<p><font color="green"><strong>[tewinget]</strong></font> I’ll update here again some time Tuesday, by then I think I can have the wallet client stuff in good shape, giving me the rest of the week to work on notify stuffs.</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> your question is too open-ended - what exactly on the backend did you hope to hear about?</p>
-<p><font color="green"><strong>[pero]</strong></font> well i dont really know what im looking for but i see some commits from may7 have been added</p>
-<p><font color="green"><strong>[tewinget]</strong></font> lemme look and make sure I pushed pero</p>
-<p><font color="green"><strong>[dternyak]</strong></font> you did - github just says may 7 cause its the oldest of your new commits</p>
-<p><font color="green"><strong>[medusa_]</strong></font> whats the overall state ? is it soon finish, just started</p>
-<p><font color="green"><strong>[dternyak]</strong></font> the newest is from 1 hour ago</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> I’ve got a written but not completely tested method for rapid tx querying via lmdb (instead of the mysql), and a re-worked algorithm that needs polishing to reduce write blocking on mysql (faster importing)</p>
-<p><font color="green"><strong>[dternyak]</strong></font> that for mymonero vtnerd?</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> the x86 ASM (assembly wallet importing) is now live for about a month I think</p>
-<p><font color="green"><strong>[pero]</strong></font> ok so thats new stuff that can be reviewed?</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> none of this has been pushed to mainline</p>
-<p><font color="green"><strong>[medusa_]</strong></font> cool. cant wairt to run it myself</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> vtnerd: i think medusa_ was referring to the updates in monero daemon.</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> the x86 ASM stuff is closest, but I wanted to confirm that it was public domain code</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> but afaik that work hasn’t been started yet?</p>
-<p><font color="green"><strong>[tewinget]</strong></font> pero: yeah. also, weird that the commits I had to touch up for rebase didn’t get new timestamps…</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> right, the biggie is that I did part 2 of fireice-uk FFS for the mymonero backend</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> so openmonero will be the other option</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> vtnerd: nice!</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> or maybe it was part 1, I forget which. either it has been live (fluffypony would have to confirm)</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> it doesn</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> doesnt touch the existing crypto code, its all cmake magic (sorry hyc/moo) so its just a matter of some polish and reviewing licensing</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> theres lots more speed improvements that can be done, but it will be interesting to get feedback from people first</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> ric also discussed with me ways to open source the backend, but its probably a reworking that will get open sourced, not the current version</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> somehow the mysql dependency will have to be punted before merging into mainline</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> sorry for hijacing this tewinget</p>
-<p><font color="green"><strong>[tewinget]</strong></font> vtnerd: no worries, I was pretty well finished anyway :)</p>
-<p><font color="green"><strong>[tewinget]</strong></font> just hanging around to answer any questions for a bit longer before I go pass out</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> I mean right now my main concerns are performance and better mempool integration on the backend (not necessarily merging into mainline)</p>
-<p><font color="green"><strong>[medusa_]</strong></font> mhm * TinusMars has quit (Ping timeout: 260 seconds)</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> so that anyone using the newer UI stuff with the backend should have a better experience (hopefully) * TinusMars (54c0d41e@gateway/web/freenode/ip.84.192.212.30) has joined</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> Jaquee: do you want to tell us about your work ?</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> Well, then. Anyone else doing interesting stuff who want to let us know ? :)</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> sure. i’ve been working on adding lightwallet support to GUI. There are two PR’s up already that will need some more work before they can be merged</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> Sorry.</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> i’ve also been working on the android and ios builds simultaneously</p>
-<p><font color="green"><strong>[medusa_]</strong></font> also Jaquee fixed the nasty ominous “black screen” bug in the gui</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> yeah. that too</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> lightwallet == GUI that uses openmonero/mymonero backend ?</p>
-<p><font color="green"><strong>[medusa_]</strong></font> yes</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> exactly</p>
-<p><font color="green"><strong>[medusa_]</strong></font> thats why i asked</p>
-<p><font color="green"><strong>[medusa_]</strong></font> its all ready, owrks like a charm</p>
-<p><font color="green"><strong>[medusa_]</strong></font> soon*</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> :)</p>
-<p><font color="green"><strong>[pigeons]</strong></font> i wonder what kind of load that puts on the remote load per user</p>
-<p><font color="green"><strong>[pigeons]</strong></font> *remote node</p>
-<p><font color="green"><strong>[pero]</strong></font> tewinget: communication has been one of the fails here i believe so it would be helpful if you could add some note in the PR wrt progress and if there’s anything someone can do now</p>
-<p><font color="green"><strong>[tewinget]</strong></font> pero: I can do that, sure.</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> pigeons: thats what Im trying to improve</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> pigeons: the lightwallet use mymonero/openmonero backend, not regular remote nodes (yet)</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> and btw. my ffs has come to an end. Thanks for all contributions!</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> yeah so eventually the pie-in-the-sky approach is a kovri pubkey that your phone connects to ?</p>
-<p><font color="green"><strong>[medusa_]</strong></font></p>
-<p>&lt;3</p>
-<p><font color="green"><strong>[pigeons]</strong></font> yes i mean on those mymonero/openmonero nodes</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> i’ll probably put up another ffs soon</p>
-<p><font color="green"><strong>[unknownids]</strong></font> wooo</p>
-<p><font color="green"><strong>[binaryFate]</strong></font> Jaquee dooooo it!</p>
-<p><font color="green"><strong>[unknownids]</strong></font> hope ya go</p>
-<p><font color="green"><strong>[unknownids]</strong></font> do*</p>
-<p><font color="green"><strong>[unknownids]</strong></font> oh god</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> pigeons: ideally people would be running these nodes only for a few people that know personally (IMO)</p>
-<p><font color="green"><strong>[unknownids]</strong></font> :(</p>
-<p><font color="green"><strong>[pigeons]</strong></font> vtnerd: yep. if the only node that people can connect to is mymonero, they will quickly kill it</p>
-<p><font color="green"><strong>[medusa_]</strong></font> for now it is, but mymoner still charges a fee. without paying, so scanning</p>
-<p><font color="green"><strong>[vtnerd]</strong></font> come on pigeons, gotta have some “swag” … mymonero can handle the load</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> :D</p>
-<p><font color="green"><strong>[pero]</strong></font> thanks tewinget</p>
-<p><font color="green"><strong>[endogenic]</strong></font> vtnerd++</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> Well, as for me, I added some fuzz testing. Turns out erikd had also started looking at that as well.</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> It’s running on GCC, not CLANG, though.</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> Anyone else ?</p>
-<p><font color="green"><strong>[knaccc]</strong></font> kenshi84 has done fantastic work on implementing the subaddress scheme. There is now the concept of a wallet containing multiple “accounts”, each with multiple “addresses” (a.k.a. subaddresses). It’s now only a cat’s whisker away from being ready for code review. <a href="https://github.com/monero-project/monero/pull/2056" target="_blank" rel="noopener">https://github.com/monero-project/monero/pull/2056</a></p>
-<p><font color="green"><strong>[moneromooo]</strong></font> Very nice stuff ^_^</p>
-<p><font color="green"><strong>[medusa_]</strong></font> cool</p>
-<p><font color="green"><strong>[Jaquee]</strong></font> ^^</p>
-<p><font color="green"><strong>[medusa_]</strong></font> how about release ? dont we need to do a testnet fork in advance ?</p>
-<p><font color="green"><strong>[medusa_]</strong></font> dou you guys have a rough timeline in mind ?</p>
-<p><font color="green"><strong>[knaccc]</strong></font> subaddresses are a wallet only change</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> For subaddresses, I don’t think we’d need to.</p>
-<p><font color="green"><strong>[_Slack]</strong></font></p>
-<p><font color="green"><strong>[sgp_]</strong></font> Just joining now. Thanks Jaquee and kenshi84 (and others of course)</p>
-<p><font color="green"><strong>[medusa_]</strong></font> no i mean in general</p>
-<p><font color="green"><strong>[medusa_]</strong></font> september fork is not far away</p>
-<p><font color="green"><strong>[medusa_]</strong></font> when do we release ?</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> Well, the only thing we’d need we don’t have yet is the smaller range proofs, but I think we’re kinda screwed now.</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> All the rest is active on testnet I think.</p>
-<p><font color="green"><strong>[knaccc]</strong></font> why screwed? it’s too late for the range proof reduction to make it into the september fork?</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> Seems so.</p>
-<p><font color="green"><strong>[ArticMine]</strong></font> That was my question also</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> Ah, there was also a question of whether to bump minimum mixin higher than was planned.</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> It was supposed to go from 2 to 4.</p>
-<p><font color="green"><strong>[binaryFate]</strong></font> who’s working on range proof reduction?</p>
-<p><font color="green"><strong>[knaccc]</strong></font> luigi</p>
-<p><font color="green"><strong>[ArticMine]</strong></font> So we are looking at 2018 for the smaller range proofs? * moneromooo apologizes for having mugged luigi for multisig help</p>
-<p><font color="green"><strong>[medusa_]</strong></font> whats exactly the issue ? too little time for now? * TinusMars_ (54c0d41e@gateway/web/freenode/ip.84.192.212.30) has joined</p>
-<p><font color="green"><strong>[knaccc]</strong></font> to be fair, it’s not the kind of thing that any mistakes can be afforded to be made with</p>
-<p><font color="green"><strong>[medusa_]</strong></font> he should just stop watching charts all day ^^ <em> TinusMars has quit (Ping timeout: 260 seconds) </em> Guest75107 is now known as bittrex-richie</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> Was there anything else than smaller range proofs, 2-&gt;4 min mixin, and mandatory rct for next fork ? * umarucchi (<a href="mailto:~sostegno@94.242.205.37" target="_blank" rel="noopener">~sostegno@94.242.205.37</a>) has joined</p>
-<p><font color="green"><strong>[knaccc]</strong></font> something has to happen to get some consensus on the mandatory ring size change</p>
-<p><font color="green"><strong>[pero]</strong></font> there isnt consensus?</p>
-<p><font color="green"><strong>[knaccc]</strong></font> i’ve suggested 20, surae said he doesn’t have a problem with that, but not much other commentary.</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> I’ve not seen olarks for a while. Anyone has ?</p>
-<p><font color="green"><strong>[knaccc]</strong></font> the thread went dead <a href="https://github.com/monero-project/monero/issues/1673" target="_blank" rel="noopener">https://github.com/monero-project/monero/issues/1673</a></p>
-<p><font color="green"><strong>[pero]</strong></font> maybe we should schedule a townhall type irc meeting</p>
-<p><font color="green"><strong>[pero]</strong></font> instead of intermittent back and forth in the ticket</p>
-<p><font color="green"><strong>[knaccc]</strong></font> other people just need to make their opinions known, not that many people have done so</p>
-<p><font color="green"><strong>[medusa_]</strong></font> i cant judge waht the min mixing should be, but would like to see the pole that can judge it discuss it ofc</p>
-<p><font color="green"><strong>[pero]</strong></font> ^</p>
-<p><font color="green"><strong>[medusa_]</strong></font> so i trust the experts * umarucchi has quit (Ping timeout: 240 seconds)</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> Anyone else wants to say anything ?</p>
-<p><font color="green"><strong>[rehrar]</strong></font> 1. Greetings</p>
-<p><font color="green"><strong>[medusa_]</strong></font> i think the miimum mixing is an important question. i cant help u guys discuss it</p>
-<p><font color="green"><strong>[knaccc]</strong></font> 2017-06-23 12:54:59 surae well, if raising the ring size from 3 to 20 results in 15% larger transactions, i have *no* problem endorsing increased minimum mix-ins *even without* taking churning into account. i’ve advocated that since the chain reaction paper, but lacking a specific attack vector, it was hard to justify the cost…</p>
-<p><font color="green"><strong>[medusa_]</strong></font> but it shouldnt be done last minute</p>
-<p><font color="green"><strong>[medusa_]</strong></font> now is the time</p>
-<p><font color="green"><strong>[_Slack]</strong></font></p>
-<p><font color="green"><strong>[sgp_]</strong></font> I think most people including me are ok with any reasonable number &gt;10</p>
-<p><font color="green"><strong>[moneromooo]</strong></font> 15% means ~30% once we have the smaller range proofs.</p>
-<p><font color="green"><strong>[knaccc]</strong></font> moneromooo true. it’s the price to get privacy in the E-&gt;A-&gt;B-&gt;E scenario unfortunately, in my opinion.</p>
-<p><font color="green"><strong>[iDunk]</strong></font> Why don’t we just ban Eve and be done with it?</p>
-<p><font color="green"><strong>[knaccc]</strong></font> because it’s how users make purchases while avoiding XMR/local currency exchange rate risk</p>
-<p><font color="green"><strong>[knaccc]</strong></font> which according to a particular vendor that posted on reddit was the almost exclusive pattern of behaviour of his clients * antw081 (<a href="mailto:~antw081@203.63.117.80" target="_blank" rel="noopener">~antw081@203.63.117.80</a>) has joined</p>
-<p><font color="green"><strong>[knaccc]</strong></font> what i posted above btw was surae’s comment, not my comment to surae</p>
-<p><font color="green"><strong>[iDunk]</strong></font> Which you probably solicited?</p>
-<p><font color="green"><strong>[knaccc]</strong></font> rubber hosed. * antw081 has quit (Client Quit)</p>
-<p><font color="green"><strong>[medusa_]</strong></font> ok guys, is that it ?</p>
-<p><font color="green"><strong>[knaccc]</strong></font> the premise is that my simulation shows that an EABE attack can only be mitigated if the anonymity set can reach 80,000 inputs. And that’s not possible without intermediate transactions, and it’d take excessive intermediate transactions to achieve this unless the mandatory ring size is much higher than it currently is</p>
-<p><font color="green"><strong>[knaccc]</strong></font> it’s a long github thread, I’ll leave you all to read it at your collective leisure :)</p>
+<p>完整會議紀錄<br><font color=green><strong>[tewinget]</strong></font> I know it’s a bit out of order, but I can go ahead and share what updates I have while we wait for fluffy.<br><font color=green><strong>[moneromooo]</strong></font> please do :)<br><font color=green><strong>[tewinget]</strong></font> I’m pretty knackered, so I’m afraid I won’t have much useful input on the other topics anyway<br><font color=green><strong>[tewinget]</strong></font> alright, so apart from a couple minor tweaks I still plan to do (but which are by no means necessary I think), the daemon zmq rpc server should be ready to merge pending approval. There are a few things I’d do differently were I to start again from scratch, and may go back and change later, but it’s in pretty decent shape overall I think. Still a good handful of unimplemented calls, but they’re mostly fill-in-the-blank and low priority imo<br><font color=green><strong>[endogenic]</strong></font> nice<br><font color=green><strong>[tewinget]</strong></font> the wallet zmq rpc client (well, not explicitly wallet-only, but for the wallet) is coming along, but not quite to that same point.<br><font color=green><strong>[vtnerd]</strong></font> yeah I had some comments about the design at some point, but I think it something that could be discussed later<br><font color=green><strong>[vtnerd]</strong></font> plus moo may have disliked my C++ suggestions (for a good reason)<br><font color=green><strong>[tewinget]</strong></font> as far as I can tell, I’ll be able to get what I set out to finish finished by the end of the month as planned.<br><font color=green><strong>[vtnerd]</strong></font> so the first cut should be able to push out when a new block is received ?<br><font color=green><strong>[tewinget]</strong></font> vtnerd: yeah, some of your suggestions are the things I considered doing differently, but the amount of re-doing didn’t seem to be worth it short term.<br><font color=green><strong>[pero]</strong></font> im a bit concerned that there has been no new code merged and leaves us with potential for another month or so turnaround on the next iteration<br><font color=green><strong>[tewinget]</strong></font> so {block,tx}notify is something I’d like to have a prototype of working by end of month, but I don’t think I’ll have a polished solution quite then. First week of July though.<br><font color=green><strong>[vtnerd]</strong></font> you did merge my one PR, right? it cut down on some boilerplate type specifying …<br><font color=green><strong>[tewinget]</strong></font> pero: check again ;)<br><font color=green><strong>[tewinget]</strong></font> hadn’t pushed stuff up yet because I had to do an annoying rebase<br><font color=green><strong>[knaccc]</strong></font> does zmq result in initial daemon sync speedup at all? or is it mainly for robustness<br><font color=green><strong>[tewinget]</strong></font> vtnerd: I believe so<br><font color=green><strong>[vtnerd]</strong></font> ok, I will follow that closely, because it matters for the mymonero backend<br><font color=green><strong>[vtnerd]</strong></font> or rather it helps the mymonero backend<br><font color=green><strong>[medusa_]</strong></font> how is that progressing vtnerd ?<br><font color=green><strong>[medusa_]</strong></font> we talk sometimes about it, since the GUi now run on android with lightwallet support, but the mymonero node tis the only node we can connect (for now)<br><font color=green><strong>[tewinget]</strong></font> I’ll update here again some time Tuesday, by then I think I can have the wallet client stuff in good shape, giving me the rest of the week to work on notify stuffs.<br><font color=green><strong>[vtnerd]</strong></font> your question is too open-ended - what exactly on the backend did you hope to hear about?<br><font color=green><strong>[pero]</strong></font> well i dont really know what im looking for but i see some commits from may7 have been added<br><font color=green><strong>[tewinget]</strong></font> lemme look and make sure I pushed pero<br><font color=green><strong>[dternyak]</strong></font> you did - github just says may 7 cause its the oldest of your new commits<br><font color=green><strong>[medusa_]</strong></font> whats the overall state ? is it soon finish, just started<br><font color=green><strong>[dternyak]</strong></font> the newest is from 1 hour ago<br><font color=green><strong>[vtnerd]</strong></font> I’ve got a written but not completely tested method for rapid tx querying via lmdb (instead of the mysql), and a re-worked algorithm that needs polishing to reduce write blocking on mysql (faster importing)<br><font color=green><strong>[dternyak]</strong></font> that for mymonero vtnerd?<br><font color=green><strong>[vtnerd]</strong></font> the x86 ASM (assembly wallet importing) is now live for about a month I think<br><font color=green><strong>[pero]</strong></font> ok so thats new stuff that can be reviewed?<br><font color=green><strong>[vtnerd]</strong></font> none of this has been pushed to mainline<br><font color=green><strong>[medusa_]</strong></font> cool. cant wairt to run it myself<br><font color=green><strong>[Jaquee]</strong></font> vtnerd: i think medusa_ was referring to the updates in monero daemon.<br><font color=green><strong>[vtnerd]</strong></font> the x86 ASM stuff is closest, but I wanted to confirm that it was public domain code<br><font color=green><strong>[Jaquee]</strong></font> but afaik that work hasn’t been started yet?<br><font color=green><strong>[tewinget]</strong></font> pero: yeah. also, weird that the commits I had to touch up for rebase didn’t get new timestamps…<br><font color=green><strong>[vtnerd]</strong></font> right, the biggie is that I did part 2 of fireice-uk FFS for the mymonero backend<br><font color=green><strong>[Jaquee]</strong></font> so openmonero will be the other option<br><font color=green><strong>[Jaquee]</strong></font> vtnerd: nice!<br><font color=green><strong>[vtnerd]</strong></font> or maybe it was part 1, I forget which. either it has been live (fluffypony would have to confirm)<br><font color=green><strong>[vtnerd]</strong></font> it doesn<br><font color=green><strong>[vtnerd]</strong></font> doesnt touch the existing crypto code, its all cmake magic (sorry hyc/moo) so its just a matter of some polish and reviewing licensing<br><font color=green><strong>[vtnerd]</strong></font> theres lots more speed improvements that can be done, but it will be interesting to get feedback from people first<br><font color=green><strong>[vtnerd]</strong></font> ric also discussed with me ways to open source the backend, but its probably a reworking that will get open sourced, not the current version<br><font color=green><strong>[vtnerd]</strong></font> somehow the mysql dependency will have to be punted before merging into mainline<br><font color=green><strong>[vtnerd]</strong></font> sorry for hijacing this tewinget<br><font color=green><strong>[tewinget]</strong></font> vtnerd: no worries, I was pretty well finished anyway :)<br><font color=green><strong>[tewinget]</strong></font> just hanging around to answer any questions for a bit longer before I go pass out<br><font color=green><strong>[vtnerd]</strong></font> I mean right now my main concerns are performance and better mempool integration on the backend (not necessarily merging into mainline)<br><font color=green><strong>[medusa_]</strong></font> mhm * TinusMars has quit (Ping timeout: 260 seconds)<br><font color=green><strong>[vtnerd]</strong></font> so that anyone using the newer UI stuff with the backend should have a better experience (hopefully) * TinusMars (54c0d41e@gateway/web/freenode/ip.84.192.212.30) has joined<br><font color=green><strong>[moneromooo]</strong></font> Jaquee: do you want to tell us about your work ?<br><font color=green><strong>[moneromooo]</strong></font> Well, then. Anyone else doing interesting stuff who want to let us know ? :)<br><font color=green><strong>[Jaquee]</strong></font> sure. i’ve been working on adding lightwallet support to GUI. There are two PR’s up already that will need some more work before they can be merged<br><font color=green><strong>[moneromooo]</strong></font> Sorry.<br><font color=green><strong>[Jaquee]</strong></font> i’ve also been working on the android and ios builds simultaneously<br><font color=green><strong>[medusa_]</strong></font> also Jaquee fixed the nasty ominous “black screen” bug in the gui<br><font color=green><strong>[Jaquee]</strong></font> yeah. that too<br><font color=green><strong>[vtnerd]</strong></font> lightwallet == GUI that uses openmonero/mymonero backend ?<br><font color=green><strong>[medusa_]</strong></font> yes<br><font color=green><strong>[Jaquee]</strong></font> exactly<br><font color=green><strong>[medusa_]</strong></font> thats why i asked<br><font color=green><strong>[medusa_]</strong></font> its all ready, owrks like a charm<br><font color=green><strong>[medusa_]</strong></font> soon*<br><font color=green><strong>[Jaquee]</strong></font> :)<br><font color=green><strong>[pigeons]</strong></font> i wonder what kind of load that puts on the remote load per user<br><font color=green><strong>[pigeons]</strong></font> *remote node<br><font color=green><strong>[pero]</strong></font> tewinget: communication has been one of the fails here i believe so it would be helpful if you could add some note in the PR wrt progress and if there’s anything someone can do now<br><font color=green><strong>[tewinget]</strong></font> pero: I can do that, sure.<br><font color=green><strong>[vtnerd]</strong></font> pigeons: thats what Im trying to improve<br><font color=green><strong>[Jaquee]</strong></font> pigeons: the lightwallet use mymonero/openmonero backend, not regular remote nodes (yet)<br><font color=green><strong>[Jaquee]</strong></font> and btw. my ffs has come to an end. Thanks for all contributions!<br><font color=green><strong>[vtnerd]</strong></font> yeah so eventually the pie-in-the-sky approach is a kovri pubkey that your phone connects to ?<br><font color=green><strong>[medusa_]</strong></font><br>&lt;3<br><font color=green><strong>[pigeons]</strong></font> yes i mean on those mymonero/openmonero nodes<br><font color=green><strong>[Jaquee]</strong></font> i’ll probably put up another ffs soon<br><font color=green><strong>[unknownids]</strong></font> wooo<br><font color=green><strong>[binaryFate]</strong></font> Jaquee dooooo it!<br><font color=green><strong>[unknownids]</strong></font> hope ya go<br><font color=green><strong>[unknownids]</strong></font> do*<br><font color=green><strong>[unknownids]</strong></font> oh god<br><font color=green><strong>[vtnerd]</strong></font> pigeons: ideally people would be running these nodes only for a few people that know personally (IMO)<br><font color=green><strong>[unknownids]</strong></font> :(<br><font color=green><strong>[pigeons]</strong></font> vtnerd: yep. if the only node that people can connect to is mymonero, they will quickly kill it<br><font color=green><strong>[medusa_]</strong></font> for now it is, but mymoner still charges a fee. without paying, so scanning<br><font color=green><strong>[vtnerd]</strong></font> come on pigeons, gotta have some “swag” … mymonero can handle the load<br><font color=green><strong>[Jaquee]</strong></font> :D<br><font color=green><strong>[pero]</strong></font> thanks tewinget<br><font color=green><strong>[endogenic]</strong></font> vtnerd++<br><font color=green><strong>[moneromooo]</strong></font> Well, as for me, I added some fuzz testing. Turns out erikd had also started looking at that as well.<br><font color=green><strong>[moneromooo]</strong></font> It’s running on GCC, not CLANG, though.<br><font color=green><strong>[moneromooo]</strong></font> Anyone else ?<br><font color=green><strong>[knaccc]</strong></font> kenshi84 has done fantastic work on implementing the subaddress scheme. There is now the concept of a wallet containing multiple “accounts”, each with multiple “addresses” (a.k.a. subaddresses). It’s now only a cat’s whisker away from being ready for code review. <a target="_blank" rel="noopener" href="https://github.com/monero-project/monero/pull/2056">https://github.com/monero-project/monero/pull/2056</a><br><font color=green><strong>[moneromooo]</strong></font> Very nice stuff ^<em>^<br><font color=green><strong>[medusa_]</strong></font> cool<br><font color=green><strong>[Jaquee]</strong></font> ^^<br><font color=green><strong>[medusa_]</strong></font> how about release ? dont we need to do a testnet fork in advance ?<br><font color=green><strong>[medusa_]</strong></font> dou you guys have a rough timeline in mind ?<br><font color=green><strong>[knaccc]</strong></font> subaddresses are a wallet only change<br><font color=green><strong>[moneromooo]</strong></font> For subaddresses, I don’t think we’d need to.<br><font color=green><strong>[_Slack]</strong></font><br><font color=green><strong>[sgp_]</strong></font> Just joining now. Thanks Jaquee and kenshi84 (and others of course)<br><font color=green><strong>[medusa_]</strong></font> no i mean in general<br><font color=green><strong>[medusa_]</strong></font> september fork is not far away<br><font color=green><strong>[medusa_]</strong></font> when do we release ?<br><font color=green><strong>[moneromooo]</strong></font> Well, the only thing we’d need we don’t have yet is the smaller range proofs, but I think we’re kinda screwed now.<br><font color=green><strong>[moneromooo]</strong></font> All the rest is active on testnet I think.<br><font color=green><strong>[knaccc]</strong></font> why screwed? it’s too late for the range proof reduction to make it into the september fork?<br><font color=green><strong>[moneromooo]</strong></font> Seems so.<br><font color=green><strong>[ArticMine]</strong></font> That was my question also<br><font color=green><strong>[moneromooo]</strong></font> Ah, there was also a question of whether to bump minimum mixin higher than was planned.<br><font color=green><strong>[moneromooo]</strong></font> It was supposed to go from 2 to 4.<br><font color=green><strong>[binaryFate]</strong></font> who’s working on range proof reduction?<br><font color=green><strong>[knaccc]</strong></font> luigi<br><font color=green><strong>[ArticMine]</strong></font> So we are looking at 2018 for the smaller range proofs? * moneromooo apologizes for having mugged luigi for multisig help<br><font color=green><strong>[medusa_]</strong></font> whats exactly the issue ? too little time for now? * TinusMars</em> (54c0d41e@gateway/web/freenode/ip.84.192.212.30) has joined<br><font color=green><strong>[knaccc]</strong></font> to be fair, it’s not the kind of thing that any mistakes can be afforded to be made with<br><font color=green><strong>[medusa_]</strong></font> he should just stop watching charts all day ^^ * TinusMars has quit (Ping timeout: 260 seconds) * Guest75107 is now known as bittrex-richie<br><font color=green><strong>[moneromooo]</strong></font> Was there anything else than smaller range proofs, 2-&gt;4 min mixin, and mandatory rct for next fork ? * umarucchi (<del><a href="mailto:&#x73;&#111;&#115;&#x74;&#101;&#x67;&#x6e;&#x6f;&#x40;&#57;&#x34;&#46;&#x32;&#52;&#50;&#46;&#50;&#x30;&#x35;&#x2e;&#51;&#x37;">&#x73;&#111;&#115;&#x74;&#101;&#x67;&#x6e;&#x6f;&#x40;&#57;&#x34;&#46;&#x32;&#52;&#50;&#46;&#50;&#x30;&#x35;&#x2e;&#51;&#x37;</a>) has joined<br><font color=green><strong>[knaccc]</strong></font> something has to happen to get some consensus on the mandatory ring size change<br><font color=green><strong>[pero]</strong></font> there isnt consensus?<br><font color=green><strong>[knaccc]</strong></font> i’ve suggested 20, surae said he doesn’t have a problem with that, but not much other commentary.<br><font color=green><strong>[moneromooo]</strong></font> I’ve not seen olarks for a while. Anyone has ?<br><font color=green><strong>[knaccc]</strong></font> the thread went dead <a target="_blank" rel="noopener" href="https://github.com/monero-project/monero/issues/1673">https://github.com/monero-project/monero/issues/1673</a><br><font color=green><strong>[pero]</strong></font> maybe we should schedule a townhall type irc meeting<br><font color=green><strong>[pero]</strong></font> instead of intermittent back and forth in the ticket<br><font color=green><strong>[knaccc]</strong></font> other people just need to make their opinions known, not that many people have done so<br><font color=green><strong>[medusa_]</strong></font> i cant judge waht the min mixing should be, but would like to see the pole that can judge it discuss it ofc<br><font color=green><strong>[pero]</strong></font> ^<br><font color=green><strong>[medusa_]</strong></font> so i trust the experts * umarucchi has quit (Ping timeout: 240 seconds)<br><font color=green><strong>[moneromooo]</strong></font> Anyone else wants to say anything ?<br><font color=green><strong>[rehrar]</strong></font> 1. Greetings<br><font color=green><strong>[medusa_]</strong></font> i think the miimum mixing is an important question. i cant help u guys discuss it<br><font color=green><strong>[knaccc]</strong></font> 2017-06-23 12:54:59 surae well, if raising the ring size from 3 to 20 results in 15% larger transactions, i have *no* problem endorsing increased minimum mix-ins *even without* taking churning into account. i’ve advocated that since the chain reaction paper, but lacking a specific attack vector, it was hard to justify the cost…<br><font color=green><strong>[medusa_]</strong></font> but it shouldnt be done last minute<br><font color=green><strong>[medusa_]</strong></font> now is the time<br><font color=green><strong>[_Slack]</strong></font><br><font color=green><strong>[sgp_]</strong></font> I think most people including me are ok with any reasonable number &gt;10<br><font color=green><strong>[moneromooo]</strong></font> 15% means ~30% once we have the smaller range proofs.<br><font color=green><strong>[knaccc]</strong></font> moneromooo true. it’s the price to get privacy in the E-&gt;A-&gt;B-&gt;E scenario unfortunately, in my opinion.<br><font color=green><strong>[iDunk]</strong></font> Why don’t we just ban Eve and be done with it?<br><font color=green><strong>[knaccc]</strong></font> because it’s how users make purchases while avoiding XMR/local currency exchange rate risk<br><font color=green><strong>[knaccc]</strong></font> which according to a particular vendor that posted on reddit was the almost exclusive pattern of behaviour of his clients * antw081 (</del><a href="mailto:&#97;&#110;&#x74;&#x77;&#48;&#x38;&#x31;&#x40;&#50;&#x30;&#x33;&#46;&#54;&#51;&#x2e;&#x31;&#49;&#55;&#x2e;&#x38;&#48;">&#97;&#110;&#x74;&#x77;&#48;&#x38;&#x31;&#x40;&#50;&#x30;&#x33;&#46;&#54;&#51;&#x2e;&#x31;&#49;&#55;&#x2e;&#x38;&#48;</a>) has joined<br><font color=green><strong>[knaccc]</strong></font> what i posted above btw was surae’s comment, not my comment to surae<br><font color=green><strong>[iDunk]</strong></font> Which you probably solicited?<br><font color=green><strong>[knaccc]</strong></font> rubber hosed. * antw081 has quit (Client Quit)<br><font color=green><strong>[medusa_]</strong></font> ok guys, is that it ?<br><font color=green><strong>[knaccc]</strong></font> the premise is that my simulation shows that an EABE attack can only be mitigated if the anonymity set can reach 80,000 inputs. And that’s not possible without intermediate transactions, and it’d take excessive intermediate transactions to achieve this unless the mandatory ring size is much higher than it currently is<br><font color=green><strong>[knaccc]</strong></font> it’s a long github thread, I’ll leave you all to read it at your collective leisure :)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xmr-tw.org/2017/06/30/devmeeting-20170625/" data-id="ckfxdrwod000hj8wy5zi6q5fx" class="article-share-link">Share</a>
+      <a data-url="https://xmr-tw.org/2017/06/30/devmeeting-20170625/" data-id="ckoglwlbn000h65wy1w385dsv" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/輕錢包/">輕錢包</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BC%95%E9%8C%A2%E5%8C%85/" rel="tag">輕錢包</a></li></ul>
 
     </footer>
   </div>
@@ -326,32 +175,32 @@
     <h3 class="widget-title">桌面版錢包/節點下載</h3>
     <div class="widget">
         <a href="https://web.getmonero.org/zh-tw/downloads/index.html" target="_blank" rel="noopener">
-            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"></a>
-    </div></div>
+            <img style="max-width:100%;max-height:100%;" src="/images/site/officiallinkwallet.png"/></a>
+    </div>
   
     <div class="widget-wrap">
     <h3 class="widget-title">行動版錢包</h3>
     <div class="widget">
         <div><p>Android 版： Monero: Monerujo Wallet</p>
-        <a href="https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img style="width:80%;max-width:400px;" alt="Google Play 立即下載" src="/images/site/zh-tw_badge_web_generic.png"></a></div>
+        <a target="_blank" rel="noopener" href='https://play.google.com/store/apps/details?id=com.m2049r.xmrwallet&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img style="width:80%;max-width:400px;" alt='Google Play 立即下載' src='/images/site/zh-tw_badge_web_generic.png' /></a></div>
         <div><p>Apple iOS 版： Cake Wallet</p>
-        <a href="https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8"><img style="width:80%;max-width:400px;" alt="App Store 下載" src="/images/site/Download_on_the_App_Store_Badge_CNTC_RGB_blk_100217.svg"></a></div>
-    </div></div>
+        <a target="_blank" rel="noopener" href='https://itunes.apple.com/tw/app/cake-wallet-for-xmr-monero/id1334702542?mt=8'><img style="width:80%;max-width:400px;" alt='App Store 下載' src='/images/site/Download_on_the_App_Store_Badge_CNTC_RGB_blk_100217.svg' /></a></div>
+    </div>
   
     <div class="widget-wrap">
     <h3 class="widget-title">試用好專案支持本站</h3>
     <div class="widget">
         <a href="https://brave.com/xmr204" target="_blank" rel="noopener">
-            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"></a>
+            <img style="max-width:100%;max-height:100%;" src="/images/site/brave.png"/></a>
             <p>經由本連結下載試用Brave瀏覽器一個月，就可以讓本站獲得些許獎勵，而你可以獲得更快更安全的上網體驗，這是雙贏！</p>
-    </div></div>
+    </div>
   
     <div class="widget-wrap">
     <h3 class="widget-title">加入臉書社團掌握最新資訊</h3>
     <div class="widget">
     	<div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.2&appId=348572471919049"></script>
-        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
+        <div class="fb-page" data-href="https://www.facebook.com/MoneroTaiwan/" data-width="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MoneroTaiwan/" class="fb-xfbml-parse-ignore"><a target="_blank" rel="noopener" href="https://www.facebook.com/MoneroTaiwan/">Monero-台灣社群</a></blockquote></div>
         <div class="fb-group" data-href="https://www.facebook.com/groups/MoneroTaiwan/" data-width="250" data-show-social-context="false" data-show-metadata="false"></div>
     </div>
 </div>
@@ -359,7 +208,7 @@
     <div class="widget-wrap">
     <h3 class="widget-title">即時價格</h3>
     <div class="widget">
-        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowtransparency="true" border="0" hidefocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="no"></iframe>
+        <iframe src="https://www.monero.how/widget" style="width:210px; height:130px;" allowTransparency="true" border="0" hideFocus="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameBorder="no"></iframe>
 </div>
 </div>
   
@@ -373,19 +222,18 @@
             <dd><a href="https://monerohash.com/explorer/" target="_blank" rel="noopener">Monerohash 區塊瀏覽器</a></dd>
             <dt>兌換服務</dt>
             <dd><a href="https://www.morphtoken.com/" target="_blank" rel="noopener">MorphToken </a> - 多種加密幣快速兌換</dd>
-            <dd><a href="https://xmr.to/" target="_blank" rel="noopener">XMR.TO</a> - 將XMR快速兌換至BTC</dd>
             <dd><a href="https://localmonero.co/" target="_blank" rel="noopener">LocalMonero </a> - 當地XMR交易媒合</dd>
             <dt>視覺化資料</dt>
             <dd><a href="https://monerohash.com/#network" target="_blank" rel="noopener">礦池算力分佈</a></dd>
             <dd><a href="https://monerohash.com/nodes-distribution.html" target="_blank" rel="noopener">全球節點分佈</a></dd>
         </ul>
-    </div></div>
+    </div>
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-小秘訣/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-技術介紹/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-新聞/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/區塊鏈分叉消息/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方新版本釋出/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/官方消息宣布/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/站務消息/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/開發者會議紀錄/">開發者會議紀錄</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-%E5%B0%8F%E7%A7%98%E8%A8%A3/">Monero 小秘訣</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-%E6%8A%80%E8%A1%93%E4%BB%8B%E7%B4%B9/">Monero 技術介紹</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monero-%E6%96%B0%E8%81%9E/">Monero 新聞</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%80%E5%A1%8A%E9%8F%88%E5%88%86%E5%8F%89%E6%B6%88%E6%81%AF/">區塊鏈分叉消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%98%E6%96%B9%E6%96%B0%E7%89%88%E6%9C%AC%E9%87%8B%E5%87%BA/">官方新版本釋出</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%98%E6%96%B9%E6%B6%88%E6%81%AF%E5%AE%A3%E5%B8%83/">官方消息宣布</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AB%99%E5%8B%99%E6%B6%88%E6%81%AF/">站務消息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%96%8B%E7%99%BC%E8%80%85%E6%9C%83%E8%AD%B0%E7%B4%80%E9%8C%84/">開發者會議紀錄</a></li></ul>
     </div>
   </div>
 
@@ -395,7 +243,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC礦機/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/CLSAG/" style="font-size: 12px;">CLSAG</a> <a href="/tags/Carbon-Chamaeleon/" style="font-size: 11px;">Carbon Chamaeleon</a> <a href="/tags/Community/" style="font-size: 11px;">Community</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI/" style="font-size: 10px;">GUI</a> <a href="/tags/GUI錢包/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/Nitrogen-Nebula/" style="font-size: 11px;">Nitrogen Nebula</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Oxygen-Orion/" style="font-size: 12px;">Oxygen Orion</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 11px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy區塊/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/付款ID/" style="font-size: 12px;">付款ID</a> <a href="/tags/密碼學/" style="font-size: 11px;">密碼學</a> <a href="/tags/心得介紹/" style="font-size: 10px;">心得介紹</a> <a href="/tags/手機錢包/" style="font-size: 14px;">手機錢包</a> <a href="/tags/手續費/" style="font-size: 11px;">手續費</a> <a href="/tags/整合型地址/" style="font-size: 10px;">整合型地址</a> <a href="/tags/核心開發團隊/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/漏洞/" style="font-size: 12px;">漏洞</a> <a href="/tags/環狀簽名/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/環簽交易/" style="font-size: 10px;">環簽交易</a> <a href="/tags/硬分叉/" style="font-size: 20px;">硬分叉</a> <a href="/tags/硬體錢包/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/輕錢包/" style="font-size: 15px;">輕錢包</a> <a href="/tags/遠端節點/" style="font-size: 11px;">遠端節點</a> <a href="/tags/金鑰映像/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/開發日誌/" style="font-size: 11px;">開發日誌</a> <a href="/tags/隱匿性地址/" style="font-size: 11px;">隱匿性地址</a>
+      <a href="/tags/ASIC/" style="font-size: 11px;">ASIC</a> <a href="/tags/ASIC%E7%A4%A6%E6%A9%9F/" style="font-size: 10px;">ASIC礦機</a> <a href="/tags/Beryllium-Bullet/" style="font-size: 10px;">Beryllium Bullet</a> <a href="/tags/Boron-Butterfly/" style="font-size: 10px;">Boron Butterfly</a> <a href="/tags/Borromean-Signature-Speedup/" style="font-size: 10px;">Borromean Signature Speedup</a> <a href="/tags/BulletProofs/" style="font-size: 19px;">BulletProofs</a> <a href="/tags/Bytecoin/" style="font-size: 10px;">Bytecoin</a> <a href="/tags/CLSAG/" style="font-size: 12px;">CLSAG</a> <a href="/tags/Carbon-Chamaeleon/" style="font-size: 11px;">Carbon Chamaeleon</a> <a href="/tags/Community/" style="font-size: 11px;">Community</a> <a href="/tags/Core-team/" style="font-size: 10px;">Core team</a> <a href="/tags/CrptoNight/" style="font-size: 10px;">CrptoNight</a> <a href="/tags/CryptoNight/" style="font-size: 10px;">CryptoNight</a> <a href="/tags/CryptoNote/" style="font-size: 11px;">CryptoNote</a> <a href="/tags/FFS/" style="font-size: 11px;">FFS</a> <a href="/tags/GUI/" style="font-size: 10px;">GUI</a> <a href="/tags/GUI%E9%8C%A2%E5%8C%85/" style="font-size: 20px;">GUI錢包</a> <a href="/tags/Gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/Helium-Hydra/" style="font-size: 12px;">Helium Hydra</a> <a href="/tags/Kovri/" style="font-size: 10px;">Kovri</a> <a href="/tags/LMDB/" style="font-size: 11px;">LMDB</a> <a href="/tags/Lithium-Luna/" style="font-size: 12px;">Lithium Luna</a> <a href="/tags/Mining/" style="font-size: 12px;">Mining</a> <a href="/tags/Monero-Research-Lab/" style="font-size: 17px;">Monero Research Lab</a> <a href="/tags/MultiSig/" style="font-size: 16px;">MultiSig</a> <a href="/tags/Nitrogen-Nebula/" style="font-size: 11px;">Nitrogen Nebula</a> <a href="/tags/OpenCart/" style="font-size: 10px;">OpenCart</a> <a href="/tags/Oxygen-Orion/" style="font-size: 14px;">Oxygen Orion</a> <a href="/tags/Proof-of-Work/" style="font-size: 11px;">Proof of Work</a> <a href="/tags/RandomX/" style="font-size: 11px;">RandomX</a> <a href="/tags/RingCT/" style="font-size: 17px;">RingCT</a> <a href="/tags/RingCT2-0/" style="font-size: 10px;">RingCT2.0</a> <a href="/tags/RuffCT/" style="font-size: 11px;">RuffCT</a> <a href="/tags/Subaddresses/" style="font-size: 16px;">Subaddresses</a> <a href="/tags/Tor/" style="font-size: 10px;">Tor</a> <a href="/tags/Trezor/" style="font-size: 11px;">Trezor</a> <a href="/tags/ZeroMQ/" style="font-size: 13px;">ZeroMQ</a> <a href="/tags/coinhive/" style="font-size: 10px;">coinhive</a> <a href="/tags/compile/" style="font-size: 10px;">compile</a> <a href="/tags/fluffy%E5%8D%80%E5%A1%8A/" style="font-size: 11px;">fluffy區塊</a> <a href="/tags/libMoneroConsensus/" style="font-size: 10px;">libMoneroConsensus</a> <a href="/tags/msgpack/" style="font-size: 10px;">msgpack</a> <a href="/tags/mymonero/" style="font-size: 15px;">mymonero</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/payment-id/" style="font-size: 10px;">payment id</a> <a href="/tags/randomJS/" style="font-size: 10px;">randomJS</a> <a href="/tags/reproducible-build/" style="font-size: 10px;">reproducible build</a> <a href="/tags/testnet/" style="font-size: 12px;">testnet</a> <a href="/tags/%E4%BB%98%E6%AC%BEID/" style="font-size: 12px;">付款ID</a> <a href="/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/" style="font-size: 11px;">密碼學</a> <a href="/tags/%E5%BF%83%E5%BE%97%E4%BB%8B%E7%B4%B9/" style="font-size: 10px;">心得介紹</a> <a href="/tags/%E6%89%8B%E6%A9%9F%E9%8C%A2%E5%8C%85/" style="font-size: 14px;">手機錢包</a> <a href="/tags/%E6%89%8B%E7%BA%8C%E8%B2%BB/" style="font-size: 11px;">手續費</a> <a href="/tags/%E6%95%B4%E5%90%88%E5%9E%8B%E5%9C%B0%E5%9D%80/" style="font-size: 10px;">整合型地址</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E9%96%8B%E7%99%BC%E5%9C%98%E9%9A%8A/" style="font-size: 10px;">核心開發團隊</a> <a href="/tags/%E6%BC%8F%E6%B4%9E/" style="font-size: 12px;">漏洞</a> <a href="/tags/%E7%92%B0%E7%8B%80%E7%B0%BD%E5%90%8D/" style="font-size: 17px;">環狀簽名</a> <a href="/tags/%E7%92%B0%E7%B0%BD%E4%BA%A4%E6%98%93/" style="font-size: 10px;">環簽交易</a> <a href="/tags/%E7%A1%AC%E5%88%86%E5%8F%89/" style="font-size: 20px;">硬分叉</a> <a href="/tags/%E7%A1%AC%E9%AB%94%E9%8C%A2%E5%8C%85/" style="font-size: 18px;">硬體錢包</a> <a href="/tags/%E8%BC%95%E9%8C%A2%E5%8C%85/" style="font-size: 15px;">輕錢包</a> <a href="/tags/%E9%81%A0%E7%AB%AF%E7%AF%80%E9%BB%9E/" style="font-size: 11px;">遠端節點</a> <a href="/tags/%E9%87%91%E9%91%B0%E6%98%A0%E5%83%8F/" style="font-size: 12px;">金鑰映像</a> <a href="/tags/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/" style="font-size: 11px;">開發日誌</a> <a href="/tags/%E9%9A%B1%E5%8C%BF%E6%80%A7%E5%9C%B0%E5%9D%80/" style="font-size: 11px;">隱匿性地址</a>
     </div>
   </div>
 
@@ -404,7 +252,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a></li></ul>
     </div>
   </div>
 
@@ -415,6 +263,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/04/09/monero-0-17-2-0-released/">Monero 發布新版本 v0.17.2.0（代號：氧氣獵戶座）</a>
+          </li>
         
           <li>
             <a href="/2020/10/05/monero-GUI-0-17-0-1-released/">Monero GUI 發布新版本 v0.17.0.1（代號：氧氣獵戶座）</a>
@@ -430,10 +282,6 @@
         
           <li>
             <a href="/2020/05/30/monero-GUI-0.16-released/">Monero GUI 更新版本 v0.16.0.0（代號：氮星雲）</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/23/monero-0.16-released/">Monero 發布新版本 v0.16.0.0（代號：氮星雲）</a>
           </li>
         
       </ul>
@@ -457,7 +305,7 @@
                 <p>&copy; 2017<script>
                     new Date().getFullYear() > 2017 && document.write("-" + new Date().getFullYear());
                     </script> Monero-Taiwan 正體中文站<br>
-                    本網站內容採用<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
+                    本網站內容採用<a target="_blank" href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">創用 CC 姓名標示 4.0 國際 授權條款</a>授權</p>
             </div>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
         </div>
@@ -480,11 +328,17 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
 
 
 

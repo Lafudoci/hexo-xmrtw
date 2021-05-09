@@ -2,493 +2,1029 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xmr-tw.org/2020/04/14/monero-GUI-0-17-2-1-released/</loc>
+    
+    <lastmod>2021-05-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2021/04/09/monero-0-17-2-0-released/</loc>
+    
+    <lastmod>2021-05-09</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xmr-tw.org/2020/10/05/monero-GUI-0-17-0-1-released/</loc>
     
-    <lastmod>2020-10-06T03:05:05.583Z</lastmod>
+    <lastmod>2020-10-06</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2020/09/27/monero-0-17-0-1-released/</loc>
     
-    <lastmod>2020-10-06T03:02:23.604Z</lastmod>
+    <lastmod>2020-10-06</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2020/09/17/monero-0-17-0-released/</loc>
     
-    <lastmod>2020-10-06T03:00:48.766Z</lastmod>
+    <lastmod>2020-10-06</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2020/05/30/monero-GUI-0.16-released/</loc>
     
-    <lastmod>2020-06-01T13:58:22.445Z</lastmod>
+    <lastmod>2020-06-01</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2020/05/23/monero-0.16-released/</loc>
     
-    <lastmod>2020-05-24T03:27:43.721Z</lastmod>
+    <lastmod>2020-05-24</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2020/04/18/dandelion-implemented/</loc>
     
-    <lastmod>2020-05-01T07:47:28.623Z</lastmod>
+    <lastmod>2020-05-01</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2020/04/13/migration-github/</loc>
     
-    <lastmod>2020-04-28T13:10:12.383Z</lastmod>
+    <lastmod>2020-04-28</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2020/03/19/monero-0-15-0-5-release/</loc>
     
-    <lastmod>2020-04-28T13:03:25.893Z</lastmod>
+    <lastmod>2020-04-28</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/09/26/mortem-of-the-burning-bug/</loc>
     
-    <lastmod>2020-04-28T13:02:02.205Z</lastmod>
+    <lastmod>2020-04-28</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2019/11/24/monero-0-15-0-1-release/</loc>
     
-    <lastmod>2020-04-28T12:38:16.160Z</lastmod>
+    <lastmod>2020-04-28</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2019/02/21/monero-0-14-0-release/</loc>
     
-    <lastmod>2020-04-28T11:19:21.400Z</lastmod>
+    <lastmod>2020-04-28</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2019/02/16/devmeeting-20181014-2/</loc>
     
-    <lastmod>2019-08-13T14:08:55.723Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2019/02/16/devmeeting-20181216/</loc>
     
-    <lastmod>2019-08-13T14:08:55.723Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2019/05/15/devmeeting-20190505/</loc>
     
-    <lastmod>2019-08-13T14:08:55.723Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/09/15/devmeeting-20180909/</loc>
     
-    <lastmod>2019-08-13T14:08:55.723Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/10/10/devmeeting-20181007/</loc>
     
-    <lastmod>2019-08-13T14:08:55.723Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/03/19/devmeeting-20180311/</loc>
     
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/03/19/devmeeting-20180318/</loc>
     
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/04/27/devmeeting-20180422/</loc>
     
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/05/24/devmeeting-20180520/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/05/11/devmeeting-20180506/</loc>
     
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xmr-tw.org/2018/07/10/devmeeting-20180701/</loc>
+    <loc>https://xmr-tw.org/2018/05/24/devmeeting-20180520/</loc>
     
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2018/07/29/devmeeting-20180715/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/06/26/devmeeting-20180617/</loc>
     
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/07/10/devmeeting-20180701/</loc>
+    
+    <lastmod>2019-08-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2018/07/29/devmeeting-20180715/</loc>
+    
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/08/01/devmeeting-20180729/</loc>
     
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/08/29/devmeeting-20180826/</loc>
     
-    <lastmod>2019-08-13T14:08:55.719Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/11/21/devmeeting-20171119/</loc>
     
-    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/12/05/devmeeting-20171203/</loc>
     
-    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/12/20/devmeeting-20171217/</loc>
     
-    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/01/30/devmeeting-20180128/</loc>
     
-    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/03/05/devmeeting-20180225/</loc>
     
-    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/03/08/devmeeting-20180304/</loc>
     
-    <lastmod>2019-08-13T14:08:55.716Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/07/20/monero-ring-signatures/</loc>
     
-    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/08/10/devmeeting-20170806/</loc>
     
-    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/08/21/devmeeting-20170820/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/08/31/paymentid/</loc>
     
-    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/08/21/devmeeting-20170820/</loc>
+    
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/09/04/devmeeting-20170903/</loc>
     
-    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/09/18/devmeeting-20170917/</loc>
     
-    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/10/02/devmeeting-20171001/</loc>
     
-    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/10/23/devmeeting-20171022/</loc>
     
-    <lastmod>2019-08-13T14:08:55.713Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/03/12/devmeeting-20170312/</loc>
     
-    <lastmod>2019-08-13T14:08:55.709Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xmr-tw.org/2017/06/30/monero-stealth-addresses/</loc>
-    
-    <lastmod>2019-08-13T14:08:55.709Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/06/30/devmeeting-20170625/</loc>
     
-    <lastmod>2019-08-13T14:08:55.709Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/2017/06/30/monero-stealth-addresses/</loc>
+    
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/07/16/devmeeting-20170709/</loc>
     
-    <lastmod>2019-08-13T14:08:55.709Z</lastmod>
+    <lastmod>2019-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2019/03/23/2018-Monero-review/</loc>
     
-    <lastmod>2019-04-22T03:43:30.000Z</lastmod>
+    <lastmod>2019-04-22</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/12/16/a-note-on-xmr-fees/</loc>
     
-    <lastmod>2019-04-22T03:24:36.000Z</lastmod>
+    <lastmod>2019-04-22</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/09/08/monero0-11-0-0-helium-hydra-release/</loc>
     
-    <lastmod>2019-04-21T13:55:07.000Z</lastmod>
+    <lastmod>2019-04-21</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/09/11/monero-gui-build-from-git/</loc>
     
-    <lastmod>2019-04-21T13:38:17.000Z</lastmod>
+    <lastmod>2019-04-21</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/05/17/disclosure-of-a-major-bug-in-cryptonote-based-currencies/</loc>
     
-    <lastmod>2019-04-21T13:23:39.000Z</lastmod>
+    <lastmod>2019-04-21</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/08/18/helium-hydra-testnetob/</loc>
     
-    <lastmod>2019-04-21T13:23:39.000Z</lastmod>
+    <lastmod>2019-04-21</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/10/26/monero-0-11-1-0/</loc>
     
-    <lastmod>2019-04-21T13:23:39.000Z</lastmod>
+    <lastmod>2019-04-21</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/12/05/monero-change-db-location/</loc>
     
-    <lastmod>2019-04-21T13:23:38.000Z</lastmod>
+    <lastmod>2019-04-21</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/02/23/pow-change-and-key-reuse/</loc>
     
-    <lastmod>2019-04-21T09:19:15.000Z</lastmod>
+    <lastmod>2019-04-21</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/07/25/ringct/</loc>
     
-    <lastmod>2019-04-21T09:19:10.000Z</lastmod>
+    <lastmod>2019-04-21</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/09/22/using-coinhive/</loc>
     
-    <lastmod>2019-04-21T09:18:55.000Z</lastmod>
+    <lastmod>2019-04-21</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/09/06/multiple-counting-bug/</loc>
     
-    <lastmod>2019-04-20T21:24:12.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/07/12/monero-ringct-will-rise/</loc>
     
-    <lastmod>2019-04-20T19:06:18.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2016/01/11/monero-ringct-1220516hf/</loc>
     
-    <lastmod>2019-04-20T19:05:35.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/03/30/monero-gui-beta2/</loc>
     
-    <lastmod>2019-04-20T18:30:46.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/09/10/monero-gui-remote-node/</loc>
     
-    <lastmod>2019-04-20T18:27:23.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2016/12/23/monero-gui-beta1/</loc>
     
-    <lastmod>2019-04-20T18:18:55.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/04/11/monero-1288616hf/</loc>
     
-    <lastmod>2019-04-20T18:07:08.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2018/03/07/core-team-announcement/</loc>
     
-    <lastmod>2019-04-20T17:45:25.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/12/09/bulletproofs-news-update/</loc>
     
-    <lastmod>2019-04-20T17:37:02.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/12/05/mymonero-import-to-gui/</loc>
     
-    <lastmod>2019-04-20T16:22:16.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/2017/11/23/monerod-node-guide/</loc>
     
-    <lastmod>2019-04-20T13:27:13.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/manifest.json</loc>
     
-    <lastmod>2019-04-20T04:17:52.000Z</lastmod>
+    <lastmod>2019-04-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/nodes/index.html</loc>
     
-    <lastmod>2019-04-17T10:24:42.000Z</lastmod>
+    <lastmod>2019-04-17</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/advantage/index.html</loc>
     
-    <lastmod>2019-04-17T10:17:49.000Z</lastmod>
+    <lastmod>2019-04-17</lastmod>
     
   </url>
   
   <url>
     <loc>https://xmr-tw.org/xmr-eta/index.html</loc>
     
-    <lastmod>2019-04-17T07:26:22.000Z</lastmod>
+    <lastmod>2019-04-17</lastmod>
     
+  </url>
+  
+
+  <url>
+    <loc>https://xmr-tw.org/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/RingCT/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E7%A1%AC%E5%88%86%E5%8F%89/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/GUI%E9%8C%A2%E5%8C%85/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Bytecoin/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/CryptoNote/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E6%BC%8F%E6%B4%9E/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E8%BC%95%E9%8C%A2%E5%8C%85/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E9%9A%B1%E5%8C%BF%E6%80%A7%E5%9C%B0%E5%9D%80/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Monero-Research-Lab/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E7%92%B0%E7%8B%80%E7%B0%BD%E5%90%8D/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E9%87%91%E9%91%B0%E6%98%A0%E5%83%8F/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/FFS/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/LMDB/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Mining/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Subaddresses/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/ZeroMQ/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E6%89%8B%E6%A9%9F%E9%8C%A2%E5%8C%85/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E7%92%B0%E7%B0%BD%E4%BA%A4%E6%98%93/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/mymonero/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Helium-Hydra/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/testnet/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/payment-id/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E4%BB%98%E6%AC%BEID/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E6%95%B4%E5%90%88%E5%9E%8B%E5%9C%B0%E5%9D%80/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/MultiSig/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/RingCT2-0/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/RuffCT/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E7%A1%AC%E9%AB%94%E9%8C%A2%E5%8C%85/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/fluffy%E5%8D%80%E5%A1%8A/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E9%81%A0%E7%AB%AF%E7%AF%80%E9%BB%9E/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/compile/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/open-source/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/coinhive/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/BulletProofs/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E5%AF%86%E7%A2%BC%E5%AD%B8/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E6%89%8B%E7%BA%8C%E8%B2%BB/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Tor/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Trezor/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Boron-Butterfly/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/RandomX/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/ASIC%E7%A4%A6%E6%A9%9F/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E5%BF%83%E5%BE%97%E4%BB%8B%E7%B4%B9/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/GUI/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Carbon-Chamaeleon/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/ASIC/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Core-team/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/%E6%A0%B8%E5%BF%83%E9%96%8B%E7%99%BC%E5%9C%98%E9%9A%8A/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Borromean-Signature-Speedup/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/libMoneroConsensus/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Lithium-Luna/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Proof-of-Work/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/OpenCart/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Kovri/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/msgpack/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/randomJS/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/CrptoNight/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/reproducible-build/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/CryptoNight/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Gitlab/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Beryllium-Bullet/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Community/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Nitrogen-Nebula/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/Oxygen-Orion/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/tags/CLSAG/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://xmr-tw.org/categories/Monero-%E6%96%B0%E8%81%9E/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/categories/%E5%8D%80%E5%A1%8A%E9%8F%88%E5%88%86%E5%8F%89%E6%B6%88%E6%81%AF/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/categories/%E5%AE%98%E6%96%B9%E6%96%B0%E7%89%88%E6%9C%AC%E9%87%8B%E5%87%BA/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/categories/%E9%96%8B%E7%99%BC%E8%80%85%E6%9C%83%E8%AD%B0%E7%B4%80%E9%8C%84/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/categories/%E5%AE%98%E6%96%B9%E6%B6%88%E6%81%AF%E5%AE%A3%E5%B8%83/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/categories/Monero-%E6%8A%80%E8%A1%93%E4%BB%8B%E7%B4%B9/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/categories/Monero-%E5%B0%8F%E7%A7%98%E8%A8%A3/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmr-tw.org/categories/%E7%AB%99%E5%8B%99%E6%B6%88%E6%81%AF/</loc>
+    <lastmod>2021-05-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
   
 </urlset>
